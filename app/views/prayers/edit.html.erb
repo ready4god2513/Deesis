@@ -1,0 +1,14 @@
+<% form_for(@prayer) do |f| %>
+	<%= f.error_messages %>
+	<fieldset>
+		<div class="formFields">
+			<%= f.label :prayer, 'Edit Your Prayer' %>
+			<%= f.text_area :prayer, :class => 'edit_prayer' %>
+		</div>
+		<div class="formFields">
+			<%= f.submit 'Submit Prayer' %>
+		</div>
+	</fieldset>
+<% end %>
+
+<%= render :partial => 'prayers/prayer' %>

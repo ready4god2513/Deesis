@@ -1,0 +1,60 @@
+<h1>Profile Management</h1>
+
+<% form_for(@user, :html => { :class => 'ajaxForm' }) do |f| %>
+	<%= f.error_messages %>
+	<fieldset>
+		<div class="formFields">
+			<%= f.label :firstname %>
+			<%= f.text_field :firstname %>
+		</div>
+		<div class="formFields">
+			<%= f.label :lastname %>
+			<%= f.text_field :lastname %>
+		</div>
+		<div class="formFields">
+			<%= f.label :location %>
+			<%= f.text_field :location %>
+		</div>
+		<div class="formFields">
+			<%= f.label :postal_code %>
+			<%= f.text_field :postal_code %>
+		</div>
+		<div class="formFields">
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+		</div>
+		<div class="formFields">
+			<%= f.submit 'Update Profile' %>
+		</div>
+	</fieldset>
+<% end %>
+
+<% form_for(@user, :html => { :multipart => true }) do |f| %>
+	<%= f.error_messages %>
+	<fieldset>
+		<div class="formFields">
+			<%= f.label :pic %>
+			<%= f.file_field :profile_pic %>
+		</div>
+		<div class="formFields">
+			<%= f.submit 'Upload Pic' %>
+		</div>
+	</fieldset>
+<% end %>
+
+<% form_for(@user, :html => { :class => 'ajaxForm'}) do |f| %>
+	<%= f.error_messages %>
+	<fieldset>
+		<div class="formFields">
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+		</div>
+		<div class="formFields">
+			<%= f.label :password_confirmation %>
+			<%= f.password_field :password_confirmation %>
+		</div>
+		<div class="formFields">
+			<%= f.submit 'Change Password' %>
+		</div>
+	</fieldset>
+<% end %>

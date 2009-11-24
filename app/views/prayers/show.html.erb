@@ -1,0 +1,9 @@
+<%= render :partial => 'prayers/prayer' %>
+
+<h3>Comments</h3>
+<% if current_user %>
+	<%= render :partial => 'comments/form', :locals => { :comment => @prayer.comment.new } %>
+<% end %>
+<div id="comments">
+	<%= render :partial => 'comments/comment', :collection => @prayer.comment %>
+</div>

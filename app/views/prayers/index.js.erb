@@ -1,0 +1,10 @@
+<% if @prayers.count > 0 %>
+	$("#prayers_list").append(' \
+	<%= escape_javascript(render :partial => 'prayers/prayer', :collection => @prayers) %> \
+	<% if @prayers.count > 9 %> \
+	<%= escape_javascript('<div id="pagination">') %> \
+	<%= escape_javascript(link_to "More Prayers", prayers_path, :class => 'round more') %> \
+	<%= escape_javascript('</div>') %> \
+	<% end %> \
+	');
+<% end %>

@@ -1,0 +1,12 @@
+<% form_for(comment, :html => { :class => 'ajaxForm' })  do |f| %>
+	<fieldset>
+		<%= f.hidden_field :prayer_id %>
+		<div class="formFields">
+			<%= f.label :comment %>
+			<%= f.text_area :comment %>
+		</div>
+		<div class="formFields">
+			<%= f.submit 'Submit Comment' %>
+		</div>
+	</fieldset>
+<% end %>

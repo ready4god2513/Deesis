@@ -1,0 +1,15 @@
+<div class="list prayer">
+	<div class="avatar"><%= profile_pic(prayer.user) %></div>
+	<div class="item"><%= format_output(prayer.prayer) %></div>
+	<div class="meta" id="prayer_<%= prayer.id %>">
+		<%= pluralize(prayer.num_responses, 'Person', 'People') %>  Praying |
+		
+		<%= link_to 'I am Praying', new_prayer_path %> |
+		
+		<%= link_to "View and Comment", prayer %>
+		
+		<% if user_can_edit(prayer) %>
+			| <%= link_to "Edit", edit_prayer_path(prayer)%>
+		<% end %>
+	</div>
+</div>

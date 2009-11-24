@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Deesis | <%= @page_title || 'We Mean Prayer' %></title>
+<meta name="keywords" content="Prayer, Small Groups, Churches, Community" />
+<meta name="description" content="Deesis is a website community built to encourage and support prayer in churches and small groups." />
+<%= stylesheet_link_tag 'base' %>
+<%= javascript_include_tag 'jquery', 'plugins', 'application' %>
+<%= yield(:head) %>
+</head>
+<body>
+<div class="wrapper">
+	<div id="user_login">
+		<% if current_user %>
+			<%= link_to "Profile", edit_user_path(:current) %> | 
+			<%= link_to "Logout", logout_path %>
+		<% else %>
+			<%= link_to "Register", register_path %> |
+			<%= link_to "Login", login_path %>
+		<% end %>
+	</div>
+	<div class="navigation">
+		<ul>
+			<li><%= link_to "Prayer", prayers_path %></li>
+			<li><%= link_to "Articles", articles_path %></li>
+			<li><%= link_to "Community", community_path %></li>
+		</ul>
+		<div id="searchform">
+			<% form_tag request.path, :method => 'get' do %>
+			  	<input type="text" id="search" name="search" value="<%= params[:search] || 'Search...' %>" class="search_box" onclick="this.value = ''"  />
+			<% end %>
+		</div>		
+	</div>
+	<div class="clear"></div>
+	<div id="notice">
+		<% if flash[:notice] %>
+			<%= flash[:notice]%>
+		<% end %>
+	</div>

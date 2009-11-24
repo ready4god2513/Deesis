@@ -1,0 +1,4 @@
+$("#comments").prepend("<%= escape_javascript(render(:partial => 'comments/comment')) %>");
+$("#notice").html('<%= escape_javascript(flash.delete(:notice)) %>');
+$("#comments div:nth-child(1) p").highlightFade({speed:3000});
+$("#new_comment")[0].reset();

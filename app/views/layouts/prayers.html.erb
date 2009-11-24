@@ -1,0 +1,14 @@
+<%= render :partial => 'layouts/header' %>
+<div class="content">
+	<div class="listing_small">
+		<%= yield %>
+	</div>
+	<div class="info_box">
+		<h3>Recent Comments</h3>
+		<div class="list">
+			<%= render :partial => 'comments/comment', :collection => @comments %>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+<%= render :partial => 'layouts/footer' %>

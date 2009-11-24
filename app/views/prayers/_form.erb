@@ -1,0 +1,12 @@
+<% form_for(@prayer, :html => { :class => 'ajaxForm' }) do |f| %>
+	<%= f.error_messages %>
+	<fieldset>
+		<div class="formFields">
+			<%= f.label :prayer, 'Write a Prayer' %>
+			<%= f.text_area :prayer %>
+		</div>
+		<div class="formFields">
+			<%= f.submit 'Submit Prayer' %>
+		</div>
+	</fieldset>
+<% end %>
