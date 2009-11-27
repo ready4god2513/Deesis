@@ -16,7 +16,7 @@ div#notice{background:#e6e6df;color:#000;font-weight:700;margin:10px 0;padding:1
 div#pagination a.more{background:url('http://s.twimg.com/a/1258507899/images/more.gif') top left repeat-x #fff;border:1px solid #ddd;border-bottom:1px solid #aaa;border-right:1px solid #aaa;display:block;font-size:14px;font-weight:700;height:22px;line-height:1.5em;margin:30px 0 10px;outline:none;padding:6px 0;text-align:center;text-shadow:1px 1px 1px #fff;width:100%}
 div#user_login a{color:#fff;font-weight:700}
 div#user_login,h1#logo{color:#fff}
-div.avatar img{background:#e8e8e8;border:none;padding:0 6px 0 0}
+div.avatar img{background:#e8e8e8;border:none;margin-right:5px;padding:3px}
 div.complete{text-decoration:line-through}
 div.footer{margin-bottom:40px;text-align:right}
 div.formFields{background:#f8f8f8;clear:both;margin-bottom:4px;padding:5px}
@@ -31,7 +31,7 @@ div.info_box ul{list-style:none;margin:0;padding:0}
 div.info_box ul li{margin:0;padding:2px}
 div.info_box ul li:hover{background:#e8e8e8}
 div.info_box ul li:hover a{color:#000}
-div.item{font-size:1.2em;word-wrap:break-word}
+div.item{font-size:1.1em;word-wrap:break-word}
 div.item p,h1,h2,h3,div.tabs ul{margin:0;padding:0}
 div.list{background:#f8f8f8;font-size:0.9em;margin:10px 0;padding:5px}
 div.listing_small{font-size:0.9em}

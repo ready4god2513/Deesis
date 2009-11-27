@@ -1,4 +1,8 @@
 class PrayersController < ApplicationController
+  
+  # Require that a current user is logged in
+  before_filter :require_login
+  
   # GET /prayers
   # GET /prayers.xml
   def index
