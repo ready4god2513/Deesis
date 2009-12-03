@@ -1,7 +1,4 @@
-class CommentsController < ApplicationController
-  
-  # Require that a current user is logged in
-  before_filter :require_login
+class CommentsController < ProtectedController
   
   # GET /comments
   # GET /comments.xml

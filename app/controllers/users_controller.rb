@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  current_tab :community
+  
   # GET /users
   # GET /users.xml
   def index

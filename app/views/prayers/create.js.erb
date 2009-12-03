@@ -1,4 +1,4 @@
 $("#prayers_list").prepend("<%= escape_javascript(render(:partial => 'prayers/prayer')) %>");
 $("#notice").html('<%= escape_javascript(flash.delete(:notice)) %>');
-$("#prayers_list div:nth-child(1) p").highlightFade({speed:2000});
+$("#prayers_list div:nth-child(1)").highlightFade({speed:2000});
 $("#new_prayer")[0].reset();

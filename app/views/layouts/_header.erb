@@ -12,7 +12,7 @@
 <% if current_user %>
 <div id="header">
 	<div class="wrapper">
-		<h1 id="logo" class="left">HoneyDue</h1>
+		<h1 id="logo" class="left">Deesis</h1>
 		<div id="user_login" class="right">
 			<%= link_to current_user.name_or_username, edit_user_path(:current) %> | 
 			<%= link_to "Logout", logout_path %>
@@ -22,7 +22,7 @@
 				<%= navigation [:prayers, :articles, :community] -%>	
 			</div>
 			<div class="tabs right">
-				<%= navigation [{:profile => edit_user_path(:current)}, {:settings => root_url}] -%>
+				<%= navigation [{:profile => account_path}, {:settings => root_url}] -%>
 			</div>
 			<div class="clear"></div>
 		</div>

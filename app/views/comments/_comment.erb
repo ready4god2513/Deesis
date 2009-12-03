@@ -1,5 +1,5 @@
 <div class="list comment">
-	<div class="avatar"><%= profile_pic(comment.user) %></div>
+	<div class="avatar left"><%= profile_pic(comment.user) %></div>
 	<div class="item"><%= format_output(comment.comment) %></div>
 	<div class="meta"><%= link_to comment.user.name_or_username, profile_path(comment.user.username) %> | <%= time_ago_in_words(comment.created_at)%> ago</div>
 </div>

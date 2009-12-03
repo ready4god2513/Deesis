@@ -14,8 +14,9 @@ $(document).ready(function() {
 	
 	$(".ajaxForm").submitWithAjax();
 	
-	$("#prayer_prayer").charCounter(1200).elastic();
-	$("#comment_comment").charCounter(400).elastic();
+	$("#prayer_prayer").charCounter(1200);
+	$("#comment_comment").charCounter(400);
+	$("textarea").elastic();
 	
 	$('textarea.edit_prayer').keyup(function(){
 		$('div.prayer div.item').html(nl2br($(this).val(), true));

@@ -12,5 +12,7 @@
 			<%= f.password_field :password %>
 		</div>
 	</fieldset>
-	<%= f.submit "Submit" %>
+	<div class="formFields submit">
+		<%= f.submit "Login" %> or <%= link_to 'Register', register_path %>
+	</div>
 <% end %>

@@ -19,7 +19,7 @@
 		<%= f.label :password_confirmation %>
 		<%= f.password_field :password_confirmation %>
 	</div>
-	<div class="formFields">
-		<%= f.submit 'Register' %>
+	<div class="formFields submit">
+		<%= f.submit 'Register' %> or <%= link_to 'Login', login_path %>
 	</div>
 <% end %>

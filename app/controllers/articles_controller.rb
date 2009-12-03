@@ -1,7 +1,4 @@
-class ArticlesController < ApplicationController
-  
-  # Require that a current user is logged in
-  before_filter :require_login
+class ArticlesController < ProtectedController
   
   # GET /articles
   # GET /articles.xml
@@ -49,7 +46,8 @@ class ArticlesController < ApplicationController
   # POST /articles.xml
   def create
     @article = Article.new(params[:article])
-
+    @article.user_id = current_user.id
+    
     respond_to do |format|
       if @article.save
         flash[:notice] = 'Article was successfully created.'

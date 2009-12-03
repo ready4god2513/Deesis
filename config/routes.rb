@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
   map.register 'register', :controller => 'users', :action => 'new'
   map.profile 'profile/:username.:format', :controller => 'users', :action => 'show'
+  map.account 'account', :controller => 'users', :action => 'edit'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

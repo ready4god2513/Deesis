@@ -1,6 +1,14 @@
 <%= render :partial => 'layouts/header' %>
 	<div class="info_box">
-		<h3>Recent Comments</h3>
+		<h2>Search Prayers</h2>
+		<form action="/" method="GET">
+			<div class="formFields">
+				<input type="text" name="search" id="search" value="<%= params[:search] || 'Search'%>" />
+			</div>
+		</form>
+	</div>
+	<div class="info_box">
+		<h2>Recent Comments</h2>
 		<div class="list">
 			<%= render :partial => 'comments/comment', :collection => @comments %>
 		</div>

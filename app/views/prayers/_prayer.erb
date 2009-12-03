@@ -1,5 +1,5 @@
 <div class="list prayer">
-	<div class="avatar"><%= profile_pic(prayer.user) %></div>
+	<div class="avatar left"><%= profile_pic(prayer.user) %></div>
 	<div class="item"><%= format_output(prayer.prayer) %></div>
 	<div class="meta" id="prayer_<%= prayer.id %>">
 		<%= pluralize(prayer.num_responses, 'Person', 'People') %>  Praying |
