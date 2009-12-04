@@ -13,8 +13,8 @@ div#footer{color:#666;font-size:0.9em;margin:10px 0 30px 20px;text-align:left}
 div#footer a{color:#666;font-size:0.9em;margin:5px;text-decoration:underline}
 div#header{background:#4184AB;margin:0 0 20px;padding:10px 0 0}
 div#notice{background:#e6e6df;color:#000;font-weight:700;margin:10px 0;padding:10px 0}
-div#pagination a.more{background:#E6E6DF;display:block;font-size:14px;font-weight:700;height:22px;line-height:1.5em;margin:30px 0;outline:none;padding:6px 0;text-align:center;width:70%}
-div#sidebar { max-width:250px; margin-left:50px;}
+div#pagination a.more{background:#E6E6DF;display:block;font-size:14px;font-weight:700;height:22px;line-height:1.5em;margin:30px 0;outline:none;padding:6px 0;text-align:center;width:100%}
+div#sidebar { max-width:300px; margin-left:50px;}
 div#user_login a{color:#fff;font-weight:700}
 div#user_login,h1#logo{color:#fff}
 div.avatar img{background:#e8e8e8;border:none;margin-right:5px;}
