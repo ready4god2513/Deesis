@@ -33,7 +33,8 @@ div.info_box ul li{margin:0;padding:2px}
 div.info_box ul li:hover{background:#e8e8e8}
 div.info_box ul li:hover a{color:#000}
 div.info_box input[type=text] {width:90%;}
-div.item{font-size:1.1em;word-wrap:break-word; width:85%;margin-left:5px;}
+div.item{font-size:1.1em;word-wrap:break-word;width:85%;margin-left:5px;}
+div.info_box div.item {width:75%;}
 div.item p,h1,h2,h3,div.tabs ul{margin:0;padding:0}
 div.list{background:#f8f8f8;font-size:0.9em;margin:10px 0;padding:5px}
 div.listing_small{font-size:0.9em}
