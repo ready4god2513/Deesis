@@ -33,13 +33,14 @@ div.info_box ul li{margin:0;padding:2px}
 div.info_box ul li:hover{background:#e8e8e8}
 div.info_box ul li:hover a{color:#000}
 div.info_box input[type=text] {width:90%;}
-div.item{font-size:1.1em;word-wrap:break-word}
+div.item{font-size:1.1em;word-wrap:break-word; width:75%;margin-left:5px;}
 div.item p,h1,h2,h3,div.tabs ul{margin:0;padding:0}
 div.list{background:#f8f8f8;font-size:0.9em;margin:10px 0;padding:5px}
 div.listing_small{font-size:0.9em}
 div.messages{background:#666;color:#fff;font-weight:700;margin:10px 0;padding:5px;text-align:center}
 div.meta{color:#999;font-size:0.95em;margin:0 20px;padding:5px}
 div.meta a,div.user_info_box a,div.list a,div.info_box a{color:#2e80d3}
+div#content div.meta a {color:#fff;display:block; background:#222;padding:5px;width:100px;-moz-border-radius:4px;text-align:center;}
 div.tabs{margin:30px 0 5px}
 div.tabs ul li{display:inline;margin:0 3px 0 0}
 div.tabs ul li a{background:#222;color:#fff;font-weight:700;margin:0;padding:5px 15px}
