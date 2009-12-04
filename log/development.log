@@ -45453,3 +45453,52 @@ Rendering users/edit
 Rendered layouts/_header (2.4ms)
 Rendered layouts/_footer (0.5ms)
 Completed in 108ms (View: 13, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-03 17:25:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+
+NameError (uninitialized constant ProtectedController):
+  app/controllers/prayers_controller.rb:1
+
+Rendered rescues/_trace (33.4ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-03 17:25:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+
+NameError (uninitialized constant ProtectedController):
+  app/controllers/prayers_controller.rb:1
+
+Rendered rescues/_trace (92.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-03 17:25:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+
+NameError (uninitialized constant ProtectedController):
+  app/controllers/prayers_controller.rb:1
+
+Rendered rescues/_trace (31.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2009-12-03 17:26:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 65ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-03 17:26:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (3.1ms)
+Rendered layouts/_footer (0.8ms)
+Completed in 113ms (View: 34, DB: 0) | 200 OK [http://localhost/login]
