@@ -1,11 +1,14 @@
-<div class="list prayer">
+<div class="list prayer" id="prayer_id_<%= prayer.id %>">
 	<div class="avatar left"><%= profile_pic(prayer.user) %></div>
 	<div class="item left"><%= format_output(prayer.prayer) %></div>
 	<div class="meta" id="prayer_<%= prayer.id %>">
-		<%= pluralize(prayer.num_responses, 'Person', 'People') %>  Praying |
+		<span class="num_people_praying"><%= pluralize(prayer.num_responses, 'Person', 'People') %></span>  Praying |
 		
-		<%= link_to 'I am Praying', new_prayer_path %>
+		<%= link_to 'I am Praying', commit_path(prayer.id), :class => 'i_am_praying' %>
 		<%= link_to 'Comments', prayer%>
+		<% if current_user.id == prayer.user_id %>
+			<%= link_to 'Edit', edit_prayer_path(prayer) %>
+		<% end %>
 	</div>
 	<div class="clear"></div>
 </div>

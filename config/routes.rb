@@ -7,6 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.root :controller => 'prayers'
   map.post 'post', :controller => 'prayers', :action => 'new'
+  map.commit 'commit/:id', :controller => 'prayers', :action => 'commit'
   map.community 'community.:format', :controller => 'users', :action => 'index'
   map.login 'login', :controller => 'user_sessions', :action => 'new'
   map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'

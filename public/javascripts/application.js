@@ -13,13 +13,25 @@ jQuery.fn.submitWithAjax = function() {
 $(document).ready(function() {
 	
 	$(".ajaxForm").submitWithAjax();
-	
 	$("#prayer_prayer").charCounter(1200);
 	$("#comment_comment").charCounter(400);
 	$("textarea").elastic();
 	
 	$('textarea.edit_prayer').keyup(function(){
 		$('div.prayer div.item').html(nl2br($(this).val(), true));
+	});
+	
+	$('#search').focus(function(){
+		if($(this).val() == 'Search')
+		{
+			$(this).val('');
+		}
+	});
+	
+	// Commiting to praying
+	$(".i_am_praying").live('click', function(){
+		$.getScript($(this).attr('href'));
+		return false;
 	});
 	
 	// Create pagination

@@ -16,6 +16,16 @@ class PrayersController < ProtectedController
       format.atom { render :atom => @prayers }
     end
   end
+  
+  def commit
+    @prayer = Prayer.find(params[:id])
+    @prayer.increment!(:num_responses)
+    
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.js { }
+    end
+  end
 
   # GET /prayers/1
   # GET /prayers/1.xml
