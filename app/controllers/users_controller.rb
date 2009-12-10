@@ -49,7 +49,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         flash[:notice] = 'Your account has been created'
-        format.html { redirect_to(@user) }
+        format.html { redirect_to root_url }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
         format.json  { render :json => @user, :status => :created, :location => @user }
       else

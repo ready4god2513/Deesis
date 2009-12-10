@@ -1,12 +1,12 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   
-  def profile_pic(user)
-    link_to (image_tag user.profile_pic.url), profile_path(user.username)
+  def profile_pic(user, size = :thumb)
+    link_to (image_tag user.profile_pic.url(size)), profile_path(user.username)
   end
   
   def profile_pic_with_popup(user)
-    link_to (image_tag user.profile_pic.url), user.profile_pic.url(:small)
+    link_to (image_tag user.profile_pic.url), user.profile_pic.url(:small), :class => 'expand_avatar'
   end
   
   def format_output(content)

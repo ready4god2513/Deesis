@@ -11,7 +11,7 @@ class Prayer < ActiveRecord::Base
   before_save :sanitize_user_input
   
   # NAMED SCOPES
-  default_scope :order => 'updated_at DESC',
+  default_scope :order => 'created_at DESC',
                 :limit => 10
   
   def self.search(search, page, per)

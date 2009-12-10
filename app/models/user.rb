@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
 
   def self.search(search, page, per)
     if per.nil?
-      per = 10
+      per = 25
     end
     
     paginate :per_page => per,
