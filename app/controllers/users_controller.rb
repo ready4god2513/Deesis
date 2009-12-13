@@ -14,6 +14,19 @@ class UsersController < ApplicationController
       format.atom  { render :atom => @users }
     end
   end
+  
+  def activity
+    @user = User.find_by_username(params[:username])
+    @activities = Activity.find_all_by_user_id(@user.id)
+     
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @activities }
+      format.json { render :json => @activities }
+      format.rss  { render :rss => @activities }
+      format.atom  { render :atom => @activities }
+    end
+  end
 
   # GET /users/1
   # GET /users/1.xml
@@ -48,6 +61,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        @activity = Activity.new(:user_id => @user.id, :activity => 'Signed up for an account', :link_to => profile_path(@user.username))
+        @activity.save
         flash[:notice] = 'Your account has been created'
         format.html { redirect_to root_url }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
@@ -66,6 +81,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
+        @activity = Activity.new(:user_id => @user.id, :activity => 'Updated Profile')
+        @activity.save
         flash[:notice] = 'Your profile has been updated'
         format.html { redirect_to edit_user_path(:current) }
         format.xml  { head :ok }

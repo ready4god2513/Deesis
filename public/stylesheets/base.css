@@ -17,6 +17,7 @@ div#pagination a.more{background:#E6E6DF;color:#4184AB;display:block;font-size:1
 div#sidebar { max-width:300px; margin-left:50px;}
 div#user_login a{color:#fff;font-weight:700}
 div#user_login,h1#logo{color:#fff}
+div.activity_stream { margin:5px 60px; font-size:0.9em;}
 div.avatar img{background:#e8e8e8;border:none;margin-right:5px;}
 div.complete{text-decoration:line-through}
 div.footer{margin-bottom:40px;text-align:right}
@@ -33,7 +34,8 @@ div.info_box ul li{margin:0;padding:2px}
 div.info_box ul li:hover{background:#e8e8e8}
 div.info_box ul li:hover a{color:#000}
 div.info_box input[type=text] {width:90%;}
-div.item{font-size:1.1em;word-wrap:break-word; width:85%;margin-left:5px;}
+div.item{font-size:1.1em;word-wrap:break-word;width:85%;margin-left:5px;}
+div.info_box div.item {width:75%;}
 div.item p,h1,h2,h3,div.tabs ul{margin:0;padding:0}
 div.list{background:#f8f8f8;font-size:0.9em;margin:10px 0;padding:5px}
 div.listing_small{font-size:0.9em}

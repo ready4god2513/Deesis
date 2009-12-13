@@ -1,7 +1,9 @@
-<div class="list user">
-	<div class="avatar"><%= profile_pic_with_popup(@user) %></div>
-	<div class="item"><%= link_to @user.name_or_username, profile_path(@user.username) %></div>
-	<div class="meta" id="user_<%= @user.id %>">
-		<%= @user.last_request_at.nil? ? 'Membership Pending' : 'Last Active ' + time_ago_in_words(@user.last_request_at) + ' ago'%>
-	</div>
-</div>
+<h1><%= @user.name_or_username %></h1>
+
+<h3>Recent Activity</h3>
+<%= render :partial => 'activity', :collection => @user.activity %>
+
+<% if @user.prayer.count > 0 %>
+<h3>Recent Prayers</h3>
+<%= render :partial => 'prayers/prayer', :collection => @user.prayer %>
+<% end %>

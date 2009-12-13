@@ -1,4 +1,9 @@
 class User < ActiveRecord::Base
+  has_many :prayer
+  has_many :comment
+  has_many :article
+  has_many :activity, :limit => 3
+  
   default_scope :order => 'created_at DESC'
   named_scope :community, :conditions => { :status => true }, 
                           :order => 'created_at DESC'
@@ -31,7 +36,7 @@ class User < ActiveRecord::Base
     paginate :per_page => per,
               :page => page, 
               :conditions => ['username like ?', "%#{search}%"],
-              :order => 'created_at DESC'
+              :order => 'last_request_at DESC'
   end
   
 end
