@@ -50,6 +50,8 @@ class ArticlesController < ProtectedController
     
     respond_to do |format|
       if @article.save
+        @activity = Activity.new(:user_id => current_user.id, :activity => 'Wrote an Article', :link_to => article_path(@article))
+        @activity.save
         flash[:notice] = 'Article was successfully created.'
         format.html { redirect_to(@article) }
         format.xml  { render :xml => @article, :status => :created, :location => @article }

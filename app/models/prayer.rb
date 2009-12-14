@@ -20,7 +20,7 @@ class Prayer < ActiveRecord::Base
     end
     
     paginate :per_page => per, :page => page, 
-              :conditions => ['prayer like ?', "%#{search}%"]
+              :conditions => ['prayer like ? AND answered like ?', "%#{search}%", false]
   end
   
   

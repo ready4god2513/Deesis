@@ -29,6 +29,29 @@ class PrayersController < ProtectedController
       format.js { }
     end
   end
+  
+  def answered
+    @prayer = Prayer.find(params[:id])
+    # Ensure that the prayer belongs to the current user
+    if !current_user || @prayer.user_id != current_user.id
+      redirect_to root_url
+    end
+    
+    @prayer.answered = 1
+
+    respond_to do |format|
+      if @prayer.save
+        @activity = Activity.new(:user_id => current_user.id, :activity => 'A Prayer was Answered!', :link_to => url_for(@prayer))
+        @activity.save
+        flash[:notice] = 'Answered prayers are so encouraging, aren\'t they?'
+        format.html { redirect_to root_url }
+        format.xml  { head :ok }
+      else
+        format.html { redirect_to root_url }
+        format.xml  { render :xml => @prayer.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
 
   # GET /prayers/1
   # GET /prayers/1.xml
@@ -83,6 +106,11 @@ class PrayersController < ProtectedController
   # PUT /prayers/1.xml
   def update
     @prayer = Prayer.find(params[:id])
+    
+    # Ensure that the prayer belongs to the current user
+    if !current_user || @prayer.user_id != current_user.id
+      redirect_to root_url
+    end
 
     respond_to do |format|
       if @prayer.update_attributes(params[:prayer])

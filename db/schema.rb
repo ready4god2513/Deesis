@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091212234711) do
+ActiveRecord::Schema.define(:version => 20091214004914) do
 
   create_table "activities", :force => true do |t|
     t.integer  "user_id"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(:version => 20091212234711) do
     t.integer  "num_responses"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "answered",      :default => false
   end
 
   create_table "settings", :force => true do |t|

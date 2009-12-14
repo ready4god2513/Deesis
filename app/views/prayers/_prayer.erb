@@ -8,6 +8,7 @@
 		<%= link_to 'Comments', prayer%>
 		<% if current_user.id == prayer.user_id %>
 			<%= link_to 'Edit', edit_prayer_path(prayer) %>
+			<%= link_to 'Prayer is Answered', answered_path(prayer) %>
 		<% end %>
 	</div>
 	<div class="clear"></div>
