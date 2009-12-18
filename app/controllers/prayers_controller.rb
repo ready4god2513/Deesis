@@ -17,6 +17,7 @@ class PrayersController < ProtectedController
     end
   end
   
+  
   def commit
     @prayer = Prayer.find(params[:id])
     @prayer.increment!(:num_responses)
