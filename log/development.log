@@ -1,0 +1,145 @@
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2009-12-21 08:08:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 30ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-21 08:08:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (2.7ms)
+Rendered layouts/_footer (0.8ms)
+Completed in 87ms (View: 76, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-12-21 08:08:58) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"username"=>"brandon", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"N1jM/ZvMo77TvwWmqcDcnkDXgpdIDBZvD6y7tix6dMg=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'brandon') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "login_count" = 3, "updated_at" = '2009-12-21 16:08:58', "last_request_at" = '2009-12-21 16:08:58' WHERE "id" = 108[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/
+Completed in 268ms (DB: 1) | 302 Found [http://localhost/user_sessions]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2009-12-21 08:08:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '108') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-12-21 16:08:59', "last_request_at" = '2009-12-21 16:08:59' WHERE "id" = 108[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.3ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/prayers
+Rendering prayers/index
+Rendered prayers/_form (3.3ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 108) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (3.3ms)
+Rendered layouts/_header (2.0ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 66ms (View: 24, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-12-21 08:09:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"articles"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '108') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-12-21 16:09:01', "last_request_at" = '2009-12-21 16:09:01' WHERE "id" = 108[0m
+[paperclip] Saving attachments.
+  [4;35;1mArticle Load (0.1ms)[0m   [0mSELECT * FROM "articles" ORDER BY updated_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering articles/index
+Rendered layouts/_header (2.2ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 86ms (View: 65, DB: 1) | 200 OK [http://localhost/articles]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-12-21 08:09:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (username like '%%') ORDER BY last_request_at DESC, created_at DESC LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mActivity Load (0.4ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".user_id = 108) ORDER BY created_at DESC LIMIT 3[0m
+Rendered users/_activity (0.7ms)
+Rendered users/_activity (0.2ms)
+Rendered users/_user (12.0ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '108') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-12-21 16:09:01', "last_request_at" = '2009-12-21 16:09:01' WHERE "id" = 108[0m
+[paperclip] Saving attachments.
+Rendered layouts/_header (9.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 40ms (View: 28, DB: 1) | 200 OK [http://localhost/community]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2009-12-21 08:09:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '108') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-12-21 16:09:02', "last_request_at" = '2009-12-21 16:09:02' WHERE "id" = 108[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.3ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/prayers
+Rendering prayers/index
+Rendered prayers/_form (2.8ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 108) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.7ms)
+Rendered layouts/_header (2.1ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 95ms (View: 9, DB: 1) | 200 OK [http://localhost/prayers]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-12-21 08:09:03) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '108') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-12-21 16:09:03', "last_request_at" = '2009-12-21 16:09:03' WHERE "id" = 108[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering users/edit
+Rendered layouts/_header (2.0ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 33ms (View: 15, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-12-21 08:09:09) [PUT]
+  Parameters: {"commit"=>"Upload Pic", "action"=>"update", "_method"=>"put", "authenticity_token"=>"N1jM/ZvMo77TvwWmqcDcnkDXgpdIDBZvD6y7tix6dMg=", "id"=>"108", "controller"=>"users", "user"=>{"profile_pic"=>#<File:/var/folders/Qb/QbAwYRLDG6qnPVVhF2GK3U+++TQ/-Tmp-/RackMultipart20091221-930-79rwt-0>}}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '108') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-12-21 16:09:09', "last_request_at" = '2009-12-21 16:09:09' WHERE "id" = 108[0m
+[paperclip] Saving attachments.
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-12-21 16:09:10', "profile_pic_file_name" = 'testUpload.jpg', "profile_pic_content_type" = 'image/jpeg', "profile_pic_file_size" = 80039, "profile_pic_updated_at" = '2009-12-21 16:09:09' WHERE "id" = 108[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/brandon/Documents/rails/Deesis/public/system/profile_pics/108/thumb/testUpload.jpg
+[paperclip] saving /Users/brandon/Documents/rails/Deesis/public/system/profile_pics/108/original/testUpload.jpg
+[paperclip] saving /Users/brandon/Documents/rails/Deesis/public/system/profile_pics/108/small/testUpload.jpg
+  [4;36;1mActivity Create (0.3ms)[0m   [0;1mINSERT INTO "activities" ("created_at", "link_to", "updated_at", "activity", "user_id") VALUES('2009-12-21 16:09:10', NULL, '2009-12-21 16:09:10', 'Updated Profile', 108)[0m
+Redirected to http://localhost:3000/users/current/edit
+Completed in 1156ms (DB: 1) | 302 Found [http://localhost/users/108]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-12-21 08:09:10) [GET]
+  Parameters: {"action"=>"edit", "id"=>"current", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '108') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-12-21 16:09:10', "last_request_at" = '2009-12-21 16:09:10' WHERE "id" = 108[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering users/edit
+Rendered layouts/_header (2.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 32ms (View: 12, DB: 1) | 200 OK [http://localhost/users/current/edit]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2009-12-21 08:09:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '108') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-12-21 16:09:12', "last_request_at" = '2009-12-21 16:09:12' WHERE "id" = 108[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.3ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/prayers
+Rendering prayers/index
+Rendered prayers/_form (2.6ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 108) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (3.1ms)
+Rendered layouts/_header (2.1ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 104ms (View: 9, DB: 1) | 200 OK [http://localhost/prayers]
