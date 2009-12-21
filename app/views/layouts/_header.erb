@@ -4,8 +4,8 @@
 <title>Deesis | <%= @page_title || 'We Mean Prayer' %></title>
 <meta name="keywords" content="Prayer, Small Groups, Churches, Community" />
 <meta name="description" content="Deesis is a website community built to encourage and support prayer in churches and small groups." />
-<%= stylesheet_link_tag 'base' %>
-<%= javascript_include_tag 'jquery', 'plugins', 'application' %>
+<%= stylesheet_link_merged 'base' %>
+<%= javascript_include_merged 'jquery', 'plugins', 'application' %>
 <%= yield(:head) %>
 </head>
 <body>
