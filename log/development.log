@@ -143,3 +143,112 @@ Rendered prayers/_prayer (3.1ms)
 Rendered layouts/_header (2.1ms)
 Rendered layouts/_footer (0.4ms)
 Completed in 104ms (View: 9, DB: 1) | 200 OK [http://localhost/prayers]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2009-12-21 09:12:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '108') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-12-21 17:12:33', "last_request_at" = '2009-12-21 17:12:33' WHERE "id" = 108[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.3ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/prayers
+Rendering prayers/index
+Rendered prayers/_form (2.6ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 108) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (3.4ms)
+
+ActionView::TemplateError (undefined method `stylesheet_link_merged' for #<ActionView::Base:0x103289480>) on line #7 of app/views/layouts/_header.erb:
+4: <title>Deesis | <%= @page_title || 'We Mean Prayer' %></title>
+5: <meta name="keywords" content="Prayer, Small Groups, Churches, Community" />
+6: <meta name="description" content="Deesis is a website community built to encourage and support prayer in churches and small groups." />
+7: <%= stylesheet_link_merged 'base' %>
+8: <%= javascript_include_merged 'jquery', 'plugins', 'application' %>
+9: <%= yield(:head) %>
+10: </head>
+
+    app/views/layouts/_header.erb:7
+    app/views/layouts/prayers.html.erb:1
+    app/controllers/prayers_controller.rb:10:in `index'
+
+Rendered rescues/_trace (101.8ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2009-12-21 09:15:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '108') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-12-21 17:15:31', "last_request_at" = '2009-12-21 17:15:31' WHERE "id" = 108[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.2ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/prayers
+Rendering prayers/index
+Rendered prayers/_form (2.7ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 108) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.8ms)
+
+ActionView::TemplateError (undefined method `stylesheet_link_merged' for #<ActionView::Base:0x10307d0b0>) on line #7 of app/views/layouts/_header.erb:
+4: <title>Deesis | <%= @page_title || 'We Mean Prayer' %></title>
+5: <meta name="keywords" content="Prayer, Small Groups, Churches, Community" />
+6: <meta name="description" content="Deesis is a website community built to encourage and support prayer in churches and small groups." />
+7: <%= stylesheet_link_merged 'base' %>
+8: <%= javascript_include_merged 'jquery', 'plugins', 'application' %>
+9: <%= yield(:head) %>
+10: </head>
+
+    app/views/layouts/_header.erb:7
+    app/views/layouts/prayers.html.erb:1
+    app/controllers/prayers_controller.rb:10:in `index'
+
+Rendered rescues/_trace (41.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2009-12-21 09:20:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '108') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-12-21 17:20:54', "last_request_at" = '2009-12-21 17:20:54' WHERE "id" = 108[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.3ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/prayers
+Rendering prayers/index
+Rendered prayers/_form (3.2ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 108) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (4.0ms)
+Rendered layouts/_header (5.0ms)
+Rendered layouts/_footer (0.8ms)
+Completed in 264ms (View: 35, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-12-21 09:21:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"articles"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '108') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-12-21 17:21:00', "last_request_at" = '2009-12-21 17:21:00' WHERE "id" = 108[0m
+[paperclip] Saving attachments.
+  [4;35;1mArticle Load (0.1ms)[0m   [0mSELECT * FROM "articles" ORDER BY updated_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering articles/index
+Rendered layouts/_header (2.3ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 32ms (View: 10, DB: 1) | 200 OK [http://localhost/articles]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2009-12-21 09:21:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '108') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-12-21 17:21:00', "last_request_at" = '2009-12-21 17:21:00' WHERE "id" = 108[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.3ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/prayers
+Rendering prayers/index
+Rendered prayers/_form (2.5ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 108) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.7ms)
+Rendered layouts/_header (2.1ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 35ms (View: 9, DB: 1) | 200 OK [http://localhost/prayers]
