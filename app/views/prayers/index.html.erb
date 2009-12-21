@@ -5,7 +5,7 @@
 <div id="prayers_list">
 	<%= render :partial => 'prayers/prayer', :collection => @prayers %>
 	
-	<% if @prayers.count > 9 %>
-	<div id="pagination"><%= link_to "More Prayers", prayers_path, :class => 'round more' %></div>
+	<% unless @prayers.next_page.nil? %>
+		<div id="pagination"><%= link_to "More Prayers", prayers_path, :class => 'round more' %></div>
 	<% end %>
 </div>
