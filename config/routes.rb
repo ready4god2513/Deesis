@@ -47,6 +47,12 @@ ActionController::Routing::Routes.draw do |map|
   #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
   #     admin.resources :products
   #   end
+  
+  # This is a catch-all for routes that don't exist, visitor is redirected to home page.
+  ActionController::Routing::Routes.draw do |map|
+      map.connect ':controller/:action/:id'
+      map.connect '*path', :controller => 'error', :action => 'missing_page'
+  end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   # map.root :controller => "welcome"

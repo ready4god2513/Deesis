@@ -1,9 +1,9 @@
-set :application, "deesis"
+set :application, "Deesis"
 set :repository,  "git://github.com/ready4god2513/Deesis.git"
 set :scm, "git"
 set :branch, "master"
 set :deploy_via, :remote_cache
-set :deploy_to, "/var/www/vhosts/deesis.org/rails/#{application}"
+set :deploy_to, "/var/www/vhosts/deesis.org/rails/deployment/#{application}"
 set :use_sudo, true
 set :user, 'root'
 
