@@ -22,7 +22,7 @@ namespace :deploy do
     EOF
   end
   
-  task :restart
+  task :restart do
     run "service httpd restart"
   end
 end

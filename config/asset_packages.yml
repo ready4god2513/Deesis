@@ -1,0 +1,9 @@
+--- 
+javascripts: 
+- base: 
+  - jquery
+  - plugins
+  - application
+stylesheets: 
+- base: 
+  - base
