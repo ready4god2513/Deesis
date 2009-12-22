@@ -15,9 +15,14 @@ server 'root@deesis.org', :app, :web, :db
 
 namespace :deploy do
   desc "Create asset packages for production" 
+  
   task :after_update_code, :roles => [:web] do
     run <<-EOF
       cd #{release_path} && rake asset:packager:build_all
     EOF
+  end
+  
+  task :restart
+    run "service httpd restart"
   end
 end
