@@ -1,7 +1,7 @@
 <div class="list user">
 	<div class="avatar"><%= profile_pic(user) %></div>
 	<div class="item">
-		<%= link_to user.name_or_username, profile_path(user.username) %>
+		<%= link_to user.name_or_username, profile_path(user.username), :class => 'user_name_link' %>
 		<div class="activity_stream">
 			<%= render :partial => 'activity', :collection => user.activity %>
 		</div>

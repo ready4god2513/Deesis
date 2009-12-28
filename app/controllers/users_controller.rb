@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   
   def activity
     @user = User.find_by_username(params[:username])
-    @activities = Activity.find_all_by_user_id(@user.id)
+    @activities = @user.activity
      
     respond_to do |format|
       format.html
@@ -32,6 +32,10 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find_by_username(params[:username])
+    
+    if @user.nil?
+      raise ActiveRecord::RecordNotFound
+    end
 
     respond_to do |format|
       format.html # show.html.erb

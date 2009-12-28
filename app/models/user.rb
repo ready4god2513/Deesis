@@ -2,11 +2,14 @@ class User < ActiveRecord::Base
   has_many :prayer
   has_many :comment
   has_many :article
-  has_many :activity, :limit => 3
+  has_many :activity, :limit => 5
   
   default_scope :order => 'created_at DESC'
-  named_scope :community, :conditions => { :status => true }, 
-                          :order => 'created_at DESC'
+  
+  named_scope :community, {
+    :conditions => {:status => true},
+    :order => 'created_at DESC'
+  }
                         
 
 

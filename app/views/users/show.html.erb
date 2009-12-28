@@ -1,7 +1,9 @@
 <h1><%= @user.name_or_username %></h1>
 
 <h3>Recent Activity</h3>
-<%= render :partial => 'activity', :collection => @user.activity %>
+<div class="activity_stream">
+	<%= render :partial => 'activity', :collection => @user.activity %>
+</div>
 
 <% if @user.prayer.count > 0 %>
 <h3>Recent Prayers</h3>
