@@ -3976,3 +3976,224 @@ Rendered prayers/_prayer (1.9ms)
 Rendered layouts/_header (2.6ms)
 Rendered layouts/_footer (0.5ms)
 Completed in 53ms (View: 12, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2009-12-28 10:09:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 63ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-28 10:09:43) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (27.7ms)
+Rendered layouts/_footer (0.8ms)
+Completed in 252ms (View: 234, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-12-28 10:09:47) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"username"=>"brandon", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"zPYy4M+DwqjU0gNExz02pAtHKOgxtpKpRCqzXHU4A+s=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (6.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'brandon') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "login_count" = 4, "updated_at" = '2009-12-28 18:09:48', "last_request_at" = '2009-12-28 18:09:48' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/
+Completed in 442ms (DB: 7) | 302 Found [http://localhost/user_sessions]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2009-12-28 10:09:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-12-28 18:09:48', "last_request_at" = '2009-12-28 18:09:48' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/prayers
+Rendering prayers/index
+Rendered prayers/_form (9.3ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (4.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (5.2ms)
+Rendered layouts/_header (7.4ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 134ms (View: 50, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ErrorController#missing_page (for 127.0.0.1 at 2009-12-28 10:09:48) [GET]
+  Parameters: {"1261975318"=>nil, "action"=>"missing_page", "path"=>["system", "profile_pics", "1", "thumb", "IMG_0008.JPG"], "controller"=>"error"}
+Rendering template within layouts/application
+Rendering error/missing_page
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-12-28 18:09:48', "last_request_at" = '2009-12-28 18:09:48' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Rendered layouts/_header (288.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 297ms (View: 295, DB: 1) | 200 OK [http://localhost/system/profile_pics/1/thumb/IMG_0008.JPG?1261975318]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-12-28 10:09:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (username like '%%') ORDER BY last_request_at DESC, created_at DESC LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mActivity Load (0.5ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".user_id = 1) ORDER BY created_at DESC LIMIT 5[0m
+Rendered users/_activity (1.9ms)
+Rendered users/_activity (0.3ms)
+Rendered users/_activity (0.3ms)
+Rendered users/_activity (0.5ms)
+Rendered users/_user (20.8ms)
+  [4;36;1mActivity Load (0.8ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities".user_id = 2) ORDER BY created_at DESC LIMIT 5[0m
+Rendered users/_activity (0.6ms)
+Rendered users/_activity (0.3ms)
+Rendered users/_activity (0.3ms)
+Rendered users/_activity (0.3ms)
+Rendered users/_activity (0.3ms)
+Rendered users/_user (5.4ms)
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (64.7ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-12-28 18:09:57', "last_request_at" = '2009-12-28 18:09:57' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Rendered layouts/_header (92.6ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 146ms (View: 67, DB: 68) | 200 OK [http://localhost/community]
+
+
+Processing ErrorController#missing_page (for 127.0.0.1 at 2009-12-28 10:09:58) [GET]
+  Parameters: {"1261975318"=>nil, "action"=>"missing_page", "path"=>["system", "profile_pics", "1", "thumb", "IMG_0008.JPG"], "controller"=>"error"}
+Rendering template within layouts/application
+Rendering error/missing_page
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-12-28 18:09:58', "last_request_at" = '2009-12-28 18:09:58' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Rendered layouts/_header (127.8ms)
+Rendered layouts/_footer (1.2ms)
+Completed in 138ms (View: 130, DB: 1) | 200 OK [http://localhost/system/profile_pics/1/thumb/IMG_0008.JPG?1261975318]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-12-28 10:09:59) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-12-28 18:09:59', "last_request_at" = '2009-12-28 18:09:59' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering users/edit
+Rendered layouts/_header (2.5ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 45ms (View: 18, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-12-28 10:10:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (username like '%%') ORDER BY last_request_at DESC, created_at DESC LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mActivity Load (1.9ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities".user_id = 1) ORDER BY created_at DESC LIMIT 5[0m
+Rendered users/_activity (0.4ms)
+Rendered users/_activity (0.3ms)
+Rendered users/_activity (0.3ms)
+Rendered users/_activity (0.2ms)
+Rendered users/_user (11.7ms)
+  [4;35;1mActivity Load (0.5ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".user_id = 2) ORDER BY created_at DESC LIMIT 5[0m
+Rendered users/_activity (0.4ms)
+Rendered users/_activity (0.3ms)
+Rendered users/_activity (0.3ms)
+Rendered users/_activity (0.3ms)
+Rendered users/_activity (0.3ms)
+Rendered users/_user (4.2ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-12-28 18:10:01', "last_request_at" = '2009-12-28 18:10:01' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Rendered layouts/_header (38.8ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 80ms (View: 54, DB: 4) | 200 OK [http://localhost/community]
+
+
+Processing ErrorController#missing_page (for 127.0.0.1 at 2009-12-28 10:10:01) [GET]
+  Parameters: {"1261975318"=>nil, "action"=>"missing_page", "path"=>["system", "profile_pics", "1", "thumb", "IMG_0008.JPG"], "controller"=>"error"}
+Rendering template within layouts/application
+Rendering error/missing_page
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-12-28 18:10:01', "last_request_at" = '2009-12-28 18:10:01' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Rendered layouts/_header (371.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 375ms (View: 373, DB: 1) | 200 OK [http://localhost/system/profile_pics/1/thumb/IMG_0008.JPG?1261975318]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-12-28 10:10:03) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-12-28 18:10:03', "last_request_at" = '2009-12-28 18:10:03' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering users/edit
+Rendered layouts/_header (9.4ms)
+Rendered layouts/_footer (2.5ms)
+Completed in 71ms (View: 21, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-12-28 10:10:15) [PUT]
+  Parameters: {"commit"=>"Upload Pic", "action"=>"update", "_method"=>"put", "authenticity_token"=>"zPYy4M+DwqjU0gNExz02pAtHKOgxtpKpRCqzXHU4A+s=", "id"=>"1", "controller"=>"users", "user"=>{"profile_pic"=>#<File:/var/folders/Qb/QbAwYRLDG6qnPVVhF2GK3U+++TQ/-Tmp-/RackMultipart20091228-1592-1rf0iqd-0>}}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-12-28 18:10:15', "last_request_at" = '2009-12-28 18:10:15' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-12-28 18:10:16', "profile_pic_file_name" = 'testUpload.jpg', "profile_pic_file_size" = 80039, "profile_pic_updated_at" = '2009-12-28 18:10:15' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/brandon/Documents/rails/Deesis/public/system/profile_pics/1/thumb/testUpload.jpg
+[paperclip] saving /Users/brandon/Documents/rails/Deesis/public/system/profile_pics/1/original/testUpload.jpg
+[paperclip] saving /Users/brandon/Documents/rails/Deesis/public/system/profile_pics/1/small/testUpload.jpg
+  [4;35;1mActivity Create (0.3ms)[0m   [0mINSERT INTO "activities" ("created_at", "link_to", "updated_at", "activity", "user_id") VALUES('2009-12-28 18:10:16', NULL, '2009-12-28 18:10:16', 'Updated Profile', 1)[0m
+Redirected to http://localhost:3000/users/current/edit
+Completed in 1115ms (DB: 1) | 302 Found [http://localhost/users/1]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-12-28 10:10:16) [GET]
+  Parameters: {"action"=>"edit", "id"=>"current", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-12-28 18:10:16', "last_request_at" = '2009-12-28 18:10:16' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering users/edit
+Rendered layouts/_header (2.3ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 30ms (View: 11, DB: 1) | 200 OK [http://localhost/users/current/edit]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2009-12-28 10:33:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-12-28 18:33:57', "last_request_at" = '2009-12-28 18:33:57' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.3ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/prayers
+Rendering prayers/index
+Rendered prayers/_form (2.8ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.9ms)
+Rendered layouts/_header (2.1ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 37ms (View: 11, DB: 1) | 200 OK [http://localhost/prayers]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2009-12-28 10:46:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-12-28 18:46:07', "last_request_at" = '2009-12-28 18:46:07' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.4ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/prayers
+Rendering prayers/index
+Rendered prayers/_form (2.6ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.0ms)
+Rendered layouts/_header (2.1ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 40ms (View: 14, DB: 1) | 200 OK [http://localhost/]
