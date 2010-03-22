@@ -1,8 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resources :prayers
-  map.resources :comments
-  map.resources :articles
+  map.resources :comments  
   map.resources :user_sessions
   
   map.root :controller => 'prayers'

@@ -608,3 +608,315 @@ Rendering error/missing_page
 Rendered layouts/_header (58.1ms)
 Rendered layouts/_footer (0.9ms)
 Completed in 80ms (View: 73, DB: 1) | 200 OK [http://localhost/system/profile_pics/1/thumb/testUpload.jpg?1262023815]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-21 22:12:23) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-21 22:12:24) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-21 22:12:46) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-21 22:13:47) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-21 22:13:51) [GET]
+
+ActionController::RoutingError (No route matches "/users" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateComments (20091113070702)
+Migrating to CreatePrayers (20091113070800)
+Migrating to CreateUsers (20091115001523)
+Migrating to AddAttachmentsProfilePicToUser (20091119050323)
+Migrating to CreateActivities (20091212234711)
+Migrating to Answered (20091214004914)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("activities")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mPRAGMA index_list("activity_stream_preferences")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_info('activity_stream_preferences_idx')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("activity_stream_totals")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_info('activity_stream_totals_idx')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_list("activity_streams")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_info('activity_streams_by_indirect_object')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('activity_streams_by_object')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_info('activity_streams_by_actor')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("articles")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("prayers")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("settings")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-21 22:15:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-22 05:15:42', "last_request_at" = '2010-03-22 05:15:42' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.8ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/prayers
+Rendering prayers/index
+Rendered prayers/_form (5.7ms)
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (7.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (5.2ms)
+
+ActionView::TemplateError (undefined method `articles_path' for #<ActionView::Base:0x10359fac0>) on line #27 of app/views/layouts/_header.erb:
+24: 		</div>
+25: 		<div class="clear">
+26: 			<div class="tabs left">
+27: 				<%= navigation [:prayers, :articles, :community] -%>	
+28: 			</div>
+29: 			<div class="tabs right">
+30: 				<%= navigation [{:profile => account_path}, {:settings => root_url}] -%>
+
+    app/views/layouts/_header.erb:27
+    app/views/layouts/prayers.html.erb:1
+    app/controllers/prayers_controller.rb:10:in `index'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (183.9ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-21 22:15:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-22 05:15:44', "last_request_at" = '2010-03-22 05:15:44' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.8ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/prayers
+Rendering prayers/index
+Rendered prayers/_form (5.6ms)
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (6.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (5.2ms)
+
+ActionView::TemplateError (undefined method `articles_path' for #<ActionView::Base:0x1033688d8>) on line #27 of app/views/layouts/_header.erb:
+24: 		</div>
+25: 		<div class="clear">
+26: 			<div class="tabs left">
+27: 				<%= navigation [:prayers, :articles, :community] -%>	
+28: 			</div>
+29: 			<div class="tabs right">
+30: 				<%= navigation [{:profile => account_path}, {:settings => root_url}] -%>
+
+    app/views/layouts/_header.erb:27
+    app/views/layouts/prayers.html.erb:1
+    app/controllers/prayers_controller.rb:10:in `index'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (183.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-21 22:15:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-22 05:15:57', "last_request_at" = '2010-03-22 05:15:57' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.8ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/prayers
+Rendering prayers/index
+Rendered prayers/_form (5.8ms)
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (6.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (5.3ms)
+Rendered layouts/_header (7.5ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 108ms (View: 34, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing ErrorController#missing_page (for 127.0.0.1 at 2010-03-21 22:15:57) [GET]
+  Parameters: {"action"=>"missing_page", "path"=>["system", "profile_pics", "1", "thumb", "testUpload.jpg"], "controller"=>"error", "1262023815"=>nil}
+Rendering template within layouts/application
+Rendering error/missing_page
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-22 05:15:57', "last_request_at" = '2010-03-22 05:15:57' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Rendered layouts/_header (57.6ms)
+Rendered layouts/_footer (1.0ms)
+Completed in 67ms (View: 60, DB: 1) | 200 OK [http://localhost/system/profile_pics/1/thumb/testUpload.jpg?1262023815]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-03-21 22:16:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (username like '%%') ORDER BY last_request_at DESC, created_at DESC LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mActivity Load (1.2ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities".user_id = 1) ORDER BY created_at DESC LIMIT 5[0m
+Rendered users/_activity (2.7ms)
+Rendered users/_activity (0.8ms)
+Rendered users/_activity (0.7ms)
+Rendered users/_activity (0.7ms)
+Rendered users/_activity (0.6ms)
+Rendered users/_user (115.9ms)
+  [4;36;1mActivity Load (1.2ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities".user_id = 2) ORDER BY created_at DESC LIMIT 5[0m
+Rendered users/_activity (0.8ms)
+Rendered users/_activity (0.7ms)
+Rendered users/_activity (0.7ms)
+Rendered users/_activity (0.7ms)
+Rendered users/_activity (0.7ms)
+Rendered users/_user (9.4ms)
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-22 05:16:00', "last_request_at" = '2010-03-22 05:16:00' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Rendered layouts/_header (23.2ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 194ms (View: 160, DB: 5) | 200 OK [http://localhost/community]
+
+
+Processing ErrorController#missing_page (for 127.0.0.1 at 2010-03-21 22:16:00) [GET]
+  Parameters: {"action"=>"missing_page", "path"=>["system", "profile_pics", "1", "thumb", "testUpload.jpg"], "controller"=>"error", "1262023815"=>nil}
+Rendering template within layouts/application
+Rendering error/missing_page
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-22 05:16:00', "last_request_at" = '2010-03-22 05:16:00' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Rendered layouts/_header (57.7ms)
+Rendered layouts/_footer (1.0ms)
+Completed in 67ms (View: 60, DB: 1) | 200 OK [http://localhost/system/profile_pics/1/thumb/testUpload.jpg?1262023815]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-03-21 22:16:02) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-22 05:16:02', "last_request_at" = '2010-03-22 05:16:02' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering users/edit
+Rendered layouts/_header (4.7ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 84ms (View: 34, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-03-21 22:16:19) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-22 05:16:19', "last_request_at" = '2010-03-22 05:16:19' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering users/edit
+Rendered layouts/_header (7.4ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 83ms (View: 33, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-03-21 22:16:22) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-22 05:16:22', "last_request_at" = '2010-03-22 05:16:22' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering users/edit
+Rendered layouts/_header (4.5ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 75ms (View: 25, DB: 1) | 200 OK [http://localhost/account]
