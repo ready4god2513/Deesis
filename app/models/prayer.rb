@@ -32,6 +32,10 @@ class Prayer < ActiveRecord::Base
               :conditions => ['prayer like ? AND answered like ?', "%#{search}%", true]
   end
   
+  def self.fp
+    paginate :per_page => 1, :page => 1
+  end
+  
   
   
   private 

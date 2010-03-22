@@ -64,7 +64,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     respond_to do |format|
-      if @user.save
+      if verify_recaptcha(:model => @user, :message => "The scrambled words were incorrect") && @user.save
         @activity = Activity.new(:user_id => @user.id, :activity => 'Signed up for an account', :link_to => profile_path(@user.username))
         @activity.save
         flash[:notice] = 'Your account has been created'

@@ -7,6 +7,11 @@
 <%= stylesheet_link_merged 'base' %>
 <%= javascript_include_merged 'jquery', 'plugins', 'application' %>
 <%= yield(:head) %>
+<script>
+var RecaptchaOptions = {
+   theme : 'clean'
+};
+</script>
 </head>
 <body>
 <% if current_user %>

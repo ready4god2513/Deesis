@@ -10,7 +10,6 @@ class ApplicationController < ActionController::Base
   rescue_from NoMethodError, :with => :show_error
   
   protected
-  
     def show_error
       redirect_to :controller => 'error', :action => 'missing_page'
     end
