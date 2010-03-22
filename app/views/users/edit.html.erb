@@ -1,6 +1,6 @@
 <h1>Profile Management</h1>
 
-<% form_for(@user, :html => { :class => 'ajaxForm' }) do |f| %>
+<% form_for(@user) do |f| %>
 	<%= f.error_messages %>
 	<fieldset>
 		<div class="formFields">
@@ -42,7 +42,7 @@
 	</fieldset>
 <% end %>
 
-<% form_for(@user, :html => { :class => 'ajaxForm'}) do |f| %>
+<% form_for(@user) do |f| %>
 	<%= f.error_messages %>
 	<fieldset>
 		<div class="formFields">

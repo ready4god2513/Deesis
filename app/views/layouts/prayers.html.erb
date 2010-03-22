@@ -1,5 +1,5 @@
 <%= render :partial => 'layouts/header' %>
-	<div class="info_box">
+	<div class="info_box box">
 		<h2>Search Prayers</h2>
 		<form action="/" method="GET">
 			<div class="formFields">
@@ -7,7 +7,7 @@
 			</div>
 		</form>
 	</div>
-	<div class="info_box">
+	<div class="info_box box">
 		<h2>Recent Comments</h2>
 		<div class="list">
 			<%= render :partial => 'comments/comment', :collection => @comments %>

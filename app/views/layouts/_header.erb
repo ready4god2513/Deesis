@@ -19,15 +19,12 @@ var RecaptchaOptions = {
 	<div class="wrapper">
 		<h1 id="logo" class="left">Deesis</h1>
 		<div id="user_login" class="right">
-			<%= link_to current_user.name_or_username, edit_user_path(:current) %> | 
+			<%= link_to current_user.name_or_username, account_path %> | 
 			<%= link_to "Logout", logout_path %>
 		</div>
 		<div class="clear">
 			<div class="tabs left">
-				<%= navigation [:prayers] -%>	
-			</div>
-			<div class="tabs right">
-				<%= navigation [{:profile => account_path}, {:settings => root_url}] -%>
+				<%= navigation [:prayers, {:profile => account_path}, {:settings => root_url}] -%>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -40,7 +37,7 @@ var RecaptchaOptions = {
 			<%= flash[:notice]%>
 		<% end %>
 	</div>
-	<div id="content" class="left">
+	<div id="content" class="left box">
 		<div class="listing_small">
 			<%= yield %>
 		</div>

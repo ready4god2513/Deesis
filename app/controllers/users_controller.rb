@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  current_tab :community
+  current_tab :profile
   
   # GET /users
   # GET /users.xml
