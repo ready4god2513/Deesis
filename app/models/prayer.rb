@@ -13,6 +13,10 @@ class Prayer < ActiveRecord::Base
   # NAMED SCOPES
   default_scope :order => 'created_at DESC',
                 :limit => 10
+                
+  def self.find_unanswered_prayers
+    find(:all, :conditions => {:answered => false})
+  end
   
   def self.search(search, page, per)
     if per.nil?

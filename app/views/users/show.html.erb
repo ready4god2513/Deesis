@@ -1,11 +1,6 @@
 <h1><%= @user.name_or_username %></h1>
 
-<h3>Recent Activity</h3>
-<div class="activity_stream">
-	<%= render :partial => 'activity', :collection => @user.activity %>
-</div>
-
 <% if @user.prayer.count > 0 %>
 <h3>Recent Prayers</h3>
-<%= render :partial => 'prayers/prayer', :collection => @user.prayer %>
+<%= render :partial => 'prayers/prayer', :collection => @user.prayer.find_unanswered_prayers %>
 <% end %>

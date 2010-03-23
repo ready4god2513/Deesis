@@ -1,7 +1,0 @@
-<div class="list article">
-	<div class="avatar"><%= profile_pic(article.user) %></div>
-	<div class="item"><%= format_output(article.content)%></div>
-	<div class="meta" id="article_<%= article.id %>">
-		<%= article.user.name_or_username %> | <%= article.created_at.strftime("%B %d")%>
-	</div>
-</div>
