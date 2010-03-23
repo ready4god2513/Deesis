@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find_by_username(params[:username])
-    
+    UserMailer.deliver_registration_confirmation(@user)
     if @user.nil?
       raise ActiveRecord::RecordNotFound
     end

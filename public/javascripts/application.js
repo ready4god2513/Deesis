@@ -73,6 +73,10 @@ $(document).ready(function() {
 		}
 	});
 	
+	var RecaptchaOptions = {
+	   theme : 'clean'
+	};
+	
 });
 
 function nl2br(str, is_xhtml) {

@@ -7,24 +7,19 @@
 <%= stylesheet_link_merged 'base' %>
 <%= javascript_include_merged 'jquery', 'plugins', 'application' %>
 <%= yield(:head) %>
-<script>
-var RecaptchaOptions = {
-   theme : 'clean'
-};
-</script>
 </head>
 <body>
 <% if current_user %>
 <div id="header">
 	<div class="wrapper">
 		<h1 id="logo" class="left">Deesis</h1>
-		<div id="user_login" class="right" style="background:#222;padding:5px;-moz-border-radius:5px">
+		<div id="user_login" class="right">
 			<%= link_to current_user.name_or_username, account_path %> | 
 			<%= link_to "Logout", logout_path %>
 		</div>
 		<div class="clear">
 			<div class="tabs left">
-				<%= navigation [:prayers, {:profile => account_path}, {:settings => root_url}] -%>
+				<%= navigation [:prayers, {:profile => account_path}] -%>
 			</div>
 			<div class="clear"></div>
 		</div>
