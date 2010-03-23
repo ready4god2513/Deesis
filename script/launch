@@ -1,0 +1,5 @@
+#!/bin/sh
+
+git pull
+script/server -d
+mate ../Deesis
