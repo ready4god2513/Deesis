@@ -32,7 +32,6 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find_by_username(params[:username])
-    UserMailer.deliver_registration_confirmation(@user)
     if @user.nil?
       raise ActiveRecord::RecordNotFound
     end
@@ -56,6 +55,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = current_user
+    UserMailer.deliver_registration_confirmation(@user)
   end
 
   # POST /users
@@ -67,6 +67,10 @@ class UsersController < ApplicationController
       if verify_recaptcha(:model => @user, :message => "The scrambled words were incorrect") && @user.save
         @activity = Activity.new(:user_id => @user.id, :activity => 'Signed up for an account', :link_to => profile_path(@user.username))
         @activity.save
+        
+        # Send out the welcome e-mail
+        UserMailer.deliver_registration_confirmation(@user)
+        
         flash[:notice] = 'Your account has been created'
         format.html { redirect_to root_url }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
