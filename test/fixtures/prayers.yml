@@ -2,10 +2,10 @@
 
 one:
   user_id: 1
-  prayer: MyText
-  num_responses: 1
+  prayer: This is the first prayer
+  num_responses: 0
 
 two:
-  user_id: 1
-  prayer: MyText
+  user_id: 2
+  prayer: This is the second prayer.  It has a single response
   num_responses: 1

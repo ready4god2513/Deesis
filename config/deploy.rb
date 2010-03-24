@@ -14,13 +14,22 @@ server 'root@deesis.org', :app, :web, :db
 # these http://github.com/rails/irs_process_scripts
 
 namespace :deploy do
-  desc "Create asset packages for production" 
+  desc "Build the site" 
   
   task :after_update_code, :roles => [:web] do
     run <<-EOF
-      cd #{release_path} && rake asset:packager:build_all
+      cd #{release_path}
+      rake gems:install
+      rake db:migrate
+      rake asset:packager:build_all
     EOF
   end
+  
+  desc "Update the crontab file"
+  task :update_crontab, :roles => :db do
+    run "cd #{release_path} && whenever --update-crontab #{application}"
+  end
+  
   
   task :restart do
     run "service httpd restart"

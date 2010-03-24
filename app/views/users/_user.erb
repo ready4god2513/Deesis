@@ -2,9 +2,6 @@
 	<div class="avatar"><%= profile_pic(user) %></div>
 	<div class="item">
 		<%= link_to user.name_or_username, profile_path(user.username), :class => 'user_name_link' %>
-		<div class="activity_stream">
-			<%= render :partial => 'activity', :collection => user.activity %>
-		</div>
 	</div>
 	<div class="meta" id="user_<%= user.id %>">
 		<%= user.last_request_at.nil? ? 'Membership Pending' : 'Last Active ' + time_ago_in_words(user.last_request_at) + ' ago'%>

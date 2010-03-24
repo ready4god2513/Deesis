@@ -1,16 +1,10 @@
 class User < ActiveRecord::Base
-  has_many :prayer
-  has_many :comment
-  has_many :article
-  has_many :activity, :limit => 5
+  
+  has_many :prayers
+  has_many :comments
+  has_many :reminders
   
   default_scope :order => 'created_at DESC'
-  
-  named_scope :community, {
-    :conditions => {:status => true},
-    :order => 'created_at DESC'
-  }
-                        
 
 
   acts_as_authentic
@@ -40,6 +34,12 @@ class User < ActiveRecord::Base
               :page => page, 
               :conditions => ['username like ?', "%#{search}%"],
               :order => 'last_request_at DESC'
+  end
+  
+  def send_reminder
+    self.reminder.each do |reminder|
+      reminder.send
+    end
   end
   
 end

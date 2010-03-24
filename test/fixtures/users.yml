@@ -1,25 +1,25 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  firstname: MyString
-  lastname: MyString
-  location: MyString
-  postal_code: 1
-  email: MyString
-  username: MyString
-  password: MyString
-  api_key: MyString
-  pic: MyString
-  status: false
+Brandon:
+  firstname: Brandon
+  lastname: Hansen
+  location: Redding
+  postal_code: 96003
+  email: brandon@melissa-brandon.com
+  username: brandon
+  password: hansen
+  api_key: 123456adfad
+  pic: /images/brandon.png
+  status: true
 
-two:
-  firstname: MyString
-  lastname: MyString
-  location: MyString
-  postal_code: 1
-  email: MyString
-  username: MyString
-  password: MyString
-  api_key: MyString
-  pic: MyString
-  status: false
+Andrew:
+  firstname: Andrew
+  lastname: Lyric
+  location: Redding
+  postal_code: 96003
+  email: andrew@lyricode.com
+  username: andrew
+  password: lyric
+  api_key: 1315421sdgsdg
+  pic: /images/andrew.png
+  status: true

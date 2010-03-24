@@ -17,23 +17,11 @@ class PrayersController < ProtectedController
     end
   end
   
-  def commit
-    @prayer = Prayer.find(params[:id])
-    @prayer.increment!(:num_responses)
-    
-    @activity = Activity.new(:user_id => current_user.id, :activity => 'Committed to Praying', :link_to => url_for(@prayer))
-    @activity.save
-    
-    respond_to do |format|
-      format.html { redirect_to root_url }
-      format.js { }
-    end
-  end
-  
   def answered
-    @prayer = Prayer.find(params[:id])
+    @prayer = current_user.prayer.find(params[:id])
+    
     # Ensure that the prayer belongs to the current user
-    if !current_user || @prayer.user_id != current_user.id
+    if !@prayer
       redirect_to root_url
     end
     
@@ -41,9 +29,8 @@ class PrayersController < ProtectedController
 
     respond_to do |format|
       if @prayer.save
-        @activity = Activity.new(:user_id => current_user.id, :activity => 'A Prayer was Answered!', :link_to => url_for(@prayer))
-        @activity.save
-        flash[:notice] = 'Answered prayers are so encouraging, aren\'t they?'
+        
+        flash[:notice] = "Answered prayers are so encouraging, aren't they?"
         format.html { redirect_to root_url }
         format.xml  { head :ok }
       else
@@ -88,8 +75,7 @@ class PrayersController < ProtectedController
 
     respond_to do |format|
       if @prayer.save
-        @activity = Activity.new(:user_id => current_user.id, :activity => 'Requested Prayer', :link_to => url_for(@prayer))
-        @activity.save
+        
         flash[:notice] = 'Your prayer has been added'
         format.html { redirect_to(@prayer) }
         format.js { }
@@ -114,8 +100,7 @@ class PrayersController < ProtectedController
 
     respond_to do |format|
       if @prayer.update_attributes(params[:prayer])
-        @activity = Activity.new(:user_id => current_user.id, :activity => 'Edited a Prayer', :link_to => url_for(@prayer))
-        @activity.save
+        
         flash[:notice] = 'Prayer was successfully updated.'
         format.html { redirect_to root_url }
         format.xml  { head :ok }
@@ -125,19 +110,5 @@ class PrayersController < ProtectedController
       end
     end
   end
-
-  # DELETE /prayers/1
-  # DELETE /prayers/1.xml
-  def destroy
-    @prayer = Prayer.find(params[:id])
-    @prayer.destroy
-    
-    @comments = Comment.find_by_prayer_id(params[:id])
-    @comments.destory
-
-    respond_to do |format|
-      format.html { redirect_to root_url }
-      format.xml  { head :ok }
-    end
-  end
+  
 end

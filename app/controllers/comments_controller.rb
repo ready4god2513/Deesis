@@ -60,8 +60,7 @@ class CommentsController < ProtectedController
 
     respond_to do |format|
       if @comment.save
-        @activity = Activity.new(:user_id => current_user.id, :activity => 'Posted a Comment', :link_to => url_for(@comment))
-        @activity.save
+        
         flash[:notice] = 'Comment was successfully created.'
         format.html { redirect_to(@comment) }
         format.js { }
@@ -80,8 +79,7 @@ class CommentsController < ProtectedController
 
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
-        @activity = Activity.new(:user_id => current_user.id, :activity => 'Updated a Comment', :link_to => url_for(@comment))
-        @activity.save
+        
         flash[:notice] = 'Comment was successfully updated.'
         format.html { redirect_to(@comment) }
         format.xml  { head :ok }
@@ -89,18 +87,6 @@ class CommentsController < ProtectedController
         format.html { render :action => "edit" }
         format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /comments/1
-  # DELETE /comments/1.xml
-  def destroy
-    @comment = Comment.find(params[:id])
-    @comment.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(comments_url) }
-      format.xml  { head :ok }
     end
   end
 end

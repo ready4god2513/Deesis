@@ -14,19 +14,6 @@ class UsersController < ApplicationController
       format.atom  { render :atom => @users }
     end
   end
-  
-  def activity
-    @user = User.find_by_username(params[:username])
-    @activities = @user.activity
-     
-    respond_to do |format|
-      format.html
-      format.xml { render :xml => @activities }
-      format.json { render :json => @activities }
-      format.rss  { render :rss => @activities }
-      format.atom  { render :atom => @activities }
-    end
-  end
 
   # GET /users/1
   # GET /users/1.xml
@@ -55,7 +42,6 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = current_user
-    UserMailer.deliver_registration_confirmation(@user)
   end
 
   # POST /users
@@ -65,8 +51,6 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if verify_recaptcha(:model => @user, :message => "The scrambled words were incorrect") && @user.save
-        @activity = Activity.new(:user_id => @user.id, :activity => 'Signed up for an account', :link_to => profile_path(@user.username))
-        @activity.save
         
         # Send out the welcome e-mail
         UserMailer.deliver_registration_confirmation(@user)
@@ -89,8 +73,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        @activity = Activity.new(:user_id => @user.id, :activity => 'Updated Profile')
-        @activity.save
+        
         flash[:notice] = 'Your profile has been updated'
         format.html { redirect_to edit_user_path(:current) }
         format.xml  { head :ok }
@@ -98,18 +81,6 @@ class UsersController < ApplicationController
         format.html { render :action => "edit" }
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /users/1
-  # DELETE /users/1.xml
-  def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(users_url) }
-      format.xml  { head :ok }
     end
   end
 end

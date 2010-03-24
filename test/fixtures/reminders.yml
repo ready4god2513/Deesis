@@ -2,10 +2,8 @@
 
 one:
   user_id: 1
-  activity: MyString
-  link_to: MyString
+  prayer_id: 1
 
 two:
-  user_id: 1
-  activity: MyString
-  link_to: MyString
+  user_id: 2
+  prayer_id: 1

@@ -1,6 +1,6 @@
 <h1><%= @user.name_or_username %></h1>
 
-<% if @user.prayer.count > 0 %>
+<% if @user.prayers.count > 0 %>
 <h3>Recent Prayers</h3>
-<%= render :partial => 'prayers/prayer', :collection => @user.prayer.find_unanswered_prayers %>
+<%= render :partial => 'prayers/prayer', :collection => @user.prayers.find_unanswered_prayers %>
 <% end %>
