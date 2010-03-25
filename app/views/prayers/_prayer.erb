@@ -8,7 +8,9 @@
 			<%= link_to 'Edit', edit_prayer_path(prayer) %>
 			<%= link_to 'Prayer is Answered', answered_path(prayer) %>
 		<% else %>
-			<%= link_to 'Remind Me', commit_path(prayer.id), :class => 'i_am_praying' %>
+		
+			<%= link_to 'Remind Me', new_reminder_path %>
+			
 			<%= link_to 'Comments', prayer%>
 		<% end %>
 	</div>
