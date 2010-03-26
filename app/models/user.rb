@@ -24,6 +24,20 @@ class User < ActiveRecord::Base
       firstname + ' ' + lastname
     end
   end
+  
+  def full_name
+    [firstname, lastname].join(' ')
+  end
+  
+  def full_name=(name)
+    split = name.split(' ', 2)
+    self.firstname = split.first
+    self.lastname = split.last
+  end
+  
+  def wants_to_be_reminded?(user, prayer)
+    user.reminders.find_by_prayer_id(prayer.id)
+  end
 
   def self.search(search, page, per)
     if per.nil?

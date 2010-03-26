@@ -1,0 +1,5 @@
+<% form_for(Reminder.new) do |f| %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :prayer_id, :value => prayer.id %>
+    <%= f.submit 'Remind Me' %>
+<% end %>
