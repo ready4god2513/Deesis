@@ -10521,3 +10521,357 @@ Migrating to CreateReminders (20100325232033)
   [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091119050323')[0m
   [4;35;1mSQL (4.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20091214004914')[0m
   [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100325225154')[0m
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-26 10:28:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-26 10:28:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 77ms (View: 7, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 10:28:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (5.3ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 25ms (View: 15, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-26 10:28:25) [POST]
+  Parameters: {"recaptcha_response_field"=>"", "recaptcha_challenge_field"=>"02pEr809N6Vg7vdOhkrxJb_KxG5JAtCTPkJqWqWdRbYJ9nJYdqt3JJWXbr_B0fRqtK_X3V1zyE0J3qaxxEaPVl0Ip7Zuu1R1rw2hgSXC4RV2-erSntVaj7XMJ7OVbX_Xs-6hE3GJ0aETQyJF40PBbLPd347iVvR1ab0Wc8IKIssIrtmBi9NNkSiwwpsFczw49HTbgtUaTHf_urYnijMpkNIVcO8d73NYEiS4ITTg_NInv918op7xOMyTMOuYnitY-NBh-XEhmtfxZQXcmqMPwiK4O-wdYB", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"l+0jcW31XS9tXZkKeHi/4Ca2uiSXJ+3TJiNOjICFGeM=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"", "password"=>"[FILTERED]", "email"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'c55d8ec2894cc1e64276821afe2462dfdbf414f4e4e8db4ce794470b3a2159f8391c3e72f72619e26e919c34e270724888a42e84cb686b46a31382f686bc75bc') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (5.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 281ms (View: 19, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-26 10:28:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 19ms (View: 7, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 10:29:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (62.3ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 78ms (View: 69, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-26 10:29:07) [POST]
+  Parameters: {"recaptcha_response_field"=>"", "recaptcha_challenge_field"=>"02FPZo40BB-nfQQ7hu1Qw7uSrI5jxZK0xXmN8M0XpbRaknZJv7135XjB-mJajtm3-T_of8xv4vCkv9-yH9JXDKIVqMaIpeFZjXmk6PFSGCiWwbwqU_pZ4BtSrOkcfM---Ky3TnVh5EzqzdIu0LApeztYZg2R6b918Ew63CfO6e3z14Sn3XHMDSGD6VnoyZYsUhgrSmO1VLYgVpsHlskI9ehTCvuZ1dYKLRsFQX3ECgd-62_-XYLEPx5gzyaRnQylscFGRAoOJhIjIV2kq3km-jnzSRtI0B", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"l+0jcW31XS9tXZkKeHi/4Ca2uiSXJ+3TJiNOjICFGeM=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"", "password"=>"[FILTERED]", "email"=>""}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '8c505f83e783fc36f89003b3f659f0fb7639be54fbb1d2ba14702dbc65323755ac5f4e5c91798c12b5b13a50559b26cf5f4965d87749ad854d3b8373efd95d1e') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (5.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 176ms (View: 20, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-26 10:29:27) [POST]
+  Parameters: {"recaptcha_response_field"=>"", "recaptcha_challenge_field"=>"02nKAuSE3ISXXhhS9sR2B9mhTHqBNQTEYbngOtB5ny_-YtI6TQXtOI7ePUFzWXYvdtdK4S6P14xaNi418mwDp-InIhqvO12shsDjKheO4uwyFc8WILX7QzpmWEi09sjxfEXlLWqdSRBibUgPh5Ekxt8XklX5If697lt2xEdA4xnPUx5k2kxwuHEhyArovSTPIMNWZK-Lw8CCKpWn71TlxqzZ_vPp8vE4_IO5pX6aoGV-tXeG3ReK9s4T0s7bcwoROCZxlCzTeYyc1v7UMVFzImjr_23TgB", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"l+0jcW31XS9tXZkKeHi/4Ca2uiSXJ+3TJiNOjICFGeM=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"djkskdhfsdf.adgadg", "password"=>"[FILTERED]", "email"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'djkskdhfsdf.adgadg') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'e2f72ac2fe6af683a69f9635baa0b8604bf6e420c06dc99b8e255b16bcdb08b3be18bfe871572dbe130738085b5ac2fa7313bb89c285acfb5ad03f1c69bd6b30') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (64.1ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 237ms (View: 76, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-26 10:29:44) [POST]
+  Parameters: {"recaptcha_response_field"=>"", "recaptcha_challenge_field"=>"02iAq0ZWyN6M3rBoC613QNoZOtG6Bf83NwsTfVlJygcnqzVH5jduqRX3WYwMle7RkLcHLfHS-CJ3sTLv654vBRrF_OK3Qf3ZAfDyVGuPV9HjlZvuWvnNM21ELsSprR9jM5JeA8Y-5cmfurEh5yYqmhLvjFdVWT-pvbAFE2XSZvZYSGAmKM2kqwdb_q7hir1OzJPbaYM_O1587MmgLxkzg1kCy8Vc2ojoQCwASRh8-YAO6m6UNfUAqESAgvxzcs5Jn4PrnQmEza5kzvf1eaF34wNnXfLF0B", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"l+0jcW31XS9tXZkKeHi/4Ca2uiSXJ+3TJiNOjICFGeM=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"sfsf", "password"=>"[FILTERED]", "email"=>""}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'sfsf') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '7c1b4e8239c6dca59df6e1593bb559dee4c748aacd24b41e74a541654b27b45fa0915fd2332531944dd100d6c1349df12a6474860ebd3b9010d1af47584d75d9') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (5.7ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 292ms (View: 18, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-26 10:29:47) [POST]
+  Parameters: {"recaptcha_response_field"=>"", "recaptcha_challenge_field"=>"024qFYrldl_yTRvh5ns4xHFYh7w1T06IlXZAkvbSHvYlaekSkNBxkNVS8_n3a08WWAPzsK503Kag7u58_UVsNAoF3STDrke6X_Jxlul89budxvSpLN4EFFUrTCqtL1LQnsgEl8WFCBDMf1l64N5KprhpnUpRT_nEyL3ciQ980035V1cako-meL4-BNZZjimjXJ-GFt5uaJLhg3QGc7AY1tDzwPehp9482oHoCDoLiPV1uupOew8JbcEiarCIeFe0Q8eyhxgLxo_n119v4tk1X0knoFRKAB", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"l+0jcW31XS9tXZkKeHi/4Ca2uiSXJ+3TJiNOjICFGeM=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"", "password"=>"[FILTERED]", "email"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'cc871ff160672ea779dac92a5143d41378426c5c4e67b7efc1bbf6065ea6010cee1898ec6702f21bce0b86082ce7de29934f11057986e54a11f7837cd3be423e') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (5.5ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 240ms (View: 80, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-26 10:31:46) [POST]
+  Parameters: {"recaptcha_response_field"=>"", "recaptcha_challenge_field"=>"0288htpjkHQDt04uA7fedLZMvsCbNtUsvay3hixHuKWnODnW-JMjh--Mqvv2j08SWq-P09O9jkT2YfTAxM-dZr6aHlvXQiEeb7m8q-YCVfoAaiKSnJ4ifjNDcol0r2DXSpZz6Qo93T4WgjxCGqDACQ-CQctgpzoPzmteve99nNLT2sA1OrJ1l38qcJ7Uv42jt3Pa81HeinM2X7jEJ-3d-P2oXtFpCRP78GlrSF4zbWJn8bHTSyTHipN6LmPAdmQ9jcKMDjbFoafWALfprgJjkxkC9DKasB", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"l+0jcW31XS9tXZkKeHi/4Ca2uiSXJ+3TJiNOjICFGeM=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"", "password"=>"[FILTERED]", "email"=>""}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'd4c61441942a952964386ab6ead049203afce57ac92c8487999db5f7dde276dc5618a3e50530fe962183a526d7e1e008474d7acc1c95eaedbac31a44fb3bc699') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (5.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 417ms (View: 20, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-03-26 10:36:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (username like '%%') ORDER BY last_request_at DESC, created_at DESC LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (6.2ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 79ms (View: 10, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-03-26 10:36:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (username like '%%') ORDER BY last_request_at DESC, created_at DESC LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (5.6ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 17ms (View: 7, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-03-26 10:37:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (username like '%%') ORDER BY last_request_at DESC, created_at DESC LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (5.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 17ms (View: 7, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-26 10:37:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-26 10:37:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (3.6ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 18ms (View: 7, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 10:38:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (5.3ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 22ms (View: 12, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-26 10:38:08) [POST]
+  Parameters: {"recaptcha_response_field"=>"", "recaptcha_challenge_field"=>"02BQSmvoaLQymy_b5mV7ulaZON9Z5f-9rnYLPSTXvBn_gcWsiMKIl8-_jgP3cOGgT9Hkxi63KCjFQrcsDKUVsD4WWivoWzGk4OZd-9THb67rGEw0Q-AiOokU5meCYb6nujDDX04615OUqL_SMY2qn3kLggWx3mwos2yDBUy_dwCzs5cGh4cYUFBsfNzLvQMeYj-o5KacdPVsuwjPdBC3UrtjDk74h0Ttzx3v5s8P6TDKcKksqLcelH80lGCJu_Wml9TyShPRvL8y6UGCI-DgwryJ6tFz0B", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"l+0jcW31XS9tXZkKeHi/4Ca2uiSXJ+3TJiNOjICFGeM=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"", "password"=>"[FILTERED]", "email"=>""}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'cf5c7a4eeaa30a7aeb5bfbb80edcc7197c32a009210719223e341a0d91a36a8bf6fc26c60ab8ab84a50c94a6670322281697909482d6dd9474e71c857a5a3282') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (5.5ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 498ms (View: 21, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-26 10:38:40) [POST]
+  Parameters: {"recaptcha_response_field"=>"", "recaptcha_challenge_field"=>"02BQSmvoaLQymy_b5mV7ulaZON9Z5f-9rnYLPSTXvBn_gcWsiMKIl8-_jgP3cOGgT9Hkxi63KCjFQrcsDKUVsD4WWivoWzGk4OZd-9THb67rGEw0Q-AiOokU5meCYb6nujDDX04615OUqL_SMY2qn3kLggWx3mwos2yDBUy_dwCzs5cGh4cYUFBsfNzLvQMeYj-o5KacdPVsuwjPdBC3UrtjDk74h0Ttzx3v5s8P6TDKcKksqLcelH80lGCJu_Wml9TyShPRvL8y6UGCI-DgwryJ6tFz0B", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"l+0jcW31XS9tXZkKeHi/4Ca2uiSXJ+3TJiNOjICFGeM=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"", "password"=>"[FILTERED]", "email"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '9430989805a11d0d945c7dfef6ba672215ac7ebfaa3a4c9f81d6da11a9ebae721b70979cb2f265a6036ada9e367c8a1bfd92aff044edb12ee298efa934f9fe70') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `semantic_form_for' for #<ActionView::Base:0x1030bcf80>) on line #3 of app/views/users/new.html.erb:
+1: <h1>Register</h1>
+2: 
+3: <% semantic_form_for @user do |form| %>
+4:     <%= form.inputs %>
+5:     <%= form.buttons %>
+6:   <% end %>
+
+    app/views/users/new.html.erb:3
+    app/controllers/users_controller.rb:64:in `create'
+    app/controllers/users_controller.rb:54:in `create'
+
+Rendered rescues/_trace (36.2ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-26 10:39:02) [POST]
+  Parameters: {"recaptcha_response_field"=>"", "recaptcha_challenge_field"=>"02BQSmvoaLQymy_b5mV7ulaZON9Z5f-9rnYLPSTXvBn_gcWsiMKIl8-_jgP3cOGgT9Hkxi63KCjFQrcsDKUVsD4WWivoWzGk4OZd-9THb67rGEw0Q-AiOokU5meCYb6nujDDX04615OUqL_SMY2qn3kLggWx3mwos2yDBUy_dwCzs5cGh4cYUFBsfNzLvQMeYj-o5KacdPVsuwjPdBC3UrtjDk74h0Ttzx3v5s8P6TDKcKksqLcelH80lGCJu_Wml9TyShPRvL8y6UGCI-DgwryJ6tFz0B", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"l+0jcW31XS9tXZkKeHi/4Ca2uiSXJ+3TJiNOjICFGeM=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"", "password"=>"[FILTERED]", "email"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '42fa88eda5f9efd553e86397576fe7e4ec1733c5985da714b06fb8d59d56ccd8537a2466f83545dddd69934a020e9c9f45f3ef8d53c592535bab1179de5a2da9') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (8.6ms)
+Rendered layouts/_footer (1.0ms)
+Completed in 292ms (View: 123, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-26 10:39:27) [POST]
+  Parameters: {"recaptcha_response_field"=>"", "recaptcha_challenge_field"=>"02BQSmvoaLQymy_b5mV7ulaZON9Z5f-9rnYLPSTXvBn_gcWsiMKIl8-_jgP3cOGgT9Hkxi63KCjFQrcsDKUVsD4WWivoWzGk4OZd-9THb67rGEw0Q-AiOokU5meCYb6nujDDX04615OUqL_SMY2qn3kLggWx3mwos2yDBUy_dwCzs5cGh4cYUFBsfNzLvQMeYj-o5KacdPVsuwjPdBC3UrtjDk74h0Ttzx3v5s8P6TDKcKksqLcelH80lGCJu_Wml9TyShPRvL8y6UGCI-DgwryJ6tFz0B", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"l+0jcW31XS9tXZkKeHi/4Ca2uiSXJ+3TJiNOjICFGeM=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"", "password"=>"[FILTERED]", "email"=>""}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '7cec0bf15901428053043048e39a10ecc5d83706089aba5c6c799da12036d69477419e6932506d644da1e82665c3ce860804ef57de3791465430fc3c80d572f4') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined local variable or method `formtastic_stylesheet_link_tag' for #<ActionView::Base:0x1030c8b28>) on line #9 of app/views/layouts/_header.erb:
+6: <meta name="description" content="Deesis is a website community built to encourage and support prayer in churches and small groups." />
+7: <%= stylesheet_link_merged 'base' %>
+8: <%= javascript_include_merged 'jquery', 'plugins', 'application' %>
+9: <%= formtastic_stylesheet_link_tag %>
+10: 
+11: <%= yield(:head) %>
+12: </head>
+
+    app/views/layouts/_header.erb:9
+    app/views/layouts/application.html.erb:1
+    app/controllers/users_controller.rb:64:in `create'
+    app/controllers/users_controller.rb:54:in `create'
+
+Rendered rescues/_trace (98.7ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-26 10:40:10) [POST]
+  Parameters: {"recaptcha_response_field"=>"", "recaptcha_challenge_field"=>"02BQSmvoaLQymy_b5mV7ulaZON9Z5f-9rnYLPSTXvBn_gcWsiMKIl8-_jgP3cOGgT9Hkxi63KCjFQrcsDKUVsD4WWivoWzGk4OZd-9THb67rGEw0Q-AiOokU5meCYb6nujDDX04615OUqL_SMY2qn3kLggWx3mwos2yDBUy_dwCzs5cGh4cYUFBsfNzLvQMeYj-o5KacdPVsuwjPdBC3UrtjDk74h0Ttzx3v5s8P6TDKcKksqLcelH80lGCJu_Wml9TyShPRvL8y6UGCI-DgwryJ6tFz0B", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"l+0jcW31XS9tXZkKeHi/4Ca2uiSXJ+3TJiNOjICFGeM=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"", "password"=>"[FILTERED]", "email"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '15d08c3bd150403d866517b847ebef2498ce027dd37b5c0fcaa8645b9973262c569f0e059de2914350c057f7d6fec904a809a02ac941b1beef50b537e3a5c9a4') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (6.5ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 287ms (View: 135, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-26 10:41:55) [POST]
+  Parameters: {"recaptcha_response_field"=>"", "recaptcha_challenge_field"=>"02BQSmvoaLQymy_b5mV7ulaZON9Z5f-9rnYLPSTXvBn_gcWsiMKIl8-_jgP3cOGgT9Hkxi63KCjFQrcsDKUVsD4WWivoWzGk4OZd-9THb67rGEw0Q-AiOokU5meCYb6nujDDX04615OUqL_SMY2qn3kLggWx3mwos2yDBUy_dwCzs5cGh4cYUFBsfNzLvQMeYj-o5KacdPVsuwjPdBC3UrtjDk74h0Ttzx3v5s8P6TDKcKksqLcelH80lGCJu_Wml9TyShPRvL8y6UGCI-DgwryJ6tFz0B", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"l+0jcW31XS9tXZkKeHi/4Ca2uiSXJ+3TJiNOjICFGeM=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"", "password"=>"[FILTERED]", "email"=>""}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '9aa58b7bc41c1093ebc11280ffb2e6d6bcaaf59fae0496b1cab128496e5948f1200602c19548079f76aae7eb5081fed7e794282486b92813fe7a7fe877b01cc9') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (6.3ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 241ms (View: 28, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-26 10:42:40) [POST]
+  Parameters: {"recaptcha_response_field"=>"", "recaptcha_challenge_field"=>"02BQSmvoaLQymy_b5mV7ulaZON9Z5f-9rnYLPSTXvBn_gcWsiMKIl8-_jgP3cOGgT9Hkxi63KCjFQrcsDKUVsD4WWivoWzGk4OZd-9THb67rGEw0Q-AiOokU5meCYb6nujDDX04615OUqL_SMY2qn3kLggWx3mwos2yDBUy_dwCzs5cGh4cYUFBsfNzLvQMeYj-o5KacdPVsuwjPdBC3UrtjDk74h0Ttzx3v5s8P6TDKcKksqLcelH80lGCJu_Wml9TyShPRvL8y6UGCI-DgwryJ6tFz0B", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"l+0jcW31XS9tXZkKeHi/4Ca2uiSXJ+3TJiNOjICFGeM=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"", "password"=>"[FILTERED]", "email"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '229d40a3449a661d90c82e27685c2f7697014371554be43be39e125be4214fe63fae95a50413bbbf66ba14212188c2451d252459b9f7be2dc38252d5b33b9508') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (5.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 250ms (View: 33, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-26 10:42:58) [POST]
+  Parameters: {"recaptcha_response_field"=>"", "recaptcha_challenge_field"=>"02BQSmvoaLQymy_b5mV7ulaZON9Z5f-9rnYLPSTXvBn_gcWsiMKIl8-_jgP3cOGgT9Hkxi63KCjFQrcsDKUVsD4WWivoWzGk4OZd-9THb67rGEw0Q-AiOokU5meCYb6nujDDX04615OUqL_SMY2qn3kLggWx3mwos2yDBUy_dwCzs5cGh4cYUFBsfNzLvQMeYj-o5KacdPVsuwjPdBC3UrtjDk74h0Ttzx3v5s8P6TDKcKksqLcelH80lGCJu_Wml9TyShPRvL8y6UGCI-DgwryJ6tFz0B", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"l+0jcW31XS9tXZkKeHi/4Ca2uiSXJ+3TJiNOjICFGeM=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"", "password"=>"[FILTERED]", "email"=>""}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '7708e2cb6733ae92aa943b062e897a74a660815bc83e669f9fd39951ee4c43f3f158cab9d9cba9e99213a10a0bce7e251453e0990f4f622ecfb1353ab0d1d065') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (5.8ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 240ms (View: 79, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-26 10:45:52) [POST]
+  Parameters: {"recaptcha_response_field"=>"", "recaptcha_challenge_field"=>"02BQSmvoaLQymy_b5mV7ulaZON9Z5f-9rnYLPSTXvBn_gcWsiMKIl8-_jgP3cOGgT9Hkxi63KCjFQrcsDKUVsD4WWivoWzGk4OZd-9THb67rGEw0Q-AiOokU5meCYb6nujDDX04615OUqL_SMY2qn3kLggWx3mwos2yDBUy_dwCzs5cGh4cYUFBsfNzLvQMeYj-o5KacdPVsuwjPdBC3UrtjDk74h0Ttzx3v5s8P6TDKcKksqLcelH80lGCJu_Wml9TyShPRvL8y6UGCI-DgwryJ6tFz0B", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"l+0jcW31XS9tXZkKeHi/4Ca2uiSXJ+3TJiNOjICFGeM=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"", "password"=>"[FILTERED]", "email"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '2c7740f5267fe8fdcbdb83e19f390c90752412f5fc64501ce2fb0054aee67e3b4b2ef71208bf2ac61aa14618f0170f6c2f6a33e4ff5ae4fbfdacff282c8aec0f') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '5') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (5.6ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 288ms (View: 24, DB: 1) | 200 OK [http://localhost/users]

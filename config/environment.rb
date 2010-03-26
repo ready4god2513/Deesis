@@ -14,5 +14,6 @@ Rails::Initializer.run do |config|
   config.gem "searchlogic"
   config.gem "ambethia-recaptcha", :lib => "recaptcha/rails", :source => "http://gems.github.com"
   config.gem "whenever", :lib => false, :source => "http://gemcutter.org/"
+  config.gem "formtastic"
   config.time_zone = "UTC"
 end

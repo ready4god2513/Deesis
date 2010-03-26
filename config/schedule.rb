@@ -13,6 +13,6 @@
 #   rake "some:great:rake:task"
 # end
 #
-every 2.days, :at => '12:30am' do
+every 1.days, :at => '12:30am' do
   runner "User.send_reminder"
 end
