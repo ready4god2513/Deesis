@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Deesis | <%= @page_title || 'We Mean Prayer' %></title>
+<title>Deesis | <%= yield(:title) || 'We Mean Prayer' %></title>
 <meta name="keywords" content="Prayer, Small Groups, Churches, Community" />
 <meta name="description" content="Deesis is a website community built to encourage and support prayer in churches and small groups." />
 <%= stylesheet_link_merged 'base' %>
@@ -27,14 +27,13 @@
 </div>
 <% end %>
 <div class="wrapper">
-	<div id="notice" <% if !flash[:notice] %>style="display:none"<% end %>>
-		<% if flash[:notice] %>
-			<%= flash[:notice]%>
-		<% end %>
-	</div>
+	<% if flash[:notice] %>
+		<div id="notice"><%= flash[:notice]%></div>
+	<% end %>
 	<div id="content" class="left box">
 		<div class="listing_small">
 			<%= yield %>
 		</div>
 	</div>
 	<div id="sidebar" class="left">
+		<%= yield(:sidebar) || '' %>

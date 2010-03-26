@@ -19,7 +19,6 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find_by_username(params[:username])
-    @user.send_reminder
     
     if @user.nil?
       raise ActiveRecord::RecordNotFound
@@ -44,6 +43,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = current_user
+    UserMailer.deliver_registration_confirmation(@user)
   end
 
   # POST /users

@@ -1,2 +1,0 @@
-$("#prayer_id_<%= @prayer.id %> span.num_people_praying").html("<%= escape_javascript(pluralize(@prayer.num_responses, 'Person', 'People')) %>");
-$("#prayer_id_<%= @prayer.id %> .i_am_praying").fadeOut().remove();
