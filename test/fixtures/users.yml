@@ -7,10 +7,16 @@ Brandon:
   postal_code: 96003
   email: brandon@melissa-brandon.com
   username: brandon
-  password: hansen
+  password_salt: <%= salt = Authlogic::Random.hex_token %>
+  crypted_password: <%= Authlogic::CryptoProviders::Sha512.encrypt("hansen" + salt) %>
+  persistence_token: <%= Authlogic::Random.hex_token %>
+  single_access_token: <%= Authlogic::Random.friendly_token %>
+  perishable_token: <%= Authlogic::Random.friendly_token %>
   api_key: 123456adfad
   pic: /images/brandon.png
   status: true
+      
+
 
 Andrew:
   firstname: Andrew
@@ -19,7 +25,11 @@ Andrew:
   postal_code: 96003
   email: andrew@lyricode.com
   username: andrew
-  password: lyric
+  password_salt: <%= salt = Authlogic::Random.hex_token %>
+  crypted_password: <%= Authlogic::CryptoProviders::Sha512.encrypt("lyric" + salt) %>
+  persistence_token: <%= Authlogic::Random.hex_token %>
+  single_access_token: <%= Authlogic::Random.friendly_token %>
+  perishable_token: <%= Authlogic::Random.friendly_token %>
   api_key: 1315421sdgsdg
   pic: /images/andrew.png
   status: true
