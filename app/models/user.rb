@@ -56,9 +56,7 @@ class User < ActiveRecord::Base
   
   
   def send_reminder
-    self.reminder.each do |reminder|
-      reminder.send
-    end
+    UserMailer.deliver_registration_confirmation(self)
   end
   
 end

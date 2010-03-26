@@ -1,11 +1,5 @@
-<html>
-<body>
-	<table bgcolor="#e8e8e8" cellpadding="10">
-		<tr>
-			<td width="600px">
-				<h1>Prayer for the Day</h1>
-			</td>
-		</tr>
-	</table>
-</body>
-</html>
+<h1>Today's Prayer Needs</h1>
+
+<% user.reminders.each do |reminder| %>
+	<%= format_output(reminder.prayer.prayer) %>
+<% end %>

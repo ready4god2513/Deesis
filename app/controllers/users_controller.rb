@@ -19,6 +19,8 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find_by_username(params[:username])
+    @user.send_reminder
+    
     if @user.nil?
       raise ActiveRecord::RecordNotFound
     end
@@ -55,7 +57,7 @@ class UsersController < ApplicationController
         # Send out the welcome e-mail
         UserMailer.deliver_registration_confirmation(@user)
         
-        flash[:notice] = 'Your account has been created'
+        flash[:notice] = 'Welcome to Deesis!'
         format.html { redirect_to root_url }
       else
         flash[:notice] = 'Fix a few errors, and let\'s try this again'
