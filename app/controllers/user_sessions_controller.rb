@@ -10,6 +10,7 @@ class UserSessionsController < ApplicationController
       flash[:notice] = 'You have been logged in'
       redirect_to root_url
     else
+      flash[:notice] = 'Either your username or password is incorrect'
       render :action => 'new'
     end
   end

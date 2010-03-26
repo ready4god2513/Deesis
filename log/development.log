@@ -10056,3 +10056,6 @@ Processing RemindersController#new (for 127.0.0.1 at 2010-03-25 16:48:39) [GET]
 Rendering template within layouts/reminders
 Rendering reminders/new
 Completed in 26ms (View: 3, DB: 1) | 200 OK [http://localhost/reminders/new]
+  [4;36;1mReminder Load (1.0ms)[0m   [0;1mSELECT * FROM "reminders" [0m
+  [4;35;1mReminder Delete all (4.1ms)[0m   [0mDELETE FROM "reminders" WHERE 1=1[0m
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" [0m

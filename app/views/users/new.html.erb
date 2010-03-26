@@ -1,23 +1,26 @@
 <h1>Register</h1>
 
 <% form_for(@user) do |f| %>
-  	<%= f.error_messages %>
 
-	<div class="formFields">
-		<%= f.label :username %>
-		<%= f.text_field :username %>
-	</div>	
 	<div class="formFields">
 		<%= f.label :email %>
 		<%= f.text_field :email %>
+		<%= error_message_on :user, :email, :prepend_text => 'Email ' %>
 	</div>
+	<div class="formFields">
+		<%= f.label :username %>
+		<%= f.text_field :username %>
+		<%= error_message_on :user, :username, :prepend_text => 'Username ' %>
+	</div>	
 	<div class="formFields">
 		<%= f.label :password %>
 		<%= f.password_field :password %>
+		<%= error_message_on :user, :password, :prepend_text => 'Password ' %>
 	</div>
 	<div class="formFields">
 		<%= f.label :password_confirmation %>
 		<%= f.password_field :password_confirmation %>
+		<%= error_message_on :user, :password_confirmation, :prepend_text => 'Password Confirmation ' %>
 	</div>
 	<div class="formFields">
 		<%= recaptcha_tags %>
