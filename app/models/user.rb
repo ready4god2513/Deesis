@@ -6,9 +6,7 @@ class User < ActiveRecord::Base
   
   default_scope :order => 'created_at DESC'
   
-  acts_as_authentic do |c|
-    c.validate_login_field false
-  end
+  acts_as_authentic
   
   has_attached_file :profile_pic,
                     :styles => {

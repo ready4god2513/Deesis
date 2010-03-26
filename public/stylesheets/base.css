@@ -26,11 +26,12 @@ div.avatar img{background:#e8e8e8;border:none;margin-right:5px;}
 div.box{background:#fff;border:1px solid;border-bottom:5px solid;border-right:5px solid;border-color:#e6e6df;}
 div.complete{text-decoration:line-through}
 div.footer{margin-bottom:40px;text-align:right}
+div.fieldWithErrors{display:inline;}
 div.formFields{background:#f8f8f8;clear:both;margin-bottom:4px;padding:5px}
 div.formFields input[type=text],div.formFields input[type=password],div.formFields select{border:1px solid;border-color:#ddd;font-size:1.1em;padding:7px}
 div.formFields label{display:block;font-weight:700;padding:5px 0}
 div.formFields textarea{border:1px solid;border-color:#ddd;font-size:1.6em;height:50px;margin-bottom:10px;padding:7px;width:95%}
-div.form_error{color:maroon;font-weight:700;margin:0;opacity:0.9px;padding:4px 0}
+div.formError{background:#FFCFCF;border:1px solid #E5A3A3;color:#B32E1B;display:inline;font-weight:700;margin:0;padding:7px}
 div.info_box{margin-bottom:10px;text-align:left;width:100%}
 div.info_box div.list{margin:10px 0 20px;padding:0}
 div.info_box h3{background-color:#ffd700;color:#000;font-weight:700;margin:0;padding:5px}

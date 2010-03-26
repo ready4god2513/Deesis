@@ -7,11 +7,9 @@ class RemindersController < ApplicationController
       if @reminder.save
         flash[:notice] = 'This prayer has been added to your reminder list'
         format.html { redirect_to(root_path) }
-        format.xml  { render :xml => @reminder, :status => :created, :location => @reminder }
       else
         flash[:notice] = 'This prayer is already part of your reminder list'
         format.html { redirect_to(root_path) }
-        format.xml  { render :xml => @reminder.errors, :status => :unprocessable_entity }
       end
     end
   end

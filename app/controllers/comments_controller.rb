@@ -7,7 +7,6 @@ class CommentsController < ProtectedController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @comments }
     end
   end
 
@@ -18,7 +17,6 @@ class CommentsController < ProtectedController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @comment }
     end
   end
   
@@ -27,8 +25,6 @@ class CommentsController < ProtectedController
     
     respond_to do |format|
       format.rss { render :rss => @comments }
-      format.json { render :json => @comments }
-      format.xml { render :xml => @comments }
     end
   end
 
@@ -39,7 +35,6 @@ class CommentsController < ProtectedController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @comment }
     end
   end
 
@@ -60,32 +55,11 @@ class CommentsController < ProtectedController
 
     respond_to do |format|
       if @comment.save
-        
-        flash[:notice] = 'Comment was successfully created.'
+        flash[:notice] = 'Thanks for posting your comment'
         format.html { redirect_to(@comment) }
-        format.js { }
-        format.xml  { render :xml => @comment, :status => :created, :location => @comment }
       else
+        flash[:notice] = 'There was an error in saving your comment'
         format.html { render :action => "new" }
-        format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /comments/1
-  # PUT /comments/1.xml
-  def update
-    @comment = Comment.find(params[:id])
-
-    respond_to do |format|
-      if @comment.update_attributes(params[:comment])
-        
-        flash[:notice] = 'Comment was successfully updated.'
-        format.html { redirect_to(@comment) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
       end
     end
   end

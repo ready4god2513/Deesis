@@ -57,12 +57,9 @@ class UsersController < ApplicationController
         
         flash[:notice] = 'Your account has been created'
         format.html { redirect_to root_url }
-        format.xml  { render :xml => @user, :status => :created, :location => @user }
-        format.json  { render :json => @user, :status => :created, :location => @user }
       else
         flash[:notice] = 'Fix a few errors, and let\'s try this again'
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+        format.html { render :action => 'new' }
       end
     end
   end
@@ -74,14 +71,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        
         flash[:notice] = 'Your profile has been updated'
         format.html { redirect_to edit_user_path(:current) }
-        format.xml  { head :ok }
       else
         flash[:notice] = 'We couldn\'t update your profile.  Fix the errors, and let\'s try again'
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+        format.html { redirect_to edit_user_path(:current) }
       end
     end
   end
