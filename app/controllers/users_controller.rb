@@ -43,7 +43,6 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = current_user
-    UserMailer.deliver_registration_confirmation(@user)
   end
 
   # POST /users
