@@ -1,5 +1,6 @@
 #!/bin/sh
 
 git pull
+sudo rake gems:install
 script/server -d
 mate ../Deesis

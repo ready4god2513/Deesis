@@ -15517,3 +15517,121 @@ Rendered prayers/_prayer (2.1ms)
 Rendered layouts/_header (1.4ms)
 Rendered layouts/_footer (0.4ms)
 Completed in 111ms (View: 8, DB: 1) | 200 OK [http://localhost/prayers]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-26 14:51:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 70ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-26 14:51:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (10.1ms)
+Rendered layouts/_footer (2.6ms)
+Completed in 120ms (View: 89, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-26 14:51:56) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"username"=>"", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"tgy89HW1NgTY6Wyk70Re0XzLqhoHXPGnmVT9eRbFoug=", "controller"=>"user_sessions"}
+Redirected to http://localhost:3000/
+Completed in 33ms (DB: 0) | 302 Found [http://localhost/user_sessions]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-26 14:51:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 29ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-26 14:51:56) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 46ms (View: 13, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 14:51:57) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered layouts/_header (9.1ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 82ms (View: 54, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-26 14:51:59) [POST]
+  Parameters: {"recaptcha_response_field"=>"", "recaptcha_challenge_field"=>"02-yaPwTUhKmvG6T7L2G_eNrP8VwlzTZSOMVIGVdmCD-bACboiYA-_U9l9ogEgSlImxON4diiV9u0GkioD0GWSuWnu8gj-rzYpSPGwKJM-FRRrUiidp1QzHG9Uc-ZWQQraLmQA0ZdZ_yss4OsHQwRtzt_0OYV3xQLDhkTWSUrJj7F3FGEENItJin7q0-rFFa-GAejSsod-OddOeEgJap70c4i-RKmNfZO_MYH8LlF8UU4IDqWsrnRM07i2LuK0kXQvCR-gp3PcwyGU652PzTBb4cD9D9EB", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"tgy89HW1NgTY6Wyk70Re0XzLqhoHXPGnmVT9eRbFoug=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"", "password"=>"[FILTERED]", "email"=>""}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'e62c914f4c34e862f6707ca6111bdd9f255f5a6f7b7ef75d838b2e74b7eba02c4a3afd425d64957c0973571a8826862806309a14d4d0f3a3731eb604a0f7e5b5') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered layouts/_header (9.4ms)
+Rendered layouts/_footer (1.0ms)
+Completed in 588ms (View: 45, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-29 10:52:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 61ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-29 10:52:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (3.9ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 46ms (View: 14, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-29 11:53:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 748ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-29 11:53:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (28.5ms)
+Rendered layouts/_footer (1.5ms)
+Completed in 71ms (View: 38, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ErrorController#missing_page (for 127.0.0.1 at 2010-03-29 13:26:49) [GET]
+  Parameters: {"action"=>"missing_page", "path"=>["doc"], "controller"=>"error"}
+Rendering template within layouts/application
+Rendering error/missing_page
+Rendered layouts/_header (41.8ms)
+Rendered layouts/_footer (1.1ms)
+Completed in 87ms (View: 82, DB: 0) | 200 OK [http://localhost/doc]
+
+
+Processing ErrorController#missing_page (for 127.0.0.1 at 2010-03-29 13:26:53) [GET]
+  Parameters: {"action"=>"missing_page", "path"=>["doc", "app"], "controller"=>"error"}
+Rendering template within layouts/application
+Rendering error/missing_page
+Rendered layouts/_header (33.6ms)
+Rendered layouts/_footer (1.0ms)
+Completed in 42ms (View: 37, DB: 0) | 200 OK [http://localhost/doc/app]
+
+
+Processing ErrorController#missing_page (for 127.0.0.1 at 2010-03-29 13:27:02) [GET]
+  Parameters: {"action"=>"missing_page", "path"=>["doc", "app", "index.html"], "controller"=>"error"}
+Rendering template within layouts/application
+Rendering error/missing_page
+Rendered layouts/_header (32.6ms)
+Rendered layouts/_footer (1.0ms)
+Completed in 41ms (View: 36, DB: 0) | 200 OK [http://localhost/doc/app/index.html]
