@@ -15635,3 +15635,19 @@ Rendering error/missing_page
 Rendered layouts/_header (32.6ms)
 Rendered layouts/_footer (1.0ms)
 Completed in 41ms (View: 36, DB: 0) | 200 OK [http://localhost/doc/app/index.html]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-29 20:40:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 201ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-29 20:40:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (17.5ms)
+Rendered layouts/_footer (3.3ms)
+Completed in 123ms (View: 89, DB: 0) | 200 OK [http://localhost/login]
