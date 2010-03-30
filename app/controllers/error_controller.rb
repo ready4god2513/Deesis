@@ -1,5 +1,5 @@
 class ErrorController < ApplicationController
-  def missing_page
+  def fourohfour
   end
 
   def internal

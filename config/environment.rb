@@ -8,14 +8,10 @@ ENV["RECAPTCHA_PRIVATE_KEY"] = "6LcSwAQAAAAAAFduT4tzR7cNoyThPFAgEZFE5A1n"
 
 
 Rails::Initializer.run do |config|
-  config.gem 'compass', :version => '>= 0.8.17'
-  config.gem 'haml', :version => '>=2.2.16'
-
   config.gem "authlogic"
   config.gem "will_paginate"
   config.gem "searchlogic"
   config.gem "ambethia-recaptcha", :lib => "recaptcha/rails", :source => "http://gems.github.com"
   config.gem "whenever", :lib => false, :source => "http://gemcutter.org/"
-  config.gem "formtastic"
   config.time_zone = "UTC"
 end

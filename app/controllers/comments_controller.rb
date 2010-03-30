@@ -57,6 +57,7 @@ class CommentsController < ProtectedController
       if @comment.save
         flash[:notice] = 'Thanks for posting your comment'
         format.html { redirect_to(@comment) }
+        format.js {}
       else
         flash[:notice] = 'There was an error in saving your comment'
         format.html { render :action => "new" }

@@ -16,13 +16,7 @@ class PrayersController < ProtectedController
   end
   
   def answered
-    @prayer = current_user.prayer.find(params[:id])
-    
-    # Ensure that the prayer belongs to the current user
-    if !@prayer
-      redirect_to root_url
-    end
-    
+    @prayer = Prayer.find(params[:id])
     @prayer.answered = 1
 
     respond_to do |format|
@@ -70,6 +64,7 @@ class PrayersController < ProtectedController
         
         flash[:notice] = 'Your prayer has been added'
         format.html { redirect_to(@prayer) }
+        format.js { }
       else
         format.html { render :action => "new" }
       end
