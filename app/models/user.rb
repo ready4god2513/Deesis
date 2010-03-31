@@ -6,7 +6,9 @@ class User < ActiveRecord::Base
   
   default_scope :order => 'created_at DESC'
   
-  acts_as_authentic
+  acts_as_authentic do |c|
+    c.login_field = "email"
+  end
   
   has_attached_file :profile_pic,
                     :styles => {
@@ -57,6 +59,11 @@ class User < ActiveRecord::Base
   
   def send_reminder
     UserMailer.deliver_registration_confirmation(self)
+  end
+  
+  def deliver_password_reset_instructions!
+    reset_perishable_token!
+    UserMailer.deliver_password_reset_instructions(self)
   end
   
 end

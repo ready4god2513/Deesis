@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100325232033) do
+ActiveRecord::Schema.define(:version => 20100331043310) do
 
   create_table "activities", :force => true do |t|
     t.integer  "user_id"
@@ -125,6 +125,10 @@ ActiveRecord::Schema.define(:version => 20100325232033) do
     t.integer  "profile_pic_file_size"
     t.datetime "profile_pic_updated_at"
     t.string   "activity_stream_token"
+    t.string   "perishable_token",         :default => "", :null => false
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["perishable_token"], :name => "index_users_on_perishable_token"
 
 end

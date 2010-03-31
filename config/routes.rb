@@ -4,6 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :prayers
   map.resources :comments  
   map.resources :user_sessions
+  map.resources :password_resets
   
   map.root :controller => 'prayers'
   map.post 'post', :controller => 'prayers', :action => 'new'
@@ -13,6 +14,7 @@ ActionController::Routing::Routes.draw do |map|
   map.profile 'profile/:username.:format', :controller => 'users', :action => 'show'
   map.account 'account', :controller => 'users', :action => 'edit'
   map.answered ':id/answered.:format', :controller => 'prayers', :action => 'answered'
+  map.password 'reset-password', :controller => 'password_resets', :action => 'new'
   
   # This is a catch-all for routes that don't exist, visitor is redirected to home page.
   ActionController::Routing::Routes.draw do |map|

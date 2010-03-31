@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password
   helper_method :current_user
   
-  rescue_from ActiveRecord::RecordNotFound, :with => :show_error
-  rescue_from NoMethodError, :with => :show_error
+  #rescue_from ActiveRecord::RecordNotFound, :with => :show_error
+  #rescue_from NoMethodError, :with => :show_error
   
   protected
     def show_error

@@ -1,5 +1,9 @@
+<%= render :partial => 'layouts/email_header' %>
+
 <h1>Today's Prayer Needs</h1>
 
 <% user.reminders.each do |reminder| %>
 	<%= format_output(reminder.prayer.prayer) %>
 <% end %>
+
+<%= render :partial => 'layouts/email_footer' %>
