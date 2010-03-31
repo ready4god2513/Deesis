@@ -24,4 +24,9 @@ module ApplicationHelper
       return true
     end
   end
+  
+  def first_x_words(str, n = 10)
+     str.split(' ')[0,n].inject{|sum,word| sum + ' ' + word}
+  end
+
 end

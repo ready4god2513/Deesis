@@ -2,10 +2,6 @@
 
 <h1>Today's Prayer Needs</h1>
 
-<ul>
-<% @user.reminders.each do |reminder| %>
-	<li><%= link_to reminder.prayer.prayer, prayer_path(reminder.prayer) %></li>
-<% end %>
-</ul>
+<%= render :partial => 'reminders/list', :locals => { :user => @user }%>
 
 <%= render :partial => 'layouts/email_footer' %>

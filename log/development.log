@@ -21145,3 +21145,1462 @@ Rendered prayers/_prayer (16.2ms)
 Rendered layouts/_header (3.9ms)
 Rendered layouts/_footer (1.0ms)
 Completed in 116ms (View: 31, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 07:49:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 87ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-31 07:49:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (4.3ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 41ms (View: 29, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-31 07:49:14) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "email"=>"brandonh@ibethel.org"}, "action"=>"create", "authenticity_token"=>"jvADR1QiFUeEADdeVyjoacelBSlglLJ5KmT33oO9feI=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".email) = 'brandonh@ibethel.org') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "login_count" = 5, "updated_at" = '2010-03-31 14:49:14', "perishable_token" = 'cFqS5hthmI5rH0oYnxLb', "last_request_at" = '2010-03-31 14:49:14' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/
+Completed in 314ms (DB: 1) | 302 Found [http://localhost/user_sessions]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 07:49:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 14:49:14', "perishable_token" = '6rixXRCqk-ED1U1kJO9B', "last_request_at" = '2010-03-31 14:49:14' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.4ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.4ms)
+Rendered prayers/_form (3.1ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (3.1ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 121ms (View: 23, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mUser Delete all (1.3ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+  [4;35;1mPrayer Delete all (1.2ms)[0m   [0mDELETE FROM "prayers" WHERE 1=1[0m
+  [4;36;1mComment Delete all (0.6ms)[0m   [0;1mDELETE FROM "comments" WHERE 1=1[0m
+  [4;35;1mReminder Delete all (2.8ms)[0m   [0mDELETE FROM "reminders" WHERE 1=1[0m
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 07:50:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-31 07:50:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (3.9ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 84ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 08:07:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-31 08:07:37) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (3.6ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 19ms (View: 7, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 08:57:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-31 08:57:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (3.6ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 19ms (View: 7, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-31 08:58:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (5.8ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 88ms (View: 17, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-31 08:58:24) [POST]
+  Parameters: {"recaptcha_response_field"=>"naturals that", "recaptcha_challenge_field"=>"02R2JNczqmkHU4BKKRyW5RyMOvpsh6QDLqGqDsdqISLwEKZswsH5grar0WJnp8kxcrCLI9gfPlLpKFrCMkN_XPa-W6bmuqgw0yfBdzVduXpLLw16Fi8xp9FDuoVSksO75s1tN2KKIkoLaiug8mroDkok8cJOyKPVz7EvGYf1fXbbkAkefcOu-WN2oYkrBkvPzC98B1LKgqiDV196N3odkObgCa-iXlB_TQGLP904f1IuWpje6mQX9-YMiPbH-abSVkI-37euKf9qC_0yQ_FbV-m8vFn4QB", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"jvADR1QiFUeEADdeVyjoacelBSlglLJ5KmT33oO9feI=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"brandon", "password"=>"[FILTERED]", "email"=>"brandon@melissa-brandon.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'brandon@melissa-brandon.com') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'brandon@melissa-brandon.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'bd0d6970dc875422c8069b4e32ec5ef981f67b42d5481f95624678cd668906a8a3960cb9d130406c8eb1a43fc5ee3e9aebe98bab4db09c0a1ec5b488cf995f8c') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (6.0ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 284ms (View: 13, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-31 08:58:31) [POST]
+  Parameters: {"recaptcha_response_field"=>"", "recaptcha_challenge_field"=>"020AwluUn7GwvaF1mHJLk5a5fXx_WAWk7qnqF9U0tTtZKGu4uaodamzLIw2WfKGQNRPxKTt0SXwVRFe0FawGala4mrw4ksF-rNkHWaSk0yVVYH1xp_FL6hxHUMeXOuF6_6HI7D6bLRukwmcbGk-XhQf6E10DA-0msYZpBk5SRZkHt95dkcQ2ep1QP4UkOlGpkLQQ5qDqnVYVlx1sqdzeJZ3XT2m_MJRwEv92il3OvB0BsogEhVdYcuzntWohrLI24hmJalJPkb0kWe-ag59mSfYpgtkzMB", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"jvADR1QiFUeEADdeVyjoacelBSlglLJ5KmT33oO9feI=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"brandon", "password"=>"[FILTERED]", "email"=>"brandon@melissa-brandon.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'brandon@melissa-brandon.com') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'brandon@melissa-brandon.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '11b9aa79ad4a8fb6651afcb8510ed5c8b1dcbb4d9978a7f75818f48d29e1e6d44f4ac55d8a1a5007b85db319e693b619d0d38883265815c12648e0339eee30d9') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (6.9ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 218ms (View: 12, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-31 08:58:37) [POST]
+  Parameters: {"recaptcha_response_field"=>"city teenaged", "recaptcha_challenge_field"=>"02V9S5sUS0qzjgsLF9A03kcYlB-JBxCMOdxcs9TwzRkATKN4_PecVQnrAEH2xQ89LnAsV3ErnJBg9J5XSKM_N8k5khR89--MyCl5Xszfpr26CxDQRSJ_gmNADAh5VfW4uqK_kMAf45WZkYRItljjsQ5Xig1f7RWK9aMUDFXTMHBpDbRwWgsj3NJe5lyUPGbDQszP-dSH4cP1oNF0LeLrm1IfFaMyI3d8yxYIUjrE0JfBFlQTwwTaBgI9BqKSsz7bXyBhzJrt62pwjkMuEyH3ao3UmnDJAB", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"jvADR1QiFUeEADdeVyjoacelBSlglLJ5KmT33oO9feI=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"brandon", "password"=>"[FILTERED]", "email"=>"brandon@melissa-brandon.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'brandon@melissa-brandon.com') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'brandon@melissa-brandon.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '1c7e8226df19979c04330a1a0c5a7bbe95e5ef3a4adaa7d8899855ce4be482e18fe59f062690bde4d7497fe50c57f2670e86a89280f43703fb3e30942745bfdb') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("profile_pic_content_type", "location", "last_request_at", "created_at", "activity_stream_token", "crypted_password", "postal_code", "updated_at", "profile_pic_file_name", "profile_pic_file_size", "perishable_token", "username", "api_key", "profile_pic_updated_at", "lastname", "password_salt", "firstname", "persistence_token", "login_count", "last_login_at", "status", "email", "pic") VALUES(NULL, NULL, '2010-03-31 15:58:37', '2010-03-31 15:58:37', NULL, '539889af9eff3c854baf56deb2c0f9edb0c3ad4769988938b14169d266ff73f2e1b0d98f034e88cf8e8ee2a94ed902b2d9c9f7eea3162c8bf54e73cf3bbf2f56', NULL, '2010-03-31 15:58:37', NULL, NULL, 'X91uA_efciLMoGsRchjY', 'brandon', NULL, NULL, NULL, '_yu3bWOgq0dDY4OT3VpT', NULL, '1c7e8226df19979c04330a1a0c5a7bbe95e5ef3a4adaa7d8899855ce4be482e18fe59f062690bde4d7497fe50c57f2670e86a89280f43703fb3e30942745bfdb', 1, NULL, NULL, 'brandon@melissa-brandon.com', NULL)[0m
+[paperclip] Saving attachments.
+Rendered layouts/_email_header (1.5ms)
+Rendered layouts/_email_footer (0.3ms)
+Sent mail to brandon@melissa-brandon.com
+
+Date: Wed, 31 Mar 2010 08:58:37 -0700
+From: welcome@deesis.org
+To: brandon@melissa-brandon.com
+Subject: Welcome to Deesis
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+  <title>Deesis</title>
+  <style type="text/css">
+/*<![CDATA[*/
+  h1 {
+        font-size: 40px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        color: #000000;
+        line-height:40px;
+        letter-spacing:-2px;
+  }
+  .style3 {
+        font-size: 16px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight:bold;
+        line-height:18px;
+  }
+  .style4 {
+        font-size: 18px;
+        font-family: Arial, sans-serif;
+        font-weight:bold;
+        line-height:18px;
+  }
+  .color {
+  color: #00a7e5; 
+  }
+  .dark {
+  color: #222222; 
+  }
+  .realdark {
+  color:#030303;
+  }
+  .white {
+  color: #222222; 
+  }
+  p {
+  line-height:22px;
+  font-size:12px;
+  color: #555555;
+  font-family:"Lucida Sans Unicode", "Lucida Grande", Arial, sans-serif
+  }
+  .webversion {
+  font-family: Arial, sans-serif;
+  font-size:12px;
+  color: #555555;
+  font-weight:bold;
+  }
+  a {
+  font-weight:bold;
+  color: #00a7e5; 
+  text-decoration:none;
+  }
+  .weblink {
+  color:#C8C8C8
+  }
+  .style5 {
+        font-size: 14px;
+        line-height:18px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight:bold;
+  }
+  .darkbg {
+  background-color:#333333;       
+  }
+  .lightbg {
+  background-color:#e3e3e3;       
+  }
+  .largeborder {
+  border:8px solid #cccccc;
+  }
+  .smallborder {
+  border:4px solid #cccccc;
+  }
+  .totalbg {
+  background-color:#FFFFFF;       
+  }
+  .black {
+  background-color:#000000;       
+  }
+  /*]]>*/
+  </style>
+</head>
+
+<body topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" class="totalbg"
+style="background-color:#FFFFFF;">
+  <!--Spacer -->
+
+  <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height=
+  "40">
+    <tr>
+      <td><img src=
+      "http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1"
+      height="40" /></td>
+    </tr>
+  </table><!--End Spacer -->
+  <!--Logo and Links -->
+
+  <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr>
+      <td width="139" class="style2"><img src=
+      "http://i1.cmail1.com/ei/r/96/198/93E/094151/images/logo.jpg" alt="Logo" width=
+      "118" height="36" style="border-style:none;" /></td>
+
+      <td width="18"></td>
+
+      <td width="140" align="center"><a href="#" class="style4 dark" style=
+      "text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;">
+      <span class="color" style="color:#00a7e5;">Forward</span> this.</a></td>
+
+      <td width="12"></td>
+
+      <td width="140" align="center"><a href="http://boldtype.cmail1.com/t/r/u/utciy/l/"
+      class="style4 dark" style=
+      "text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;">
+      <span class="color" style="color:#00a7e5;">Un</span>-Subscribe.</a></td>
+
+      <td width="11"></td>
+
+      <td width="140" align="center"><a href="#" class="style4 dark" style=
+      "text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;">
+      <span class="color" style="color:#00a7e5;">Contact</span> Us.</a></td>
+    </tr>
+
+    <tr height="10">
+      <td colspan="7"></td>
+    </tr>
+
+    <tr height="3">
+      <td class="lightbg" style="background-color:#e3e3e3;"></td>
+
+      <td></td>
+
+      <td class="lightbg" style="background-color:#e3e3e3;"></td>
+
+      <td></td>
+
+      <td class="lightbg" style="background-color:#e3e3e3;"></td>
+
+      <td></td>
+
+      <td class="lightbg" style="background-color:#e3e3e3;"></td>
+    </tr>
+  </table><!--End Logo and Links -->
+  <!--Spacer -->
+
+  <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height=
+  "40">
+    <tr>
+      <td><img src=
+      "http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1"
+      height="40" /></td>
+    </tr>
+  </table><!--End Spacer -->
+
+  <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr>
+      <td>
+        <!--Main Image and Headline -->
+        <!--End Spacer -->
+        <!--Full Width Copy -->
+
+        <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td rowspan="3">
+
+<p>
+	This is the registration confirmation
+</p>
+
+</td>
+</tr>
+</table><!--End Full Width Copy -->
+<!--Spacer -->
+
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center"
+height="40">
+<tr>
+<td><img src=
+"http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif"
+width="1" height="40" /></td>
+</tr>
+</table><!--End Spacer -->
+</td>
+</tr>
+</table>
+</body>
+</html>
+Redirected to http://localhost:3000/
+Completed in 279ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 08:58:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '1c7e8226df19979c04330a1a0c5a7bbe95e5ef3a4adaa7d8899855ce4be482e18fe59f062690bde4d7497fe50c57f2670e86a89280f43703fb3e30942745bfdb') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 15:58:37', "perishable_token" = '1yJ4CdmmV8mKaQOtESF2', "last_request_at" = '2010-03-31 15:58:37' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.2ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.1ms)
+Rendered prayers/_form (2.6ms)
+Rendered layouts/_header (1.5ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 38ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-03-31 08:58:40) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '1c7e8226df19979c04330a1a0c5a7bbe95e5ef3a4adaa7d8899855ce4be482e18fe59f062690bde4d7497fe50c57f2670e86a89280f43703fb3e30942745bfdb') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 15:58:40', "perishable_token" = '0hZ8MgJJcGRrSqMj84Hb', "last_request_at" = '2010-03-31 15:58:40' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_settings (0.2ms)
+Rendered layouts/_header (1.3ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 34ms (View: 15, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-03-31 08:59:01) [PUT]
+  Parameters: {"commit"=>"Update Profile", "action"=>"update", "_method"=>"put", "authenticity_token"=>"jvADR1QiFUeEADdeVyjoacelBSlglLJ5KmT33oO9feI=", "id"=>"3", "controller"=>"users", "user"=>{"location"=>"", "full_name"=>" Brandon", "email"=>"brandon@melissa-brandon.com"}}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '1c7e8226df19979c04330a1a0c5a7bbe95e5ef3a4adaa7d8899855ce4be482e18fe59f062690bde4d7497fe50c57f2670e86a89280f43703fb3e30942745bfdb') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 15:59:01', "perishable_token" = 'bMU9PX6B3gbXywUFTOrZ', "last_request_at" = '2010-03-31 15:59:01' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "lastname" = 'Brandon', "updated_at" = '2010-03-31 15:59:01', "firstname" = 'Brandon', "perishable_token" = 'zBTDQsyYcY6Ee3bLXHlM', "location" = '' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/users/current/edit
+Completed in 23ms (DB: 1) | 302 Found [http://localhost/users/3]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-03-31 08:59:01) [GET]
+  Parameters: {"action"=>"edit", "id"=>"current", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '1c7e8226df19979c04330a1a0c5a7bbe95e5ef3a4adaa7d8899855ce4be482e18fe59f062690bde4d7497fe50c57f2670e86a89280f43703fb3e30942745bfdb') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 15:59:01', "perishable_token" = '_i8aoQXYYuitmCv49bjL', "last_request_at" = '2010-03-31 15:59:01' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_settings (0.1ms)
+Rendered layouts/_header (1.3ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 28ms (View: 9, DB: 1) | 200 OK [http://localhost/users/current/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-03-31 08:59:05) [PUT]
+  Parameters: {"commit"=>"Update Profile", "action"=>"update", "_method"=>"put", "authenticity_token"=>"jvADR1QiFUeEADdeVyjoacelBSlglLJ5KmT33oO9feI=", "id"=>"3", "controller"=>"users", "user"=>{"location"=>"", "full_name"=>"Brandon Hasnen", "email"=>"brandon@melissa-brandon.com"}}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '1c7e8226df19979c04330a1a0c5a7bbe95e5ef3a4adaa7d8899855ce4be482e18fe59f062690bde4d7497fe50c57f2670e86a89280f43703fb3e30942745bfdb') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 15:59:05', "perishable_token" = 'LYrrPggPYxmHEmyTD6mF', "last_request_at" = '2010-03-31 15:59:05' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "lastname" = 'Hasnen', "updated_at" = '2010-03-31 15:59:05', "perishable_token" = '7rnHPtvig-kxaXBmMkcb' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/users/current/edit
+Completed in 23ms (DB: 1) | 302 Found [http://localhost/users/3]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-03-31 08:59:05) [GET]
+  Parameters: {"action"=>"edit", "id"=>"current", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '1c7e8226df19979c04330a1a0c5a7bbe95e5ef3a4adaa7d8899855ce4be482e18fe59f062690bde4d7497fe50c57f2670e86a89280f43703fb3e30942745bfdb') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 15:59:06', "perishable_token" = 'U7F-zvnFyHXumNUrHKJE', "last_request_at" = '2010-03-31 15:59:06' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_settings (0.1ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 28ms (View: 9, DB: 1) | 200 OK [http://localhost/users/current/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-03-31 08:59:09) [PUT]
+  Parameters: {"commit"=>"Update Profile", "action"=>"update", "_method"=>"put", "authenticity_token"=>"jvADR1QiFUeEADdeVyjoacelBSlglLJ5KmT33oO9feI=", "id"=>"3", "controller"=>"users", "user"=>{"location"=>"", "full_name"=>"Brandon Hansen", "email"=>"brandon@melissa-brandon.com"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '1c7e8226df19979c04330a1a0c5a7bbe95e5ef3a4adaa7d8899855ce4be482e18fe59f062690bde4d7497fe50c57f2670e86a89280f43703fb3e30942745bfdb') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 15:59:09', "perishable_token" = 'phgqE9WrBedqBB90mXJZ', "last_request_at" = '2010-03-31 15:59:09' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "lastname" = 'Hansen', "updated_at" = '2010-03-31 15:59:09', "perishable_token" = '7dwSnBdg2_uUxAXY39Jd' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/users/current/edit
+Completed in 85ms (DB: 1) | 302 Found [http://localhost/users/3]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-03-31 08:59:10) [GET]
+  Parameters: {"action"=>"edit", "id"=>"current", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '1c7e8226df19979c04330a1a0c5a7bbe95e5ef3a4adaa7d8899855ce4be482e18fe59f062690bde4d7497fe50c57f2670e86a89280f43703fb3e30942745bfdb') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 15:59:10', "perishable_token" = 'wkXETNYD2jicD5KgBSy9', "last_request_at" = '2010-03-31 15:59:10' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_settings (0.1ms)
+Rendered layouts/_header (1.5ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 28ms (View: 9, DB: 1) | 200 OK [http://localhost/users/current/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-03-31 09:00:15) [PUT]
+  Parameters: {"commit"=>"Update Profile", "action"=>"update", "_method"=>"put", "authenticity_token"=>"jvADR1QiFUeEADdeVyjoacelBSlglLJ5KmT33oO9feI=", "id"=>"3", "controller"=>"users", "user"=>{"location"=>"", "full_name"=>"Brandon", "email"=>"brandon@melissa-brandon.com"}}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '1c7e8226df19979c04330a1a0c5a7bbe95e5ef3a4adaa7d8899855ce4be482e18fe59f062690bde4d7497fe50c57f2670e86a89280f43703fb3e30942745bfdb') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 16:00:15', "perishable_token" = 'soSHJ52Ah4zntqgz10Aw', "last_request_at" = '2010-03-31 16:00:15' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+
+NoMethodError (undefined method `last=' for ["Brandon"]:Array):
+  app/models/user.rb:41:in `full_name='
+  app/controllers/users_controller.rb:74:in `update'
+  app/controllers/users_controller.rb:73:in `update'
+  haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+  /Library/Ruby/Gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+
+Rendered rescues/_trace (32.5ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-03-31 09:00:59) [PUT]
+  Parameters: {"commit"=>"Update Profile", "action"=>"update", "_method"=>"put", "authenticity_token"=>"jvADR1QiFUeEADdeVyjoacelBSlglLJ5KmT33oO9feI=", "id"=>"3", "controller"=>"users", "user"=>{"location"=>"", "full_name"=>"Brandon", "email"=>"brandon@melissa-brandon.com"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '1c7e8226df19979c04330a1a0c5a7bbe95e5ef3a4adaa7d8899855ce4be482e18fe59f062690bde4d7497fe50c57f2670e86a89280f43703fb3e30942745bfdb') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 16:00:59', "perishable_token" = 'O57VVWjNKWK7zMj7ZShz', "last_request_at" = '2010-03-31 16:00:59' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "lastname" = '', "updated_at" = '2010-03-31 16:00:59', "perishable_token" = 'hH69lL-LzBdQDvNkBy03' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/users/current/edit
+Completed in 25ms (DB: 1) | 302 Found [http://localhost/users/3]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-03-31 09:00:59) [GET]
+  Parameters: {"action"=>"edit", "id"=>"current", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '1c7e8226df19979c04330a1a0c5a7bbe95e5ef3a4adaa7d8899855ce4be482e18fe59f062690bde4d7497fe50c57f2670e86a89280f43703fb3e30942745bfdb') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 16:00:59', "perishable_token" = '0COd6xnNwkdVm3iCId9P', "last_request_at" = '2010-03-31 16:00:59' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_settings (0.1ms)
+Rendered layouts/_header (2.3ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 96ms (View: 10, DB: 1) | 200 OK [http://localhost/users/current/edit]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 09:01:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '1c7e8226df19979c04330a1a0c5a7bbe95e5ef3a4adaa7d8899855ce4be482e18fe59f062690bde4d7497fe50c57f2670e86a89280f43703fb3e30942745bfdb') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 16:01:15', "perishable_token" = 'mWJ9Y9RS81bIBzdVl8E-', "last_request_at" = '2010-03-31 16:01:15' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.1ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+Rendered prayers/_form (2.4ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 32ms (View: 6, DB: 1) | 200 OK [http://localhost/prayers]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-03-31 09:01:20) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '1c7e8226df19979c04330a1a0c5a7bbe95e5ef3a4adaa7d8899855ce4be482e18fe59f062690bde4d7497fe50c57f2670e86a89280f43703fb3e30942745bfdb') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 16:01:20', "perishable_token" = 'D4bUqz471SVk37Tcatfd', "last_request_at" = '2010-03-31 16:01:20' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_settings (0.1ms)
+Rendered layouts/_header (1.6ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 90ms (View: 9, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-31 09:01:27) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '1c7e8226df19979c04330a1a0c5a7bbe95e5ef3a4adaa7d8899855ce4be482e18fe59f062690bde4d7497fe50c57f2670e86a89280f43703fb3e30942745bfdb') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 16:01:27', "perishable_token" = 'BBcMLcYRB6ViG2fK4JXl', "last_request_at" = '2010-03-31 16:01:27' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 09:01:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 74ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-31 09:01:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (1.7ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 18ms (View: 6, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PasswordResetsController#new (for 127.0.0.1 at 2010-03-31 09:01:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"password_resets"}
+Rendering template within layouts/application
+Rendering password_resets/new
+Rendered layouts/_header (1.0ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 19ms (View: 7, DB: 0) | 200 OK [http://localhost/reset-password]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 10:48:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 74ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-31 10:48:49) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (1.6ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 17ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-31 10:49:33) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "email"=>"brandon@melissa-brandon.com"}, "action"=>"create", "authenticity_token"=>"1UMjqAujJ54oojsqjLqSY/sQJzIgaUAW2AY9IMs64os=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".email) = 'brandon@melissa-brandon.com') ORDER BY created_at DESC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 16ms (DB: 0) | 302 Found [http://localhost/user_sessions]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 10:49:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-31 10:49:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (1.6ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 21ms (View: 7, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-31 10:49:39) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "email"=>"brandon@melissa-brandon.com"}, "action"=>"create", "authenticity_token"=>"1UMjqAujJ54oojsqjLqSY/sQJzIgaUAW2AY9IMs64os=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".email) = 'brandon@melissa-brandon.com') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "login_count" = 2, "updated_at" = '2010-03-31 17:49:39', "perishable_token" = 'j3d7zeMtUeY-ovfC8xxe', "last_request_at" = '2010-03-31 17:49:39' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/
+Completed in 20ms (DB: 1) | 302 Found [http://localhost/user_sessions]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 10:49:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 17:49:40', "perishable_token" = 'qs-HK4tU6sHDfHuiNjD0', "last_request_at" = '2010-03-31 17:49:40' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.1ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.1ms)
+Rendered prayers/_form (2.4ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 31ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#create (for 127.0.0.1 at 2010-03-31 10:49:55) [POST]
+  Parameters: {"prayer"=>{"prayer"=>""}, "action"=>"create", "authenticity_token"=>"1UMjqAujJ54oojsqjLqSY/sQJzIgaUAW2AY9IMs64os=", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 17:49:55', "perishable_token" = '9zfkXwCEKKLCM4V6c7Ea', "last_request_at" = '2010-03-31 17:49:55' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+Completed in 83ms (View: 1, DB: 1) | 406 Not Acceptable [http://localhost/prayers]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:12:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 18:12:34', "perishable_token" = 'LoQn3zoCKvvu5I2ZHpui', "last_request_at" = '2010-03-31 18:12:34' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.2ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+Rendered reminders/_list_short (3.7ms)
+Rendered prayers/_form (2.5ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 41ms (View: 15, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:12:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:12:35', "perishable_token" = 'lmiH_nmqUuhWwyi8z9AU', "last_request_at" = '2010-03-31 18:12:35' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.2ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+  [4;35;1mReminder Load (0.1ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+Rendered reminders/_list_short (2.9ms)
+Rendered prayers/_form (2.4ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 97ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:12:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 18:12:36', "perishable_token" = 'VhO5OETH53UXo15jUELG', "last_request_at" = '2010-03-31 18:12:36' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.2ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+  [4;36;1mReminder Load (0.1ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+Rendered reminders/_list_short (3.0ms)
+Rendered prayers/_form (2.3ms)
+Rendered layouts/_header (1.3ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 93ms (View: 67, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#create (for 127.0.0.1 at 2010-03-31 11:14:06) [POST]
+  Parameters: {"prayer"=>{"prayer"=>"Sed nec lorem tortor. Vestibulum ultricies, enim ac pulvinar pulvinar, augue lacus scelerisque tellus, non consequat lectus purus vel eros. Mauris in arcu lacus. Phasellus sit amet odio lacinia erat accumsan rhoncus. Sed at magna at eros gravida gravida sit amet non sapien."}, "action"=>"create", "authenticity_token"=>"1UMjqAujJ54oojsqjLqSY/sQJzIgaUAW2AY9IMs64os=", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:14:06', "perishable_token" = 'scxyGTa_LkDHxzqeBjsE', "last_request_at" = '2010-03-31 18:14:06' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Create (0.5ms)[0m   [0mINSERT INTO "prayers" ("prayer", "answered", "created_at", "updated_at", "num_responses", "user_id") VALUES('Sed nec lorem tortor. Vestibulum ultricies, enim ac pulvinar pulvinar, augue lacus scelerisque tellus, non consequat lectus purus vel eros. Mauris in arcu lacus. Phasellus sit amet odio lacinia erat accumsan rhoncus. Sed at magna at eros gravida gravida sit amet non sapien.', 'f', '2010-03-31 18:14:06', '2010-03-31 18:14:06', NULL, 3)[0m
+  [4;36;1mReminder Load (0.1ms)[0m   [0;1mSELECT "reminders".id FROM "reminders" WHERE ("reminders"."user_id" = 1 AND "reminders".prayer_id = 1) LIMIT 1[0m
+  [4;35;1mReminder Create (0.2ms)[0m   [0mINSERT INTO "reminders" ("created_at", "updated_at", "user_id", "prayer_id") VALUES('2010-03-31 18:14:06', '2010-03-31 18:14:06', 1, 1)[0m
+Rendering prayers/create
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:1)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:2)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:3)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:4)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:5)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:7)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from extract_options! at /Users/brandon/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/array/extract_options.rb:15)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from generated code (/Users/brandon/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route.rb:160)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from answered_path at (eval):3)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from answered_path at (eval):3)
+Rendered prayers/_prayer (3.8ms)
+Completed in 48ms (View: 8, DB: 2) | 200 OK [http://localhost/prayers]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:14:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:14:08', "perishable_token" = 'oG74N9s5_PiD7pQK4rBI', "last_request_at" = '2010-03-31 18:14:08' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.4ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+  [4;35;1mReminder Load (0.3ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+Rendered reminders/_list_short (3.2ms)
+Rendered prayers/_form (2.3ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.8ms)
+Rendered layouts/_header (1.5ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 165ms (View: 10, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:14:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:14:10', "perishable_token" = 'RUN7kuugNZUn3HDMnp0P', "last_request_at" = '2010-03-31 18:14:10' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.3ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+  [4;35;1mReminder Load (0.1ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+Rendered reminders/_list_short (3.0ms)
+Rendered prayers/_form (2.3ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.7ms)
+Rendered layouts/_header (1.3ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 36ms (View: 10, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mReminder Load (0.5ms)[0m   [0;1mSELECT * FROM "reminders" [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mReminder Load (0.3ms)[0m   [0;1mSELECT * FROM "reminders" LIMIT 1[0m
+  [4;35;1mPrayer Load (0.1ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 1) ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mReminder Load (0.3ms)[0m   [0;1mSELECT * FROM "reminders" LIMIT 1[0m
+  [4;35;1mPrayer Load (0.1ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 1) ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mReminder Load (0.3ms)[0m   [0;1mSELECT * FROM "reminders" LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) ORDER BY created_at DESC[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" ORDER BY created_at DESC[0m
+
+
+Processing PrayersController#create (for 127.0.0.1 at 2010-03-31 11:17:03) [POST]
+  Parameters: {"prayer"=>{"prayer"=>"Sed nec lorem tortor. Vestibulum ultricies, enim ac pulvinar pulvinar, augue lacus scelerisque tellus, non consequat lectus purus vel eros. Mauris in arcu lacus. Phasellus sit amet odio lacinia erat accumsan rhoncus. Sed at magna at eros gravida gravida sit amet non sapien."}, "action"=>"create", "authenticity_token"=>"1UMjqAujJ54oojsqjLqSY/sQJzIgaUAW2AY9IMs64os=", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:17:03', "perishable_token" = 'ZoA1d5iaqCJSuvr6s4VI', "last_request_at" = '2010-03-31 18:17:03' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Create (0.2ms)[0m   [0mINSERT INTO "prayers" ("prayer", "answered", "created_at", "updated_at", "num_responses", "user_id") VALUES('Sed nec lorem tortor. Vestibulum ultricies, enim ac pulvinar pulvinar, augue lacus scelerisque tellus, non consequat lectus purus vel eros. Mauris in arcu lacus. Phasellus sit amet odio lacinia erat accumsan rhoncus. Sed at magna at eros gravida gravida sit amet non sapien.', 'f', '2010-03-31 18:17:03', '2010-03-31 18:17:03', NULL, 3)[0m
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT "reminders".id FROM "reminders" WHERE ("reminders"."user_id" = 3 AND "reminders".prayer_id = 5) LIMIT 1[0m
+  [4;35;1mReminder Create (0.2ms)[0m   [0mINSERT INTO "reminders" ("created_at", "updated_at", "user_id", "prayer_id") VALUES('2010-03-31 18:17:03', '2010-03-31 18:17:03', 3, 5)[0m
+Rendering prayers/create
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:1)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:2)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:3)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:4)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:5)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:7)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from extract_options! at /Users/brandon/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/array/extract_options.rb:15)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from generated code (/Users/brandon/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route.rb:160)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from answered_path at (eval):3)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from answered_path at (eval):3)
+Rendered prayers/_prayer (3.5ms)
+Completed in 75ms (View: 4, DB: 2) | 200 OK [http://localhost/prayers]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:17:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:17:04', "perishable_token" = 'fdUrjLhrGF7o450gqvvL', "last_request_at" = '2010-03-31 18:17:04' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+  [4;35;1mReminder Load (0.2ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+  [4;36;1mPrayer Load (0.2ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 5) ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (6.6ms)
+Rendered prayers/_form (1.6ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.1ms)
+Rendered layouts/_header (1.5ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 100ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#show (for 127.0.0.1 at 2010-03-31 11:17:07) [GET]
+  Parameters: {"action"=>"show", "id"=>"5", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:17:07', "perishable_token" = 'T8TTH50pEZrJJu9foPZn', "last_request_at" = '2010-03-31 18:17:07' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.2ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 5) ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".prayer_id = 5) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering prayers/show
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:1)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:2)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:3)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:4)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:5)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:7)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from extract_options! at /Users/brandon/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/array/extract_options.rb:15)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from build_expiry at /Users/brandon/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:340)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from generated code (/Users/brandon/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route.rb:160)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from answered_path at (eval):3)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from answered_path at (eval):3)
+Rendered prayers/_prayer (4.3ms)
+Rendered comments/_form (2.2ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 44ms (View: 17, DB: 1) | 200 OK [http://localhost/prayers/5]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:18:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 18:18:23', "perishable_token" = 'YAdSm0EErrYijSFUMvSU', "last_request_at" = '2010-03-31 18:18:23' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.4ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+  [4;36;1mReminder Load (0.3ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+  [4;35;1mPrayer Load (0.2ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 5) ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (6.3ms)
+Rendered reminders/_box (7.1ms)
+Rendered prayers/_form (1.4ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.1ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 47ms (View: 20, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#create (for 127.0.0.1 at 2010-03-31 11:18:47) [POST]
+  Parameters: {"prayer"=>{"prayer"=>"The way we figure it, photos are the perfect way to share the stories that make travel so great. So we want to bring you into the picture.\n\nWe’ve had thousands of spectacular entries already. Here are some of our favourites. We hope they inspire you to join in the storytelling."}, "action"=>"create", "authenticity_token"=>"1UMjqAujJ54oojsqjLqSY/sQJzIgaUAW2AY9IMs64os=", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 18:18:47', "perishable_token" = 'xJyawS1ndzCeZawJApp7', "last_request_at" = '2010-03-31 18:18:47' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Create (0.2ms)[0m   [0;1mINSERT INTO "prayers" ("prayer", "answered", "created_at", "updated_at", "num_responses", "user_id") VALUES('The way we figure it, photos are the perfect way to share the stories that make travel so great. So we want to bring you into the picture.
+
+We’ve had thousands of spectacular entries already. Here are some of our favourites. We hope they inspire you to join in the storytelling.', 'f', '2010-03-31 18:18:47', '2010-03-31 18:18:47', NULL, 3)[0m
+  [4;35;1mReminder Load (0.2ms)[0m   [0mSELECT "reminders".id FROM "reminders" WHERE ("reminders"."user_id" = 3 AND "reminders".prayer_id = 6) LIMIT 1[0m
+  [4;36;1mReminder Create (0.2ms)[0m   [0;1mINSERT INTO "reminders" ("created_at", "updated_at", "user_id", "prayer_id") VALUES('2010-03-31 18:18:47', '2010-03-31 18:18:47', 3, 6)[0m
+Rendering prayers/create
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:1)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:2)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:3)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:4)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:5)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:7)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from extract_options! at /Users/brandon/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/array/extract_options.rb:15)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from generated code (/Users/brandon/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route.rb:160)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from answered_path at (eval):3)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from answered_path at (eval):3)
+Rendered prayers/_prayer (3.1ms)
+Completed in 118ms (View: 4, DB: 2) | 200 OK [http://localhost/prayers]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:18:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 18:18:48', "perishable_token" = 'CbpjOQeR7RNg4p4jbe1H', "last_request_at" = '2010-03-31 18:18:48' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.4ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+  [4;36;1mReminder Load (0.3ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+  [4;35;1mPrayer Load (0.2ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 5) ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mPrayer Load (0.2ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 6) ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (7.0ms)
+Rendered reminders/_box (7.3ms)
+Rendered prayers/_form (1.6ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.1ms)
+Rendered layouts/_header (1.5ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 104ms (View: 76, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#show (for 127.0.0.1 at 2010-03-31 11:18:54) [GET]
+  Parameters: {"action"=>"show", "id"=>"6", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 18:18:54', "perishable_token" = 'wwEVbcFZYL3UTVmlHIH6', "last_request_at" = '2010-03-31 18:18:54' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.2ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 6) ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".prayer_id = 6) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering prayers/show
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:1)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:2)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:3)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:4)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:5)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:7)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from extract_options! at /Users/brandon/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/array/extract_options.rb:15)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from build_expiry at /Users/brandon/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:340)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from generated code (/Users/brandon/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route.rb:160)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from answered_path at (eval):3)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from answered_path at (eval):3)
+Rendered prayers/_prayer (4.2ms)
+Rendered comments/_form (1.8ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 37ms (View: 11, DB: 1) | 200 OK [http://localhost/prayers/6]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:19:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:19:52', "perishable_token" = 'ccKgELYnmnMNn2IH1mM7', "last_request_at" = '2010-03-31 18:19:52' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.4ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+  [4;35;1mReminder Load (0.3ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+  [4;36;1mPrayer Load (0.2ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 5) ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mPrayer Load (0.2ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 6) ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (7.4ms)
+Rendered reminders/_box (7.6ms)
+Rendered reminders/_list_short (0.5ms)
+Rendered reminders/_box (0.7ms)
+Rendered prayers/_form (1.5ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.1ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 111ms (View: 20, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:20:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:20:04', "perishable_token" = 'C10W5Oj6kz-Y5RuXFMgg', "last_request_at" = '2010-03-31 18:20:04' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.4ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.1ms)
+  [4;35;1mReminder Load (0.3ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+  [4;36;1mPrayer Load (0.2ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 5) ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mPrayer Load (0.2ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 6) ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (7.3ms)
+Rendered reminders/_box (7.6ms)
+Rendered prayers/_form (1.5ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.1ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 107ms (View: 20, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#answered (for 127.0.0.1 at 2010-03-31 11:20:09) [GET]
+  Parameters: {"action"=>"answered", "id"=>"4", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:20:09', "perishable_token" = 'IEI6kieCoewe2PtPIoVu', "last_request_at" = '2010-03-31 18:20:09' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.2ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 4) ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mPrayer Update (0.2ms)[0m   [0;1mUPDATE "prayers" SET "updated_at" = '2010-03-31 18:20:09', "answered" = 't' WHERE "id" = 4[0m
+Redirected to http://localhost:3000/
+Completed in 42ms (DB: 1) | 302 Found [http://localhost/4/answered]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:20:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:20:10', "perishable_token" = 'vbJn1NotMcoZg9j3Dd0n', "last_request_at" = '2010-03-31 18:20:10' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.3ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.1ms)
+  [4;35;1mReminder Load (0.3ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+  [4;36;1mPrayer Load (0.2ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 5) ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mPrayer Load (0.2ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 6) ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (6.9ms)
+Rendered reminders/_box (7.2ms)
+Rendered prayers/_form (1.5ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.1ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 105ms (View: 15, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#answered (for 127.0.0.1 at 2010-03-31 11:21:58) [GET]
+  Parameters: {"action"=>"answered", "id"=>"6", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 18:21:58', "perishable_token" = 'phN1MAjgtX3o-ObqKYxO', "last_request_at" = '2010-03-31 18:21:58' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.2ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 6) ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mPrayer Update (0.3ms)[0m   [0mUPDATE "prayers" SET "updated_at" = '2010-03-31 18:21:58', "answered" = 't' WHERE "id" = 6[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `delete_all_by_prayer_id' for #<Class:0x1036dfca0>):
+  searchlogic (2.3.9) lib/searchlogic/named_scopes/conditions.rb:88:in `method_missing'
+  searchlogic (2.3.9) lib/searchlogic/named_scopes/association_conditions.rb:19:in `method_missing'
+  searchlogic (2.3.9) lib/searchlogic/named_scopes/association_ordering.rb:27:in `method_missing'
+  searchlogic (2.3.9) lib/searchlogic/named_scopes/ordering.rb:30:in `method_missing'
+  searchlogic (2.3.9) lib/searchlogic/named_scopes/or_conditions.rb:24:in `method_missing'
+  /Users/brandon/.gem/ruby/1.8/gems/will_paginate-2.3.11/lib/will_paginate/finder.rb:170:in `method_missing'
+  app/controllers/prayers_controller.rb:24:in `answered'
+  app/controllers/prayers_controller.rb:22:in `answered'
+  haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+  /Library/Ruby/Gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+
+Rendered rescues/_trace (32.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrayersController#answered (for 127.0.0.1 at 2010-03-31 11:22:15) [GET]
+  Parameters: {"action"=>"answered", "id"=>"6", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:22:15', "perishable_token" = 'obXJtNNCqkJkVjmX38c7', "last_request_at" = '2010-03-31 18:22:15' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.2ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 6) ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mReminder Delete all (10.8ms)[0m   [0;1mDELETE FROM "reminders" WHERE ("reminders"."prayer_id" = 6) [0m
+Redirected to http://localhost:3000/
+Completed in 38ms (DB: 12) | 302 Found [http://localhost/6/answered]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:22:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:22:15', "perishable_token" = 'R1vhT3tCF1H4lky4Z6qs', "last_request_at" = '2010-03-31 18:22:15' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.3ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.1ms)
+  [4;35;1mReminder Load (0.2ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+  [4;36;1mPrayer Load (0.2ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 5) ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (6.1ms)
+Rendered reminders/_box (6.3ms)
+Rendered prayers/_form (1.4ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.7ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 40ms (View: 13, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#answered (for 127.0.0.1 at 2010-03-31 11:23:11) [GET]
+  Parameters: {"action"=>"answered", "id"=>"5", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 18:23:11', "perishable_token" = 'WXoaFmxk_zZ-Qv7DGyVE', "last_request_at" = '2010-03-31 18:23:11' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.2ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 5) ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mPrayer Update (0.2ms)[0m   [0mUPDATE "prayers" SET "updated_at" = '2010-03-31 18:23:11', "answered" = 't' WHERE "id" = 5[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `remove_by_prayer' for #<Class:0x1031b1ff8>):
+  searchlogic (2.3.9) lib/searchlogic/named_scopes/conditions.rb:88:in `method_missing'
+  searchlogic (2.3.9) lib/searchlogic/named_scopes/association_conditions.rb:19:in `method_missing'
+  searchlogic (2.3.9) lib/searchlogic/named_scopes/association_ordering.rb:27:in `method_missing'
+  searchlogic (2.3.9) lib/searchlogic/named_scopes/ordering.rb:30:in `method_missing'
+  searchlogic (2.3.9) lib/searchlogic/named_scopes/or_conditions.rb:24:in `method_missing'
+  /Users/brandon/.gem/ruby/1.8/gems/will_paginate-2.3.11/lib/will_paginate/finder.rb:170:in `method_missing'
+  app/controllers/prayers_controller.rb:26:in `answered'
+  app/controllers/prayers_controller.rb:22:in `answered'
+  haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+  /Library/Ruby/Gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+
+Rendered rescues/_trace (32.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrayersController#answered (for 127.0.0.1 at 2010-03-31 11:23:32) [GET]
+  Parameters: {"action"=>"answered", "id"=>"5", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:23:32', "perishable_token" = 'rQTOUinovjYkdGDhyBvW', "last_request_at" = '2010-03-31 18:23:32' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.2ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 5) ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mReminder Delete all (1.3ms)[0m   [0;1mDELETE FROM "reminders" WHERE ("reminders"."prayer_id" = 5) [0m
+Redirected to http://localhost:3000/
+Completed in 94ms (DB: 2) | 302 Found [http://localhost/5/answered]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:23:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:23:32', "perishable_token" = 'Cx3k5SmNtya6NYYQaEWh', "last_request_at" = '2010-03-31 18:23:32' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.2ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;35;1mReminder Load (0.1ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+Rendered reminders/_list_short (3.7ms)
+Rendered reminders/_box (3.9ms)
+Rendered prayers/_form (2.4ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 36ms (View: 10, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#answered (for 127.0.0.1 at 2010-03-31 11:24:16) [GET]
+  Parameters: {"action"=>"answered", "id"=>"5", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 18:24:16', "perishable_token" = 'vYJvtxxn3c2yLWktlexL', "last_request_at" = '2010-03-31 18:24:16' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.2ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 5) ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mReminder Delete all (11.5ms)[0m   [0mDELETE FROM "reminders" WHERE ("reminders"."prayer_id" = 5) [0m
+Redirected to http://localhost:3000/
+Completed in 103ms (DB: 12) | 302 Found [http://localhost/5/answered]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:24:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (6.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 18:24:16', "perishable_token" = 'ZPFUO8VUg_KAYE95DRA-', "last_request_at" = '2010-03-31 18:24:16' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.2ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.1ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined method `count_all' for #<Class:0x102f316c0>) on line #1 of app/views/reminders/_box.erb:
+1: <% if(user.reminders.count_all)%>
+2: <div class="info_box box">
+3: 	<h2>Reminders</h2>
+4: 	<%= render :partial => 'reminders/list_short', :locals => { :user => user } %>
+
+    searchlogic (2.3.9) lib/searchlogic/named_scopes/conditions.rb:88:in `method_missing'
+    searchlogic (2.3.9) lib/searchlogic/named_scopes/association_conditions.rb:19:in `method_missing'
+    searchlogic (2.3.9) lib/searchlogic/named_scopes/association_ordering.rb:27:in `method_missing'
+    searchlogic (2.3.9) lib/searchlogic/named_scopes/ordering.rb:30:in `method_missing'
+    searchlogic (2.3.9) lib/searchlogic/named_scopes/or_conditions.rb:24:in `method_missing'
+    /Users/brandon/.gem/ruby/1.8/gems/will_paginate-2.3.11/lib/will_paginate/finder.rb:170:in `method_missing'
+    /Users/brandon/.gem/ruby/1.8/gems/will_paginate-2.3.11/lib/will_paginate/finder.rb:170:in `method_missing'
+    app/views/reminders/_box.erb:1
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/prayers/index.html.erb:2
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/prayers_controller.rb:10:in `index'
+    haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    /Library/Ruby/Gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+
+Rendered rescues/_trace (51.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrayersController#answered (for 127.0.0.1 at 2010-03-31 11:24:24) [GET]
+  Parameters: {"action"=>"answered", "id"=>"5", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:24:24', "perishable_token" = 'y43-qCdnVfE4IWBDk2KZ', "last_request_at" = '2010-03-31 18:24:24' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.3ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 5) ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mReminder Delete all (0.6ms)[0m   [0;1mDELETE FROM "reminders" WHERE ("reminders"."prayer_id" = 5) [0m
+Redirected to http://localhost:3000/
+Completed in 99ms (DB: 2) | 302 Found [http://localhost/5/answered]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:24:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:24:24', "perishable_token" = 'g-lVOrjlbfrtAMTRhd0L', "last_request_at" = '2010-03-31 18:24:24' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.2ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.1ms)
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+  [4;36;1mReminder Load (0.1ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+Rendered reminders/_list_short (0.5ms)
+Rendered reminders/_box (4.6ms)
+Rendered prayers/_form (2.3ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 41ms (View: 13, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#answered (for 127.0.0.1 at 2010-03-31 11:24:35) [GET]
+  Parameters: {"action"=>"answered", "id"=>"5", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:24:35', "perishable_token" = 'yXC53Mlyfntt9K8NEJcF', "last_request_at" = '2010-03-31 18:24:35' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.2ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 5) ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mReminder Delete all (10.0ms)[0m   [0;1mDELETE FROM "reminders" WHERE ("reminders"."prayer_id" = 5) [0m
+Redirected to http://localhost:3000/
+Completed in 102ms (DB: 11) | 302 Found [http://localhost/5/answered]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:24:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:24:35', "perishable_token" = 'ngt8B3B8aENHhvO-LkUA', "last_request_at" = '2010-03-31 18:24:35' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.2ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.1ms)
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+Rendered reminders/_box (3.9ms)
+Rendered prayers/_form (2.3ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 39ms (View: 13, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#create (for 127.0.0.1 at 2010-03-31 11:24:51) [POST]
+  Parameters: {"prayer"=>{"prayer"=>"Finally, Ethan Daniels captures a diver playing with a manta in Indonesia"}, "action"=>"create", "authenticity_token"=>"1UMjqAujJ54oojsqjLqSY/sQJzIgaUAW2AY9IMs64os=", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 18:24:51', "perishable_token" = 'BdmiTAZSyeHNfao78OVL', "last_request_at" = '2010-03-31 18:24:51' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Create (0.2ms)[0m   [0;1mINSERT INTO "prayers" ("prayer", "answered", "created_at", "updated_at", "num_responses", "user_id") VALUES('Finally, Ethan Daniels captures a diver playing with a manta in Indonesia', 'f', '2010-03-31 18:24:51', '2010-03-31 18:24:51', NULL, 3)[0m
+  [4;35;1mReminder Load (0.1ms)[0m   [0mSELECT "reminders".id FROM "reminders" WHERE ("reminders"."user_id" = 3 AND "reminders".prayer_id = 7) LIMIT 1[0m
+  [4;36;1mReminder Create (0.2ms)[0m   [0;1mINSERT INTO "reminders" ("created_at", "updated_at", "user_id", "prayer_id") VALUES('2010-03-31 18:24:51', '2010-03-31 18:24:51', 3, 7)[0m
+Rendering prayers/create
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:1)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:2)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:3)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:4)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:5)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:7)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from extract_options! at /Users/brandon/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/array/extract_options.rb:15)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from generated code (/Users/brandon/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route.rb:160)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from answered_path at (eval):3)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from answered_path at (eval):3)
+Rendered prayers/_prayer (3.0ms)
+Completed in 65ms (View: 4, DB: 1) | 200 OK [http://localhost/prayers]
+
+
+Processing PrayersController#answered (for 127.0.0.1 at 2010-03-31 11:24:51) [GET]
+  Parameters: {"action"=>"answered", "id"=>"5", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 18:24:51', "perishable_token" = 'WdJb_16Oz0Zg6Y9NIC-j', "last_request_at" = '2010-03-31 18:24:51' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.3ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 5) ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mReminder Delete all (0.6ms)[0m   [0mDELETE FROM "reminders" WHERE ("reminders"."prayer_id" = 5) [0m
+Redirected to http://localhost:3000/
+Completed in 88ms (DB: 1) | 302 Found [http://localhost/5/answered]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:24:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 18:24:51', "perishable_token" = 'SRTR9SDXFEdTZr6Je9g5', "last_request_at" = '2010-03-31 18:24:51' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.3ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.1ms)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+  [4;35;1mReminder Load (0.1ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+  [4;36;1mPrayer Load (0.2ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 7) ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (3.2ms)
+Rendered reminders/_box (6.9ms)
+Rendered prayers/_form (1.5ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (1.8ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 41ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PrayersController#show (for 127.0.0.1 at 2010-03-31 11:24:53) [GET]
+  Parameters: {"action"=>"show", "id"=>"7", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 18:24:53', "perishable_token" = 'SN2ria7shDiLCW2pKUIk', "last_request_at" = '2010-03-31 18:24:53' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.2ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 7) ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".prayer_id = 7) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering prayers/show
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:1)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:2)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC[0m
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:3)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:4)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:5)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from _run_erb_app47views47prayers47_prayer46erb_locals_object_prayer at /Users/brandon/Documents/rails/Deesis/app/views/prayers/_prayer.erb:7)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from extract_options! at /Users/brandon/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/array/extract_options.rb:15)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from build_expiry at /Users/brandon/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:340)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from generated code (/Users/brandon/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route.rb:160)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from answered_path at (eval):3)
+DEPRECATION WARNING: @prayer will no longer be implicitly assigned to prayer. (called from answered_path at (eval):3)
+Rendered prayers/_prayer (4.0ms)
+Rendered comments/_form (1.8ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 99ms (View: 11, DB: 2) | 200 OK [http://localhost/prayers/7]
+
+
+Processing PrayersController#answered (for 127.0.0.1 at 2010-03-31 11:24:55) [GET]
+  Parameters: {"action"=>"answered", "id"=>"7", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 18:24:55', "perishable_token" = 'S_WjqvUmpuGYvK3ZhC1b', "last_request_at" = '2010-03-31 18:24:55' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.2ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 7) ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mPrayer Update (0.2ms)[0m   [0;1mUPDATE "prayers" SET "updated_at" = '2010-03-31 18:24:55', "answered" = 't' WHERE "id" = 7[0m
+  [4;35;1mReminder Delete all (1.1ms)[0m   [0mDELETE FROM "reminders" WHERE ("reminders"."prayer_id" = 7) [0m
+Redirected to http://localhost:3000/
+Completed in 45ms (DB: 2) | 302 Found [http://localhost/7/answered]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:24:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 18:24:55', "perishable_token" = 'oWN6mlJjh-7nykWPc5kI', "last_request_at" = '2010-03-31 18:24:55' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.2ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.1ms)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 3) [0m
+Rendered reminders/_box (3.6ms)
+Rendered prayers/_form (2.4ms)
+Rendered layouts/_header (1.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 37ms (View: 10, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mUser Delete all (1.5ms)[0m   [0mDELETE FROM "users" WHERE 1=1[0m
+  [4;36;1mPrayer Delete all (1.5ms)[0m   [0;1mDELETE FROM "prayers" WHERE 1=1[0m
+  [4;35;1mReminder Delete all (1.3ms)[0m   [0mDELETE FROM "reminders" WHERE 1=1[0m
+  [4;36;1mComment Delete all (0.7ms)[0m   [0;1mDELETE FROM "comments" WHERE 1=1[0m
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-31 11:25:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-31 11:25:41) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 20ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-31 11:28:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (5.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 23ms (View: 12, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-31 11:28:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC LIMIT 1[0m
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 20ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PasswordResetsController#new (for 127.0.0.1 at 2010-03-31 11:28:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"password_resets"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering password_resets/new
+Rendered layouts/_header (0.9ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 17ms (View: 3, DB: 0) | 200 OK [http://localhost/reset-password]
+
+
+Processing PasswordResetsController#create (for 127.0.0.1 at 2010-03-31 11:28:12) [POST]
+  Parameters: {"commit"=>"Reset Password", "action"=>"create", "authenticity_token"=>"1UMjqAujJ54oojsqjLqSY/sQJzIgaUAW2AY9IMs64os=", "controller"=>"password_resets", "email"=>""}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = '') ORDER BY created_at DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering password_resets/new
+Rendered layouts/_header (1.0ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 77ms (View: 4, DB: 0) | 200 OK [http://localhost/password_resets]

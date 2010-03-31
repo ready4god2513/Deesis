@@ -5,4 +5,15 @@ class Reminder < ActiveRecord::Base
   validates_uniqueness_of :user_id, :scope => :prayer_id
   validates_presence_of :user_id, :prayer_id
   
+  
+  def self.prayer_by_user(prayer, user)
+     self.prayer_id = prayer.id
+     self.user_id = user.id
+     self.save
+  end
+  
+  def self.remove_by_prayer(prayer)
+    self.delete_all(:prayer_id => prayer.id)
+  end
+  
 end

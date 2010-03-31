@@ -1,0 +1,5 @@
+<ul>
+	<% user.reminders.each do |reminder| %>
+		<li><%= link_to format_output(reminder.prayer.prayer), prayer_path(reminder.prayer) %></li>
+	<% end %>
+</ul>

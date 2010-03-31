@@ -21,6 +21,10 @@ class PrayersController < ProtectedController
 
     respond_to do |format|
       if @prayer.save
+        
+        # Remove reminders
+        Reminder.remove_by_prayer(@prayer)
+        
         flash[:notice] = "Answered prayers are so encouraging, aren't they?"
         format.html { redirect_to root_url }
       else
@@ -61,6 +65,10 @@ class PrayersController < ProtectedController
 
     respond_to do |format|
       if @prayer.save
+        
+        # Add this prayer to the user's list of reminders
+        Reminder.prayer_by_user(@prayer, current_user)
+        
         
         flash[:notice] = 'Your prayer has been added'
         format.html { redirect_to(@prayer) }

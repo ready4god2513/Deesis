@@ -36,7 +36,14 @@ class User < ActiveRecord::Base
   def full_name=(name)
     split = name.split(' ', 2)
     self.firstname = split.first
-    self.lastname = split.last
+    
+    if(split.first == split.last)
+      self.lastname = ''
+    else
+      self.lastname = split.last
+    end
+    
+    
   end
   
   
