@@ -18897,3 +18897,48 @@ Rendering users/new
 Rendered layouts/_header (10.3ms)
 Rendered layouts/_footer (1.0ms)
 Completed in 59ms (View: 27, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing PasswordResetsController#new (for 127.0.0.1 at 2010-03-30 22:22:23) [GET]
+  Parameters: {"action"=>"new", "controller"=>"password_resets"}
+Rendering template within layouts/application
+Rendering password_resets/new
+Rendered layouts/_header (2.4ms)
+Rendered layouts/_footer (1.0ms)
+Completed in 43ms (View: 8, DB: 0) | 200 OK [http://localhost/reset-password]
+
+
+Processing PasswordResetsController#new (for 127.0.0.1 at 2010-03-30 22:22:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"password_resets"}
+Rendering template within layouts/application
+Rendering password_resets/new
+Rendered layouts/_header (2.4ms)
+Rendered layouts/_footer (1.2ms)
+Completed in 143ms (View: 15, DB: 0) | 200 OK [http://localhost/reset-password]
+
+
+Processing PasswordResetsController#new (for 127.0.0.1 at 2010-03-30 22:22:50) [GET]
+  Parameters: {"action"=>"new", "controller"=>"password_resets"}
+Rendering template within layouts/application
+Rendering password_resets/new
+Rendered layouts/_header (2.4ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 50ms (View: 15, DB: 0) | 200 OK [http://localhost/reset-password]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-30 22:22:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (1.5ms)
+Completed in 145ms (View: 21, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-30 22:24:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (4.0ms)
+Rendered layouts/_footer (1.0ms)
+Completed in 47ms (View: 14, DB: 0) | 200 OK [http://localhost/login]
