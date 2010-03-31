@@ -16579,3 +16579,56 @@ Rendered prayers/_form (5.8ms)
 Rendered layouts/_header (3.6ms)
 Rendered layouts/_footer (1.0ms)
 Completed in 168ms (View: 14, DB: 2) | 200 OK [http://localhost/prayers]
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateComments (20091113070702)
+Migrating to CreatePrayers (20091113070800)
+Migrating to CreateUsers (20091115001523)
+Migrating to AddAttachmentsProfilePicToUser (20091119050323)
+Migrating to Answered (20091214004914)
+Migrating to MissingColumnsInReminders (20100325225154)
+Migrating to CreateReminders (20100325232033)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("activities")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("activity_stream_preferences")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_info('activity_stream_preferences_idx')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("activity_stream_totals")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_info('activity_stream_totals_idx')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_list("activity_streams")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_info('activity_streams_by_object')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('activity_streams_by_indirect_object')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_info('activity_streams_by_actor')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("articles")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("prayers")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("reminders")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("settings")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-30 19:57:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 119ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-30 19:57:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (9.9ms)
+Rendered layouts/_footer (2.8ms)
+Completed in 104ms (View: 71, DB: 0) | 200 OK [http://localhost/login]
