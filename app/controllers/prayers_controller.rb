@@ -4,7 +4,6 @@ class PrayersController < ProtectedController
   # GET /prayers.xml
   def index
     @prayers = Prayer.search(params[:search], params[:page], params[:per])
-    @comments = Comment.all(:limit => 2)
     @prayer = Prayer.new
     
     respond_to do |format|
@@ -67,8 +66,8 @@ class PrayersController < ProtectedController
       if @prayer.save
         
         # Add this prayer to the user's list of reminders
-        Reminder.prayer_by_user(@prayer, current_user)
-        
+        @reminder = Reminder.new({ :prayer_id => @prayer.id, :user_id => current_user.id})
+        @reminder.save
         
         flash[:notice] = 'Your prayer has been added'
         format.html { redirect_to(@prayer) }
@@ -85,7 +84,7 @@ class PrayersController < ProtectedController
     @prayer = Prayer.find(params[:id])
     
     # Ensure that the prayer belongs to the current user
-    if !current_user || @prayer.user_id != current_user.id
+    if @prayer.user_id != current_user.id
       redirect_to root_url
     end
 
@@ -94,6 +93,7 @@ class PrayersController < ProtectedController
         
         flash[:notice] = 'Prayer was successfully updated.'
         format.html { redirect_to root_url }
+        format.js {  }
       else
         format.html { redirect_to root_url }
       end

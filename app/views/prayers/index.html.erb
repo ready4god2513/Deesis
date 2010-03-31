@@ -2,13 +2,15 @@
 <%= sidebar(render :partial => 'reminders/box', :locals => { :user => current_user })  %>
 
 <% if current_user %>
-	<%= render :partial => 'prayers/form' %>
+	<%= render :partial => 'form' %>
 <% end %>
 
 <div id="prayers_list">
-	<%= render :partial => 'prayers/prayer', :collection => @prayers %>
+	<%= render :partial => 'prayer', :collection => @prayers %>
 	
 	<% unless @prayers.next_page.nil? %>
-		<div id="pagination"><%= link_to "More Prayers", prayers_path, :class => 'round more' %></div>
+		<div id="pagination">
+			<%= link_to "More Prayers", prayers_path, :class => 'round more' %>
+		</div>
 	<% end %>
 </div>

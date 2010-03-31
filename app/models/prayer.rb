@@ -12,10 +12,13 @@ class Prayer < ActiveRecord::Base
   
   # NAMED SCOPES
   default_scope :order => 'created_at DESC',
-                :limit => 10
+                :limit => 10,
+                :conditions => { :private => false }
                 
   def self.find_unanswered_prayers
-    find(:all, :conditions => {:answered => false})
+    find(:all, 
+      :conditions => {:answered => false, :private => false }
+    )
   end
   
   def self.search(search, page, per)
@@ -23,8 +26,9 @@ class Prayer < ActiveRecord::Base
       per = 10
     end
     
-    paginate :per_page => per, :page => page, 
-              :conditions => ['prayer like ? AND answered like ?', "%#{search}%", false]
+    paginate :per_page => per, 
+              :page => page, 
+              :conditions => ['prayer like ? AND answered like ? AND private = ?', "%#{search}%", false, false]
   end
   
   def self.answered(search, page, per)
@@ -32,8 +36,9 @@ class Prayer < ActiveRecord::Base
       per = 10
     end
     
-    paginate :per_page => per, :page => page, 
-              :conditions => ['prayer like ? AND answered like ?', "%#{search}%", true]
+    paginate :per_page => per, 
+              :page => page, 
+              :conditions => ['prayer like ? AND answered like ? AND private = ?', "%#{search}%", true, false]
   end
   
   def self.fp

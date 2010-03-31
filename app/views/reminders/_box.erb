@@ -1,6 +1,6 @@
 <% if( user.reminders.count > 0)%>
 	<div class="info_box box">
-		<h2>Reminders</h2>
+		<h2>Your Prayer Reminders</h2>
 		<%= render :partial => 'reminders/list_short', :locals => { :user => user } %>
 	</div>
 <% end %>
