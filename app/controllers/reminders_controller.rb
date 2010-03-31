@@ -1,5 +1,12 @@
 class RemindersController < ApplicationController
   
+  def index
+    @user = current_user
+    @user.send_reminder
+    
+    redirect_to(root_path)
+  end
+  
   def create
     @reminder = Reminder.new(params[:reminder])
 
@@ -23,4 +30,5 @@ class RemindersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
 end

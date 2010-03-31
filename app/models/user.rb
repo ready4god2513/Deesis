@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
   
   
   def send_reminder
-    UserMailer.deliver_registration_confirmation(self)
+    UserMailer.deliver_reminder(self)
   end
   
   def deliver_password_reset_instructions!

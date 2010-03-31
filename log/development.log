@@ -18942,3 +18942,2206 @@ Rendering user_sessions/new
 Rendered layouts/_header (4.0ms)
 Rendered layouts/_footer (1.0ms)
 Completed in 47ms (View: 14, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-30 22:27:42) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "email"=>"brandonh@ibethel.org"}, "action"=>"create", "authenticity_token"=>"rvYlWmRHJOcnuPeTYpWtXKOkpf2bT3/VK8Osl0TIuEk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".email) = 'brandonh@ibethel.org') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "login_count" = 4, "updated_at" = '2010-03-31 05:27:43', "perishable_token" = 'IQNSLwjENZT_qjhn1OBP', "last_request_at" = '2010-03-31 05:27:43' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/
+Completed in 138ms (DB: 1) | 302 Found [http://localhost/user_sessions]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-30 22:27:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 05:27:43', "perishable_token" = 'tPJpfzBHIo426w76fv4e', "last_request_at" = '2010-03-31 05:27:43' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.6ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+Rendered prayers/_form (5.7ms)
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (4.4ms)
+Rendered layouts/_header (3.5ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 88ms (View: 17, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#show (for 127.0.0.1 at 2010-03-30 22:27:50) [GET]
+  Parameters: {"action"=>"show", "id"=>"send", "controller"=>"reminders"}
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2010-03-30 22:27:50) [GET]
+  Parameters: {"action"=>"show", "id"=>"send", "controller"=>"reminders"}
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+  /usr/local/lib/ruby/gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (47.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RemindersController#show (for 127.0.0.1 at 2010-03-30 22:28:04) [GET]
+  Parameters: {"action"=>"show", "id"=>"send", "controller"=>"reminders"}
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2010-03-30 22:28:04) [GET]
+  Parameters: {"action"=>"show", "id"=>"send", "controller"=>"reminders"}
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+  /usr/local/lib/ruby/gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RemindersController#send (for 127.0.0.1 at 2010-03-30 22:28:50) [GET]
+  Parameters: {"action"=>"send", "id"=>"1", "controller"=>"reminders"}
+
+
+Processing ApplicationController#send (for 127.0.0.1 at 2010-03-30 22:28:50) [GET]
+  Parameters: {"action"=>"send", "id"=>"1", "controller"=>"reminders"}
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+  /usr/local/lib/ruby/gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (137.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-03-30 22:28:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-30 22:28:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+  /usr/local/lib/ruby/gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-03-30 22:29:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 05:29:13', "perishable_token" = 'Aq4riS_2HY2QHd-aRtL7', "last_request_at" = '2010-03-31 05:29:13' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Rendered layouts/_email_header (0.1ms)
+Rendered layouts/_email_footer (0.1ms)
+Sent mail to brandonh@ibethel.org
+
+Date: Tue, 30 Mar 2010 22:29:13 -0700
+From: welcome@deesis.org
+To: brandonh@ibethel.org
+Subject: Welcome to Deesis
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Deesis</title>
+<style type="text/css">
+h1 {
+	font-size: 40px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	color: #000000;
+	line-height:40px;
+	letter-spacing:-2px;
+}
+.style3 {
+	font-size: 16px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	line-height:18px;
+}
+.style4 {
+	font-size: 18px;
+	font-family: Arial, sans-serif;
+	font-weight:bold;
+	line-height:18px;
+}
+.color {
+color: #00a7e5;	
+}
+.dark {
+color: #222222;	
+}
+.realdark {
+color:#030303;
+}
+.white {
+color: #222222;	
+}
+p {
+line-height:22px;
+font-size:12px;
+color: #555555;
+font-family:"Lucida Sans Unicode", "Lucida Grande", Arial, sans-serif
+}
+.webversion {
+font-family: Arial, sans-serif;
+font-size:12px;
+color: #555555;
+font-weight:bold;
+}
+a {
+font-weight:bold;
+color: #00a7e5;	
+text-decoration:none;
+}
+.weblink {
+color:#C8C8C8
+}
+.style5 {
+	font-size: 14px;
+	line-height:18px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight:bold;
+}
+.darkbg {
+background-color:#333333;	
+}
+.lightbg {
+background-color:#e3e3e3;	
+}
+.largeborder {
+border:8px solid #cccccc;
+}
+.smallborder {
+border:4px solid #cccccc;
+}
+.totalbg {
+background-color:#FFFFFF;	
+}
+.black {
+background-color:#000000;	
+}
+</style>
+<META NAME="ROBOTS" CONTENT="NOINDEX,NOFOLLOW">
+</head>
+<body topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" class="totalbg" style="background-color:#FFFFFF;" >
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+<!--Logo and Links -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td width="139" class="style2"><img src="http://i1.cmail1.com/ei/r/96/198/93E/094151/images/logo.jpg" alt="Logo" width="118" height="36" style="border-style:none;" /></td>
+    <td width="18"></td>
+
+    <td width="140" align="center">
+    <a href="#" class="style4 dark" style="text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" ><span class="color" style="color:#00a7e5;" >Forward</span> this.</a>
+    </td>
+    <td width="12"></td>
+    <td width="140" align="center">
+    <a href="http://boldtype.cmail1.com/t/r/u/utciy/l/" class="style4 dark" style="text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" ><span class="color" style="color:#00a7e5;" >Un</span>-Subscribe.</a>
+
+    </td>
+    <td width="11" ></td>
+    <td width="140"  align="center">
+     <a href="#" class="style4 dark" style="text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" ><span class="color" style="color:#00a7e5;" >Contact</span> Us.</a>
+    </td>
+  </tr>
+    <tr height="10">
+
+    <td colspan="7"></td>
+  </tr>
+  <tr height="3">
+    <td class="lightbg" style="background-color:#e3e3e3;" ></td>
+    <td></td>
+    <td class="lightbg" style="background-color:#e3e3e3;" ></td>
+    <td></td>
+    <td class="lightbg" style="background-color:#e3e3e3;" ></td>
+    <td></td>
+
+    <td class="lightbg" style="background-color:#e3e3e3;" ></td>
+  </tr>
+</table>
+<!--End Logo and Links -->
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+<!--
+---------------------
+Featured Image Module
+---------------------
+ -->
+ 
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ <!--Not Needed for Top Story
+  <tr>
+	  <td class="lightbg" height="3" style="background-color:#e3e3e3;" ></td>
+	 </tr>
+     <tr>
+      <td height="40"><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td>
+     </tr>  
+  Not Needed for Top Story -->  
+      
+	<tr>
+    	<td>
+
+        
+	<!--Main Image and Headline -->
+	<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ 	 <tr>
+   	  <td width="266" rowspan="3">
+      <img src="http://i2.cmail1.com/ei/r/96/198/93E/094151/images/cards.jpg" alt="Image" width="250" height="185" class="largeborder" style="border-width:8px;border-style:solid;border-color:#cccccc;" />
+      </td>
+   	  <td width="29" rowspan="3">&nbsp;</td>
+      <td width="305" valign="middle">
+      <h1 style="font-size:40px;font-family:Helvetica, Arial, sans-serif;font-weight:bold;color:#000000;line-height:40px;letter-spacing:-2px;" >Be bold. Go big or go home.</h1>
+
+      <p class="style3 color" style="font-size:16px;font-family:Helvetica, Arial, sans-serif;font-weight:bold;line-height:18px;color:#00a7e5;" >There's really only one way to say it.
+      Ultra big, ultra dramatic &amp; ultra bold.</p>
+      </td>
+ 	 </tr>
+    </table>
+    <!--End Main Image and Headline -->
+	<!--Spacer -->
+	<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="20"><tr><td><img src="http://i7.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer20.gif" width="1" height="20" /></td></tr></table>
+
+	<!--End Spacer -->
+	<!--Full Width Copy -->
+	<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+  	 <tr>
+      <td rowspan="3">
+
+<p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Nullam dapibus varius risus, et auctor augue semper quis. In eros urna, 
+      pulvinar a porttitor sed, commodo vitae enim. Ut est turpis, rhoncus vel
+       commodo non, lacinia viverra leo.  <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" > | Read More |</a> </p>
+
+</td>
+
+ </tr>  
+</table>
+<!--End Full Width Copy -->
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+
+	</td>
+</tr>
+</table>
+<!--
+-------------------------
+End Featured Image Module
+-------------------------
+--> 
+<!--
+-------------------------
+Start Two Column Module
+-------------------------
+-->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+
+<tr>
+  <td width="275" height="3" class="lightbg" style="background-color:#e3e3e3;" ></td>
+  <td width="50"></td>
+  <td width="275" class="lightbg" style="background-color:#e3e3e3;" ></td>
+ </tr>
+ <tr>
+  <td height="10" colspan="3"><img src="http://i3.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer10.gif" width="1" height="10" /></td>
+ </tr>  
+
+  
+<tr>
+
+	<td colspan="3">
+    
+<!--Main Image and Headline -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ <tr>
+  <td width="275" rowspan="3"> <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >Less is  <span class="color" style="color:#00a7e5;" >More.</span></p>
+  <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" ><img src="http://i4.cmail1.com/ei/r/96/198/93E/094151/images/cards-pack.jpg" alt="image" width="259" height="208" class="largeborder" vspace="10" style="border-width:8px;border-style:solid;border-color:#cccccc;" /></p>
+  <p class="white" style="line-height:22px;font-size:12px;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;color:#222222;" ><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
+
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >Nullam dapibus varius risus, et auctor augue semper quis. 
+        In eros urna, pulvinar a porttitor sed, commodo vitae enim. 
+        Ut est turpis, rhoncus vel commodo non, lacinia viverra leo. 
+        Vivamus convallis turpis nibh, vel viverra elit. Morbi viverra 
+  bibendum lobortis.</p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p></td>
+  <td width="50" rowspan="3">&nbsp;</td>
+  <td width="275" valign="middle"> <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >The Grid  <span class="color" style="color:#00a7e5;" >System. </span></p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" ><img src="http://i5.cmail1.com/ei/r/96/198/93E/094151/images/cards-pack2.jpg" alt="image" width="259" height="208" class="largeborder" vspace="10" style="border-width:8px;border-style:solid;border-color:#cccccc;" /></p>
+
+  <p class="white" style="line-height:22px;font-size:12px;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;color:#222222;" ><strong>Lorem ipsum dolor sit amet, 
+    consectetur adipiscing elit. Nullam dapibus varius 
+    risus, et auctor augue semper quis. In eros urna,
+   pulvinar a porttitor sed, commodo vitae enim. </strong></p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >Ut est turpis, rhoncus vel commodo non, lacinia 
+    viverra leo. Vivamus convallis turpis nibh, vel viverra
+   elit. Morbi viverra bibendum lobortis.</p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p>  </td>
+ </tr>
+</table>
+<!--End Main Image and Headline -->
+
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+
+	</td>
+</tr>
+</table>
+<!--
+-------------------------
+End Two Column Module
+-------------------------
+-->
+
+
+
+<!--
+-------------------------
+Start Three Column Module
+-------------------------
+-->
+
+
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+  <td width="173" height="3" class="lightbg" style="background-color:#e3e3e3;" ></td>
+
+  <td width="40"></td>
+  <td width="173" height="3" class="lightbg" style="background-color:#e3e3e3;" ></td>
+  <td width="40"></td>
+  <td width="174" height="3" class="lightbg" style="background-color:#e3e3e3;" ></td>
+ </tr>
+ <tr>
+  <td height="10" colspan="5"><img src="http://i3.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer10.gif" width="1" height="10" /></td>
+ </tr>  
+
+  
+<tr>
+
+	<td colspan="5">
+    
+<!--Main Image and Headline -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ <tr>
+  <td width="173" rowspan="3">
+  <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >The Grid  <span class="color" style="color:#00a7e5;" >System. </span></p>
+  <img src="http://i6.cmail1.com/ei/r/96/198/93E/094151/images/thumb1.jpg" width="165" height="110" alt="thumbnail" class="smallborder" style="border-width:4px;border-style:solid;border-color:#cccccc;" />
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >It is a long established fact that a reader will be 
+  distracted by the readable content of a page when looking 
+  at its layout.</p>
+
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p>
+  </td>
+  <td width="40" rowspan="3">&nbsp;</td>
+  <td width="173" valign="middle">
+  <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >The Grid  <span class="color" style="color:#00a7e5;" >System. </span></p>
+  <img src="http://i6.cmail1.com/ei/r/96/198/93E/094151/images/thumb1.jpg" width="165" height="110" alt="thumbnail" class="smallborder" style="border-width:4px;border-style:solid;border-color:#cccccc;" />
+
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >It is a long established fact that a reader will be 
+  distracted by the readable content of a page when looking 
+  at its layout.</p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p>
+  </td>
+  <td width="40" valign="middle">&nbsp;</td>
+  <td width="174" valign="middle">
+  <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >The Grid  <span class="color" style="color:#00a7e5;" >System. </span></p>
+
+  <img src="http://i6.cmail1.com/ei/r/96/198/93E/094151/images/thumb1.jpg" width="165" height="110" alt="thumbnail" class="smallborder" style="border-width:4px;border-style:solid;border-color:#cccccc;" />
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >It is a long established fact that a reader will be 
+  distracted by the readable content of a page when looking 
+  at its layout.</p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p>
+  </td>
+ </tr>
+</table>
+<!--End Main Image and Headline -->
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+
+	</td>
+</tr>
+</table>
+<!--
+-------------------------
+End Three Column Module
+-------------------------
+-->
+<!--
+---------------------------
+Start Footer Contact Module
+---------------------------
+-->
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td align="center">
+
+<!--Spacer -->
+
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td></td></tr></table>
+<!--End Spacer -->
+
+<!--Logo and Contact Info-->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ <tr>
+  <td width="252" valign="middle">
+   	<h1>Deesis</h1>
+	<h3>We Mean Prayer</h3>
+  </td>
+  <td width="20" valign="middle" align="left"></td>
+
+  	<td align="left" valign="middle">
+      <p class="style5" style="color:#030303;font-size:14px;line-height:18px;font-family:Helvetica, Arial, sans-serif;font-weight:bold;">contact@deesis.org<span class="webversion" style="font-family:Arial, sans-serif;font-size:12px;color:#555555;font-weight:bold;" > | </span>www.deesis.org<br />
+      </td>
+  </tr>
+
+</table>
+<!--End Logo and Contact Info-->
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td></td></tr></table>
+<!--End Spacer -->
+    
+</td>
+</tr>
+</table>
+</body>
+</html>
+Redirected to http://localhost:3000/
+Completed in 151ms (DB: 1) | 302 Found [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-30 22:29:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 05:29:13', "perishable_token" = '5Byes0MB9LJvgG7UUzWR', "last_request_at" = '2010-03-31 05:29:13' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.6ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+Rendered prayers/_form (5.7ms)
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (4.8ms)
+Rendered layouts/_header (3.6ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 90ms (View: 18, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-03-30 22:29:38) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 05:29:38', "perishable_token" = 'c60vJb4ypSr12uBdG4ZU', "last_request_at" = '2010-03-31 05:29:38' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_settings (0.2ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 159ms (View: 23, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-30 22:31:21) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-31 05:31:21', "perishable_token" = 'p4UmKwvobt6u3M7UD1cX', "last_request_at" = '2010-03-31 05:31:21' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/
+Completed in 54ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-30 22:31:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 30ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-30 22:31:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (3.9ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 47ms (View: 13, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-30 22:31:29) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "email"=>"brandon@melissa-brandon.com"}, "action"=>"create", "authenticity_token"=>"rvYlWmRHJOcnuPeTYpWtXKOkpf2bT3/VK8Osl0TIuEk=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".email) = 'brandon@melissa-brandon.com') ORDER BY created_at DESC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 45ms (DB: 1) | 302 Found [http://localhost/user_sessions]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-30 22:31:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 116ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-30 22:31:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (3.9ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 46ms (View: 13, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-30 22:31:34) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "email"=>"brandon@melissa-brandon.com"}, "action"=>"create", "authenticity_token"=>"rvYlWmRHJOcnuPeTYpWtXKOkpf2bT3/VK8Osl0TIuEk=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".email) = 'brandon@melissa-brandon.com') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "login_count" = 6, "updated_at" = '2010-03-31 05:31:34', "perishable_token" = 'vipw4JfPvO2yZr_SDrCg', "last_request_at" = '2010-03-31 05:31:34' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/
+Completed in 52ms (DB: 1) | 302 Found [http://localhost/user_sessions]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-30 22:31:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 05:31:35', "perishable_token" = 'p5hekk-v5fenxnuxf4VM', "last_request_at" = '2010-03-31 05:31:35' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.6ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+Rendered prayers/_form (5.8ms)
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 3) AND ("reminders".user_id = 2) LIMIT 1[0m
+Rendered prayers/_prayer (14.7ms)
+Rendered layouts/_header (3.5ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 98ms (View: 27, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-03-30 22:31:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 05:31:41', "perishable_token" = '5ZIeaQ7XpBXBCp3XZ69t', "last_request_at" = '2010-03-31 05:31:41' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+Rendered layouts/_email_header (0.1ms)
+Rendered layouts/_email_footer (0.1ms)
+Sent mail to brandon@melissa-brandon.com
+
+Date: Tue, 30 Mar 2010 22:31:41 -0700
+From: welcome@deesis.org
+To: brandon@melissa-brandon.com
+Subject: Welcome to Deesis
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Deesis</title>
+<style type="text/css">
+h1 {
+	font-size: 40px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	color: #000000;
+	line-height:40px;
+	letter-spacing:-2px;
+}
+.style3 {
+	font-size: 16px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	line-height:18px;
+}
+.style4 {
+	font-size: 18px;
+	font-family: Arial, sans-serif;
+	font-weight:bold;
+	line-height:18px;
+}
+.color {
+color: #00a7e5;	
+}
+.dark {
+color: #222222;	
+}
+.realdark {
+color:#030303;
+}
+.white {
+color: #222222;	
+}
+p {
+line-height:22px;
+font-size:12px;
+color: #555555;
+font-family:"Lucida Sans Unicode", "Lucida Grande", Arial, sans-serif
+}
+.webversion {
+font-family: Arial, sans-serif;
+font-size:12px;
+color: #555555;
+font-weight:bold;
+}
+a {
+font-weight:bold;
+color: #00a7e5;	
+text-decoration:none;
+}
+.weblink {
+color:#C8C8C8
+}
+.style5 {
+	font-size: 14px;
+	line-height:18px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight:bold;
+}
+.darkbg {
+background-color:#333333;	
+}
+.lightbg {
+background-color:#e3e3e3;	
+}
+.largeborder {
+border:8px solid #cccccc;
+}
+.smallborder {
+border:4px solid #cccccc;
+}
+.totalbg {
+background-color:#FFFFFF;	
+}
+.black {
+background-color:#000000;	
+}
+</style>
+<META NAME="ROBOTS" CONTENT="NOINDEX,NOFOLLOW">
+</head>
+<body topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" class="totalbg" style="background-color:#FFFFFF;" >
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+<!--Logo and Links -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td width="139" class="style2"><img src="http://i1.cmail1.com/ei/r/96/198/93E/094151/images/logo.jpg" alt="Logo" width="118" height="36" style="border-style:none;" /></td>
+    <td width="18"></td>
+
+    <td width="140" align="center">
+    <a href="#" class="style4 dark" style="text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" ><span class="color" style="color:#00a7e5;" >Forward</span> this.</a>
+    </td>
+    <td width="12"></td>
+    <td width="140" align="center">
+    <a href="http://boldtype.cmail1.com/t/r/u/utciy/l/" class="style4 dark" style="text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" ><span class="color" style="color:#00a7e5;" >Un</span>-Subscribe.</a>
+
+    </td>
+    <td width="11" ></td>
+    <td width="140"  align="center">
+     <a href="#" class="style4 dark" style="text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" ><span class="color" style="color:#00a7e5;" >Contact</span> Us.</a>
+    </td>
+  </tr>
+    <tr height="10">
+
+    <td colspan="7"></td>
+  </tr>
+  <tr height="3">
+    <td class="lightbg" style="background-color:#e3e3e3;" ></td>
+    <td></td>
+    <td class="lightbg" style="background-color:#e3e3e3;" ></td>
+    <td></td>
+    <td class="lightbg" style="background-color:#e3e3e3;" ></td>
+    <td></td>
+
+    <td class="lightbg" style="background-color:#e3e3e3;" ></td>
+  </tr>
+</table>
+<!--End Logo and Links -->
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+<!--
+---------------------
+Featured Image Module
+---------------------
+ -->
+ 
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ <!--Not Needed for Top Story
+  <tr>
+	  <td class="lightbg" height="3" style="background-color:#e3e3e3;" ></td>
+	 </tr>
+     <tr>
+      <td height="40"><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td>
+     </tr>  
+  Not Needed for Top Story -->  
+      
+	<tr>
+    	<td>
+
+        
+	<!--Main Image and Headline -->
+	<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ 	 <tr>
+   	  <td width="266" rowspan="3">
+      <img src="http://i2.cmail1.com/ei/r/96/198/93E/094151/images/cards.jpg" alt="Image" width="250" height="185" class="largeborder" style="border-width:8px;border-style:solid;border-color:#cccccc;" />
+      </td>
+   	  <td width="29" rowspan="3">&nbsp;</td>
+      <td width="305" valign="middle">
+      <h1 style="font-size:40px;font-family:Helvetica, Arial, sans-serif;font-weight:bold;color:#000000;line-height:40px;letter-spacing:-2px;" >Be bold. Go big or go home.</h1>
+
+      <p class="style3 color" style="font-size:16px;font-family:Helvetica, Arial, sans-serif;font-weight:bold;line-height:18px;color:#00a7e5;" >There's really only one way to say it.
+      Ultra big, ultra dramatic &amp; ultra bold.</p>
+      </td>
+ 	 </tr>
+    </table>
+    <!--End Main Image and Headline -->
+	<!--Spacer -->
+	<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="20"><tr><td><img src="http://i7.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer20.gif" width="1" height="20" /></td></tr></table>
+
+	<!--End Spacer -->
+	<!--Full Width Copy -->
+	<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+  	 <tr>
+      <td rowspan="3">
+
+<p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Nullam dapibus varius risus, et auctor augue semper quis. In eros urna, 
+      pulvinar a porttitor sed, commodo vitae enim. Ut est turpis, rhoncus vel
+       commodo non, lacinia viverra leo.  <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" > | Read More |</a> </p>
+
+</td>
+
+ </tr>  
+</table>
+<!--End Full Width Copy -->
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+
+	</td>
+</tr>
+</table>
+<!--
+-------------------------
+End Featured Image Module
+-------------------------
+--> 
+<!--
+-------------------------
+Start Two Column Module
+-------------------------
+-->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+
+<tr>
+  <td width="275" height="3" class="lightbg" style="background-color:#e3e3e3;" ></td>
+  <td width="50"></td>
+  <td width="275" class="lightbg" style="background-color:#e3e3e3;" ></td>
+ </tr>
+ <tr>
+  <td height="10" colspan="3"><img src="http://i3.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer10.gif" width="1" height="10" /></td>
+ </tr>  
+
+  
+<tr>
+
+	<td colspan="3">
+    
+<!--Main Image and Headline -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ <tr>
+  <td width="275" rowspan="3"> <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >Less is  <span class="color" style="color:#00a7e5;" >More.</span></p>
+  <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" ><img src="http://i4.cmail1.com/ei/r/96/198/93E/094151/images/cards-pack.jpg" alt="image" width="259" height="208" class="largeborder" vspace="10" style="border-width:8px;border-style:solid;border-color:#cccccc;" /></p>
+  <p class="white" style="line-height:22px;font-size:12px;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;color:#222222;" ><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
+
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >Nullam dapibus varius risus, et auctor augue semper quis. 
+        In eros urna, pulvinar a porttitor sed, commodo vitae enim. 
+        Ut est turpis, rhoncus vel commodo non, lacinia viverra leo. 
+        Vivamus convallis turpis nibh, vel viverra elit. Morbi viverra 
+  bibendum lobortis.</p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p></td>
+  <td width="50" rowspan="3">&nbsp;</td>
+  <td width="275" valign="middle"> <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >The Grid  <span class="color" style="color:#00a7e5;" >System. </span></p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" ><img src="http://i5.cmail1.com/ei/r/96/198/93E/094151/images/cards-pack2.jpg" alt="image" width="259" height="208" class="largeborder" vspace="10" style="border-width:8px;border-style:solid;border-color:#cccccc;" /></p>
+
+  <p class="white" style="line-height:22px;font-size:12px;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;color:#222222;" ><strong>Lorem ipsum dolor sit amet, 
+    consectetur adipiscing elit. Nullam dapibus varius 
+    risus, et auctor augue semper quis. In eros urna,
+   pulvinar a porttitor sed, commodo vitae enim. </strong></p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >Ut est turpis, rhoncus vel commodo non, lacinia 
+    viverra leo. Vivamus convallis turpis nibh, vel viverra
+   elit. Morbi viverra bibendum lobortis.</p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p>  </td>
+ </tr>
+</table>
+<!--End Main Image and Headline -->
+
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+
+	</td>
+</tr>
+</table>
+<!--
+-------------------------
+End Two Column Module
+-------------------------
+-->
+
+
+
+<!--
+-------------------------
+Start Three Column Module
+-------------------------
+-->
+
+
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+  <td width="173" height="3" class="lightbg" style="background-color:#e3e3e3;" ></td>
+
+  <td width="40"></td>
+  <td width="173" height="3" class="lightbg" style="background-color:#e3e3e3;" ></td>
+  <td width="40"></td>
+  <td width="174" height="3" class="lightbg" style="background-color:#e3e3e3;" ></td>
+ </tr>
+ <tr>
+  <td height="10" colspan="5"><img src="http://i3.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer10.gif" width="1" height="10" /></td>
+ </tr>  
+
+  
+<tr>
+
+	<td colspan="5">
+    
+<!--Main Image and Headline -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ <tr>
+  <td width="173" rowspan="3">
+  <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >The Grid  <span class="color" style="color:#00a7e5;" >System. </span></p>
+  <img src="http://i6.cmail1.com/ei/r/96/198/93E/094151/images/thumb1.jpg" width="165" height="110" alt="thumbnail" class="smallborder" style="border-width:4px;border-style:solid;border-color:#cccccc;" />
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >It is a long established fact that a reader will be 
+  distracted by the readable content of a page when looking 
+  at its layout.</p>
+
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p>
+  </td>
+  <td width="40" rowspan="3">&nbsp;</td>
+  <td width="173" valign="middle">
+  <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >The Grid  <span class="color" style="color:#00a7e5;" >System. </span></p>
+  <img src="http://i6.cmail1.com/ei/r/96/198/93E/094151/images/thumb1.jpg" width="165" height="110" alt="thumbnail" class="smallborder" style="border-width:4px;border-style:solid;border-color:#cccccc;" />
+
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >It is a long established fact that a reader will be 
+  distracted by the readable content of a page when looking 
+  at its layout.</p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p>
+  </td>
+  <td width="40" valign="middle">&nbsp;</td>
+  <td width="174" valign="middle">
+  <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >The Grid  <span class="color" style="color:#00a7e5;" >System. </span></p>
+
+  <img src="http://i6.cmail1.com/ei/r/96/198/93E/094151/images/thumb1.jpg" width="165" height="110" alt="thumbnail" class="smallborder" style="border-width:4px;border-style:solid;border-color:#cccccc;" />
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >It is a long established fact that a reader will be 
+  distracted by the readable content of a page when looking 
+  at its layout.</p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p>
+  </td>
+ </tr>
+</table>
+<!--End Main Image and Headline -->
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+
+	</td>
+</tr>
+</table>
+<!--
+-------------------------
+End Three Column Module
+-------------------------
+-->
+<!--
+---------------------------
+Start Footer Contact Module
+---------------------------
+-->
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td align="center">
+
+<!--Spacer -->
+
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td></td></tr></table>
+<!--End Spacer -->
+
+<!--Logo and Contact Info-->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ <tr>
+  <td width="252" valign="middle">
+   	<h1>Deesis</h1>
+	<h3>We Mean Prayer</h3>
+  </td>
+  <td width="20" valign="middle" align="left"></td>
+
+  	<td align="left" valign="middle">
+      <p class="style5" style="color:#030303;font-size:14px;line-height:18px;font-family:Helvetica, Arial, sans-serif;font-weight:bold;">contact@deesis.org<span class="webversion" style="font-family:Arial, sans-serif;font-size:12px;color:#555555;font-weight:bold;" > | </span>www.deesis.org<br />
+      </td>
+  </tr>
+
+</table>
+<!--End Logo and Contact Info-->
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td></td></tr></table>
+<!--End Spacer -->
+    
+</td>
+</tr>
+</table>
+</body>
+</html>
+Redirected to http://localhost:3000/
+Completed in 238ms (DB: 1) | 302 Found [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-30 22:31:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 05:31:42', "perishable_token" = 'hAJxfq4CajnEd7uyga5l', "last_request_at" = '2010-03-31 05:31:42' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.8ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+Rendered prayers/_form (6.1ms)
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 3) AND ("reminders".user_id = 2) LIMIT 1[0m
+Rendered prayers/_prayer (15.2ms)
+Rendered layouts/_header (4.2ms)
+Rendered layouts/_footer (1.0ms)
+Completed in 110ms (View: 29, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-03-30 22:32:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 05:32:56', "perishable_token" = 'tLz2jcV2-SFYSHOfrV23', "last_request_at" = '2010-03-31 05:32:56' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+Rendered layouts/_email_header (0.1ms)
+
+ActionView::TemplateError (undefined local variable or method `user' for #<ActionView::Base:0x1034cba40>) on line #5 of app/views/user_mailer/reminder.html.erb:
+2: 
+3: <h1>Today's Prayer Needs</h1>
+4: 
+5: <% user.reminders.each do |reminder| %>
+6: 	<%= format_output(reminder.prayer.prayer) %>
+7: <% end %>
+8: 
+
+    app/views/user_mailer/reminder.html.erb:5
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/models/user.rb:61:in `send_reminder'
+    app/controllers/reminders_controller.rb:5:in `index'
+    haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    /usr/local/lib/ruby/gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (72.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-03-30 22:33:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 05:33:14', "perishable_token" = 'AT_25l-_4S6Ef0Mi8Mgn', "last_request_at" = '2010-03-31 05:33:14' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+Rendered layouts/_email_header (0.1ms)
+  [4;36;1mReminder Load (0.5ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 2) [0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 3) ORDER BY created_at DESC LIMIT 10[0m
+
+ActionView::TemplateError (undefined method `format_output' for #<ActionView::Base:0x10354e148>) on line #6 of app/views/user_mailer/reminder.html.erb:
+3: <h1>Today's Prayer Needs</h1>
+4: 
+5: <% @user.reminders.each do |reminder| %>
+6: 	<%= format_output(reminder.prayer.prayer) %>
+7: <% end %>
+8: 
+9: <%= render :partial => 'layouts/email_footer' %>
+
+    app/views/user_mailer/reminder.html.erb:6
+    /usr/local/lib/ruby/gems/1.8/gems/will_paginate-2.3.12/lib/will_paginate/finder.rb:168:in `method_missing'
+    /usr/local/lib/ruby/gems/1.8/gems/will_paginate-2.3.12/lib/will_paginate/finder.rb:168:in `method_missing'
+    app/views/user_mailer/reminder.html.erb:5
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/models/user.rb:61:in `send_reminder'
+    app/controllers/reminders_controller.rb:5:in `index'
+    haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    /usr/local/lib/ruby/gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (80.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-03-30 22:33:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 05:33:53', "perishable_token" = 'OcWsd8ZOOXdKnLEIcSU3', "last_request_at" = '2010-03-31 05:33:53' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+Rendered layouts/_email_header (0.1ms)
+  [4;36;1mReminder Load (0.5ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 2) [0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 3) ORDER BY created_at DESC LIMIT 10[0m
+Rendered layouts/_email_footer (0.1ms)
+Sent mail to brandon@melissa-brandon.com
+
+Date: Tue, 30 Mar 2010 22:33:53 -0700
+From: deesis.org
+To: brandon@melissa-brandon.com
+Subject: Your Daily Prayer Reminder
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Deesis</title>
+<style type="text/css">
+h1 {
+	font-size: 40px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	color: #000000;
+	line-height:40px;
+	letter-spacing:-2px;
+}
+.style3 {
+	font-size: 16px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	line-height:18px;
+}
+.style4 {
+	font-size: 18px;
+	font-family: Arial, sans-serif;
+	font-weight:bold;
+	line-height:18px;
+}
+.color {
+color: #00a7e5;	
+}
+.dark {
+color: #222222;	
+}
+.realdark {
+color:#030303;
+}
+.white {
+color: #222222;	
+}
+p {
+line-height:22px;
+font-size:12px;
+color: #555555;
+font-family:"Lucida Sans Unicode", "Lucida Grande", Arial, sans-serif
+}
+.webversion {
+font-family: Arial, sans-serif;
+font-size:12px;
+color: #555555;
+font-weight:bold;
+}
+a {
+font-weight:bold;
+color: #00a7e5;	
+text-decoration:none;
+}
+.weblink {
+color:#C8C8C8
+}
+.style5 {
+	font-size: 14px;
+	line-height:18px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight:bold;
+}
+.darkbg {
+background-color:#333333;	
+}
+.lightbg {
+background-color:#e3e3e3;	
+}
+.largeborder {
+border:8px solid #cccccc;
+}
+.smallborder {
+border:4px solid #cccccc;
+}
+.totalbg {
+background-color:#FFFFFF;	
+}
+.black {
+background-color:#000000;	
+}
+</style>
+<META NAME="ROBOTS" CONTENT="NOINDEX,NOFOLLOW">
+</head>
+<body topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" class="totalbg" style="background-color:#FFFFFF;" >
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+<!--Logo and Links -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td width="139" class="style2"><img src="http://i1.cmail1.com/ei/r/96/198/93E/094151/images/logo.jpg" alt="Logo" width="118" height="36" style="border-style:none;" /></td>
+    <td width="18"></td>
+
+    <td width="140" align="center">
+    <a href="#" class="style4 dark" style="text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" ><span class="color" style="color:#00a7e5;" >Forward</span> this.</a>
+    </td>
+    <td width="12"></td>
+    <td width="140" align="center">
+    <a href="http://boldtype.cmail1.com/t/r/u/utciy/l/" class="style4 dark" style="text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" ><span class="color" style="color:#00a7e5;" >Un</span>-Subscribe.</a>
+
+    </td>
+    <td width="11" ></td>
+    <td width="140"  align="center">
+     <a href="#" class="style4 dark" style="text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" ><span class="color" style="color:#00a7e5;" >Contact</span> Us.</a>
+    </td>
+  </tr>
+    <tr height="10">
+
+    <td colspan="7"></td>
+  </tr>
+  <tr height="3">
+    <td class="lightbg" style="background-color:#e3e3e3;" ></td>
+    <td></td>
+    <td class="lightbg" style="background-color:#e3e3e3;" ></td>
+    <td></td>
+    <td class="lightbg" style="background-color:#e3e3e3;" ></td>
+    <td></td>
+
+    <td class="lightbg" style="background-color:#e3e3e3;" ></td>
+  </tr>
+</table>
+<!--End Logo and Links -->
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+<!--
+---------------------
+Featured Image Module
+---------------------
+ -->
+ 
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ <!--Not Needed for Top Story
+  <tr>
+	  <td class="lightbg" height="3" style="background-color:#e3e3e3;" ></td>
+	 </tr>
+     <tr>
+      <td height="40"><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td>
+     </tr>  
+  Not Needed for Top Story -->  
+      
+	<tr>
+    	<td>
+
+        
+	<!--Main Image and Headline -->
+	<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ 	 <tr>
+   	  <td width="266" rowspan="3">
+      <img src="http://i2.cmail1.com/ei/r/96/198/93E/094151/images/cards.jpg" alt="Image" width="250" height="185" class="largeborder" style="border-width:8px;border-style:solid;border-color:#cccccc;" />
+      </td>
+   	  <td width="29" rowspan="3">&nbsp;</td>
+      <td width="305" valign="middle">
+      <h1 style="font-size:40px;font-family:Helvetica, Arial, sans-serif;font-weight:bold;color:#000000;line-height:40px;letter-spacing:-2px;" >Be bold. Go big or go home.</h1>
+
+      <p class="style3 color" style="font-size:16px;font-family:Helvetica, Arial, sans-serif;font-weight:bold;line-height:18px;color:#00a7e5;" >There's really only one way to say it.
+      Ultra big, ultra dramatic &amp; ultra bold.</p>
+      </td>
+ 	 </tr>
+    </table>
+    <!--End Main Image and Headline -->
+	<!--Spacer -->
+	<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="20"><tr><td><img src="http://i7.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer20.gif" width="1" height="20" /></td></tr></table>
+
+	<!--End Spacer -->
+	<!--Full Width Copy -->
+	<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+  	 <tr>
+      <td rowspan="3">
+
+<h1>Today's Prayer Needs</h1>
+
+
+	This is a test
+
+
+</td>
+
+ </tr>  
+</table>
+<!--End Full Width Copy -->
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+
+	</td>
+</tr>
+</table>
+<!--
+-------------------------
+End Featured Image Module
+-------------------------
+--> 
+<!--
+-------------------------
+Start Two Column Module
+-------------------------
+-->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+
+<tr>
+  <td width="275" height="3" class="lightbg" style="background-color:#e3e3e3;" ></td>
+  <td width="50"></td>
+  <td width="275" class="lightbg" style="background-color:#e3e3e3;" ></td>
+ </tr>
+ <tr>
+  <td height="10" colspan="3"><img src="http://i3.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer10.gif" width="1" height="10" /></td>
+ </tr>  
+
+  
+<tr>
+
+	<td colspan="3">
+    
+<!--Main Image and Headline -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ <tr>
+  <td width="275" rowspan="3"> <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >Less is  <span class="color" style="color:#00a7e5;" >More.</span></p>
+  <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" ><img src="http://i4.cmail1.com/ei/r/96/198/93E/094151/images/cards-pack.jpg" alt="image" width="259" height="208" class="largeborder" vspace="10" style="border-width:8px;border-style:solid;border-color:#cccccc;" /></p>
+  <p class="white" style="line-height:22px;font-size:12px;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;color:#222222;" ><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
+
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >Nullam dapibus varius risus, et auctor augue semper quis. 
+        In eros urna, pulvinar a porttitor sed, commodo vitae enim. 
+        Ut est turpis, rhoncus vel commodo non, lacinia viverra leo. 
+        Vivamus convallis turpis nibh, vel viverra elit. Morbi viverra 
+  bibendum lobortis.</p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p></td>
+  <td width="50" rowspan="3">&nbsp;</td>
+  <td width="275" valign="middle"> <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >The Grid  <span class="color" style="color:#00a7e5;" >System. </span></p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" ><img src="http://i5.cmail1.com/ei/r/96/198/93E/094151/images/cards-pack2.jpg" alt="image" width="259" height="208" class="largeborder" vspace="10" style="border-width:8px;border-style:solid;border-color:#cccccc;" /></p>
+
+  <p class="white" style="line-height:22px;font-size:12px;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;color:#222222;" ><strong>Lorem ipsum dolor sit amet, 
+    consectetur adipiscing elit. Nullam dapibus varius 
+    risus, et auctor augue semper quis. In eros urna,
+   pulvinar a porttitor sed, commodo vitae enim. </strong></p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >Ut est turpis, rhoncus vel commodo non, lacinia 
+    viverra leo. Vivamus convallis turpis nibh, vel viverra
+   elit. Morbi viverra bibendum lobortis.</p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p>  </td>
+ </tr>
+</table>
+<!--End Main Image and Headline -->
+
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+
+	</td>
+</tr>
+</table>
+<!--
+-------------------------
+End Two Column Module
+-------------------------
+-->
+
+
+
+<!--
+-------------------------
+Start Three Column Module
+-------------------------
+-->
+
+
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+  <td width="173" height="3" class="lightbg" style="background-color:#e3e3e3;" ></td>
+
+  <td width="40"></td>
+  <td width="173" height="3" class="lightbg" style="background-color:#e3e3e3;" ></td>
+  <td width="40"></td>
+  <td width="174" height="3" class="lightbg" style="background-color:#e3e3e3;" ></td>
+ </tr>
+ <tr>
+  <td height="10" colspan="5"><img src="http://i3.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer10.gif" width="1" height="10" /></td>
+ </tr>  
+
+  
+<tr>
+
+	<td colspan="5">
+    
+<!--Main Image and Headline -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ <tr>
+  <td width="173" rowspan="3">
+  <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >The Grid  <span class="color" style="color:#00a7e5;" >System. </span></p>
+  <img src="http://i6.cmail1.com/ei/r/96/198/93E/094151/images/thumb1.jpg" width="165" height="110" alt="thumbnail" class="smallborder" style="border-width:4px;border-style:solid;border-color:#cccccc;" />
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >It is a long established fact that a reader will be 
+  distracted by the readable content of a page when looking 
+  at its layout.</p>
+
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p>
+  </td>
+  <td width="40" rowspan="3">&nbsp;</td>
+  <td width="173" valign="middle">
+  <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >The Grid  <span class="color" style="color:#00a7e5;" >System. </span></p>
+  <img src="http://i6.cmail1.com/ei/r/96/198/93E/094151/images/thumb1.jpg" width="165" height="110" alt="thumbnail" class="smallborder" style="border-width:4px;border-style:solid;border-color:#cccccc;" />
+
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >It is a long established fact that a reader will be 
+  distracted by the readable content of a page when looking 
+  at its layout.</p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p>
+  </td>
+  <td width="40" valign="middle">&nbsp;</td>
+  <td width="174" valign="middle">
+  <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >The Grid  <span class="color" style="color:#00a7e5;" >System. </span></p>
+
+  <img src="http://i6.cmail1.com/ei/r/96/198/93E/094151/images/thumb1.jpg" width="165" height="110" alt="thumbnail" class="smallborder" style="border-width:4px;border-style:solid;border-color:#cccccc;" />
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >It is a long established fact that a reader will be 
+  distracted by the readable content of a page when looking 
+  at its layout.</p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p>
+  </td>
+ </tr>
+</table>
+<!--End Main Image and Headline -->
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+
+	</td>
+</tr>
+</table>
+<!--
+-------------------------
+End Three Column Module
+-------------------------
+-->
+<!--
+---------------------------
+Start Footer Contact Module
+---------------------------
+-->
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td align="center">
+
+<!--Spacer -->
+
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td></td></tr></table>
+<!--End Spacer -->
+
+<!--Logo and Contact Info-->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ <tr>
+  <td width="252" valign="middle">
+   	<h1>Deesis</h1>
+	<h3>We Mean Prayer</h3>
+  </td>
+  <td width="20" valign="middle" align="left"></td>
+
+  	<td align="left" valign="middle">
+      <p class="style5" style="color:#030303;font-size:14px;line-height:18px;font-family:Helvetica, Arial, sans-serif;font-weight:bold;">contact@deesis.org<span class="webversion" style="font-family:Arial, sans-serif;font-size:12px;color:#555555;font-weight:bold;" > | </span>www.deesis.org<br />
+      </td>
+  </tr>
+
+</table>
+<!--End Logo and Contact Info-->
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td></td></tr></table>
+<!--End Spacer -->
+    
+</td>
+</tr>
+</table>
+</body>
+</html>
+Redirected to http://localhost:3000/
+Completed in 165ms (DB: 2) | 302 Found [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-30 22:33:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 05:33:53', "perishable_token" = 'HIl-FWXZO49dFSN4wUHX', "last_request_at" = '2010-03-31 05:33:53' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.6ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+Rendered prayers/_form (6.1ms)
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 3) AND ("reminders".user_id = 2) LIMIT 1[0m
+Rendered prayers/_prayer (15.5ms)
+Rendered layouts/_header (3.5ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 204ms (View: 128, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-03-30 22:35:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 05:35:04', "perishable_token" = 'nqjJF2ta5dpBU6ec7GCv', "last_request_at" = '2010-03-31 05:35:04' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+Rendered layouts/_email_header (0.1ms)
+  [4;36;1mReminder Load (0.5ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 2) [0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 3) ORDER BY created_at DESC LIMIT 10[0m
+Rendered layouts/_email_footer (0.2ms)
+Sent mail to brandon@melissa-brandon.com
+
+Date: Tue, 30 Mar 2010 22:35:04 -0700
+From: deesis.org
+To: brandon@melissa-brandon.com
+Subject: Your Daily Prayer Reminder
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Deesis</title>
+<style type="text/css">
+h1 {
+	font-size: 40px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	color: #000000;
+	line-height:40px;
+	letter-spacing:-2px;
+}
+.style3 {
+	font-size: 16px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	line-height:18px;
+}
+.style4 {
+	font-size: 18px;
+	font-family: Arial, sans-serif;
+	font-weight:bold;
+	line-height:18px;
+}
+.color {
+color: #00a7e5;	
+}
+.dark {
+color: #222222;	
+}
+.realdark {
+color:#030303;
+}
+.white {
+color: #222222;	
+}
+p {
+line-height:22px;
+font-size:12px;
+color: #555555;
+font-family:"Lucida Sans Unicode", "Lucida Grande", Arial, sans-serif
+}
+.webversion {
+font-family: Arial, sans-serif;
+font-size:12px;
+color: #555555;
+font-weight:bold;
+}
+a {
+font-weight:bold;
+color: #00a7e5;	
+text-decoration:none;
+}
+.weblink {
+color:#C8C8C8
+}
+.style5 {
+	font-size: 14px;
+	line-height:18px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight:bold;
+}
+.darkbg {
+background-color:#333333;	
+}
+.lightbg {
+background-color:#e3e3e3;	
+}
+.largeborder {
+border:8px solid #cccccc;
+}
+.smallborder {
+border:4px solid #cccccc;
+}
+.totalbg {
+background-color:#FFFFFF;	
+}
+.black {
+background-color:#000000;	
+}
+</style>
+<META NAME="ROBOTS" CONTENT="NOINDEX,NOFOLLOW">
+</head>
+<body topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" class="totalbg" style="background-color:#FFFFFF;" >
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+<!--Logo and Links -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td width="139" class="style2"><img src="http://i1.cmail1.com/ei/r/96/198/93E/094151/images/logo.jpg" alt="Logo" width="118" height="36" style="border-style:none;" /></td>
+    <td width="18"></td>
+
+    <td width="140" align="center">
+    <a href="#" class="style4 dark" style="text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" ><span class="color" style="color:#00a7e5;" >Forward</span> this.</a>
+    </td>
+    <td width="12"></td>
+    <td width="140" align="center">
+    <a href="http://boldtype.cmail1.com/t/r/u/utciy/l/" class="style4 dark" style="text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" ><span class="color" style="color:#00a7e5;" >Un</span>-Subscribe.</a>
+
+    </td>
+    <td width="11" ></td>
+    <td width="140"  align="center">
+     <a href="#" class="style4 dark" style="text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" ><span class="color" style="color:#00a7e5;" >Contact</span> Us.</a>
+    </td>
+  </tr>
+    <tr height="10">
+
+    <td colspan="7"></td>
+  </tr>
+  <tr height="3">
+    <td class="lightbg" style="background-color:#e3e3e3;" ></td>
+    <td></td>
+    <td class="lightbg" style="background-color:#e3e3e3;" ></td>
+    <td></td>
+    <td class="lightbg" style="background-color:#e3e3e3;" ></td>
+    <td></td>
+
+    <td class="lightbg" style="background-color:#e3e3e3;" ></td>
+  </tr>
+</table>
+<!--End Logo and Links -->
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+<!--
+---------------------
+Featured Image Module
+---------------------
+ -->
+ 
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ <!--Not Needed for Top Story
+  <tr>
+	  <td class="lightbg" height="3" style="background-color:#e3e3e3;" ></td>
+	 </tr>
+     <tr>
+      <td height="40"><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td>
+     </tr>  
+  Not Needed for Top Story -->  
+      
+	<tr>
+    	<td>
+
+        
+	<!--Main Image and Headline -->
+	<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ 	 <tr>
+   	  <td width="266" rowspan="3">
+      <img src="http://i2.cmail1.com/ei/r/96/198/93E/094151/images/cards.jpg" alt="Image" width="250" height="185" class="largeborder" style="border-width:8px;border-style:solid;border-color:#cccccc;" />
+      </td>
+   	  <td width="29" rowspan="3">&nbsp;</td>
+      <td width="305" valign="middle">
+      <h1 style="font-size:40px;font-family:Helvetica, Arial, sans-serif;font-weight:bold;color:#000000;line-height:40px;letter-spacing:-2px;" >Be bold. Go big or go home.</h1>
+
+      <p class="style3 color" style="font-size:16px;font-family:Helvetica, Arial, sans-serif;font-weight:bold;line-height:18px;color:#00a7e5;" >There's really only one way to say it.
+      Ultra big, ultra dramatic &amp; ultra bold.</p>
+      </td>
+ 	 </tr>
+    </table>
+    <!--End Main Image and Headline -->
+	<!--Spacer -->
+	<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="20"><tr><td><img src="http://i7.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer20.gif" width="1" height="20" /></td></tr></table>
+
+	<!--End Spacer -->
+	<!--Full Width Copy -->
+	<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+  	 <tr>
+      <td rowspan="3">
+
+<h1>Today's Prayer Needs</h1>
+
+
+	<li><a href="/prayers/3">This is a test</a></li>
+
+
+</td>
+
+ </tr>  
+</table>
+<!--End Full Width Copy -->
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+
+	</td>
+</tr>
+</table>
+<!--
+-------------------------
+End Featured Image Module
+-------------------------
+--> 
+<!--
+-------------------------
+Start Two Column Module
+-------------------------
+-->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+
+<tr>
+  <td width="275" height="3" class="lightbg" style="background-color:#e3e3e3;" ></td>
+  <td width="50"></td>
+  <td width="275" class="lightbg" style="background-color:#e3e3e3;" ></td>
+ </tr>
+ <tr>
+  <td height="10" colspan="3"><img src="http://i3.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer10.gif" width="1" height="10" /></td>
+ </tr>  
+
+  
+<tr>
+
+	<td colspan="3">
+    
+<!--Main Image and Headline -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ <tr>
+  <td width="275" rowspan="3"> <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >Less is  <span class="color" style="color:#00a7e5;" >More.</span></p>
+  <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" ><img src="http://i4.cmail1.com/ei/r/96/198/93E/094151/images/cards-pack.jpg" alt="image" width="259" height="208" class="largeborder" vspace="10" style="border-width:8px;border-style:solid;border-color:#cccccc;" /></p>
+  <p class="white" style="line-height:22px;font-size:12px;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;color:#222222;" ><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
+
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >Nullam dapibus varius risus, et auctor augue semper quis. 
+        In eros urna, pulvinar a porttitor sed, commodo vitae enim. 
+        Ut est turpis, rhoncus vel commodo non, lacinia viverra leo. 
+        Vivamus convallis turpis nibh, vel viverra elit. Morbi viverra 
+  bibendum lobortis.</p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p></td>
+  <td width="50" rowspan="3">&nbsp;</td>
+  <td width="275" valign="middle"> <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >The Grid  <span class="color" style="color:#00a7e5;" >System. </span></p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" ><img src="http://i5.cmail1.com/ei/r/96/198/93E/094151/images/cards-pack2.jpg" alt="image" width="259" height="208" class="largeborder" vspace="10" style="border-width:8px;border-style:solid;border-color:#cccccc;" /></p>
+
+  <p class="white" style="line-height:22px;font-size:12px;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;color:#222222;" ><strong>Lorem ipsum dolor sit amet, 
+    consectetur adipiscing elit. Nullam dapibus varius 
+    risus, et auctor augue semper quis. In eros urna,
+   pulvinar a porttitor sed, commodo vitae enim. </strong></p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >Ut est turpis, rhoncus vel commodo non, lacinia 
+    viverra leo. Vivamus convallis turpis nibh, vel viverra
+   elit. Morbi viverra bibendum lobortis.</p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p>  </td>
+ </tr>
+</table>
+<!--End Main Image and Headline -->
+
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+
+	</td>
+</tr>
+</table>
+<!--
+-------------------------
+End Two Column Module
+-------------------------
+-->
+
+
+
+<!--
+-------------------------
+Start Three Column Module
+-------------------------
+-->
+
+
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+  <td width="173" height="3" class="lightbg" style="background-color:#e3e3e3;" ></td>
+
+  <td width="40"></td>
+  <td width="173" height="3" class="lightbg" style="background-color:#e3e3e3;" ></td>
+  <td width="40"></td>
+  <td width="174" height="3" class="lightbg" style="background-color:#e3e3e3;" ></td>
+ </tr>
+ <tr>
+  <td height="10" colspan="5"><img src="http://i3.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer10.gif" width="1" height="10" /></td>
+ </tr>  
+
+  
+<tr>
+
+	<td colspan="5">
+    
+<!--Main Image and Headline -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ <tr>
+  <td width="173" rowspan="3">
+  <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >The Grid  <span class="color" style="color:#00a7e5;" >System. </span></p>
+  <img src="http://i6.cmail1.com/ei/r/96/198/93E/094151/images/thumb1.jpg" width="165" height="110" alt="thumbnail" class="smallborder" style="border-width:4px;border-style:solid;border-color:#cccccc;" />
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >It is a long established fact that a reader will be 
+  distracted by the readable content of a page when looking 
+  at its layout.</p>
+
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p>
+  </td>
+  <td width="40" rowspan="3">&nbsp;</td>
+  <td width="173" valign="middle">
+  <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >The Grid  <span class="color" style="color:#00a7e5;" >System. </span></p>
+  <img src="http://i6.cmail1.com/ei/r/96/198/93E/094151/images/thumb1.jpg" width="165" height="110" alt="thumbnail" class="smallborder" style="border-width:4px;border-style:solid;border-color:#cccccc;" />
+
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >It is a long established fact that a reader will be 
+  distracted by the readable content of a page when looking 
+  at its layout.</p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p>
+  </td>
+  <td width="40" valign="middle">&nbsp;</td>
+  <td width="174" valign="middle">
+  <p class="style4 dark" style="font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;" >The Grid  <span class="color" style="color:#00a7e5;" >System. </span></p>
+
+  <img src="http://i6.cmail1.com/ei/r/96/198/93E/094151/images/thumb1.jpg" width="165" height="110" alt="thumbnail" class="smallborder" style="border-width:4px;border-style:solid;border-color:#cccccc;" />
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" >It is a long established fact that a reader will be 
+  distracted by the readable content of a page when looking 
+  at its layout.</p>
+  <p style="line-height:22px;font-size:12px;color:#555555;font-family:'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;" > <a href="#" style="font-weight:bold;color:#00a7e5;text-decoration:none;" >| Read More |</a> </p>
+  </td>
+ </tr>
+</table>
+<!--End Main Image and Headline -->
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td><img src="http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1" height="40" /></td></tr></table>
+<!--End Spacer -->
+
+	</td>
+</tr>
+</table>
+<!--
+-------------------------
+End Three Column Module
+-------------------------
+-->
+<!--
+---------------------------
+Start Footer Contact Module
+---------------------------
+-->
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td align="center">
+
+<!--Spacer -->
+
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td></td></tr></table>
+<!--End Spacer -->
+
+<!--Logo and Contact Info-->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+ <tr>
+  <td width="252" valign="middle">
+   	<h1>Deesis</h1>
+	<h3>We Mean Prayer</h3>
+  </td>
+  <td width="20" valign="middle" align="left"></td>
+
+  	<td align="left" valign="middle">
+      <p class="style5" style="color:#030303;font-size:14px;line-height:18px;font-family:Helvetica, Arial, sans-serif;font-weight:bold;">contact@deesis.org<span class="webversion" style="font-family:Arial, sans-serif;font-size:12px;color:#555555;font-weight:bold;" > | </span>www.deesis.org<br />
+      </td>
+  </tr>
+
+</table>
+<!--End Logo and Contact Info-->
+
+<!--Spacer -->
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height="40"><tr><td></td></tr></table>
+<!--End Spacer -->
+    
+</td>
+</tr>
+</table>
+</body>
+</html>
+Redirected to http://localhost:3000/
+Completed in 167ms (DB: 2) | 302 Found [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-30 22:35:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 05:35:04', "perishable_token" = 'nfyxmwxthdWMGqRXdC9z', "last_request_at" = '2010-03-31 05:35:04' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.6ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+Rendered prayers/_form (6.3ms)
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 3) AND ("reminders".user_id = 2) LIMIT 1[0m
+Rendered prayers/_prayer (15.9ms)
+Rendered layouts/_header (3.6ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 101ms (View: 29, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-03-30 22:50:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 05:50:09', "perishable_token" = 'DD3otP3YvurjfOtilAsp', "last_request_at" = '2010-03-31 05:50:09' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+Rendered layouts/_email_header (4.9ms)
+  [4;36;1mReminder Load (0.5ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 2) [0m
+  [4;35;1mPrayer Load (0.4ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 3) ORDER BY created_at DESC LIMIT 10[0m
+Rendered layouts/_email_footer (0.8ms)
+Sent mail to brandon@melissa-brandon.com
+
+Date: Tue, 30 Mar 2010 22:50:09 -0700
+From: deesis.org
+To: brandon@melissa-brandon.com
+Subject: Your Daily Prayer Reminder
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+  <title>Deesis</title>
+  <style type="text/css">
+/*<![CDATA[*/
+  h1 {
+        font-size: 40px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        color: #000000;
+        line-height:40px;
+        letter-spacing:-2px;
+  }
+  .style3 {
+        font-size: 16px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight:bold;
+        line-height:18px;
+  }
+  .style4 {
+        font-size: 18px;
+        font-family: Arial, sans-serif;
+        font-weight:bold;
+        line-height:18px;
+  }
+  .color {
+  color: #00a7e5; 
+  }
+  .dark {
+  color: #222222; 
+  }
+  .realdark {
+  color:#030303;
+  }
+  .white {
+  color: #222222; 
+  }
+  p {
+  line-height:22px;
+  font-size:12px;
+  color: #555555;
+  font-family:"Lucida Sans Unicode", "Lucida Grande", Arial, sans-serif
+  }
+  .webversion {
+  font-family: Arial, sans-serif;
+  font-size:12px;
+  color: #555555;
+  font-weight:bold;
+  }
+  a {
+  font-weight:bold;
+  color: #00a7e5; 
+  text-decoration:none;
+  }
+  .weblink {
+  color:#C8C8C8
+  }
+  .style5 {
+        font-size: 14px;
+        line-height:18px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight:bold;
+  }
+  .darkbg {
+  background-color:#333333;       
+  }
+  .lightbg {
+  background-color:#e3e3e3;       
+  }
+  .largeborder {
+  border:8px solid #cccccc;
+  }
+  .smallborder {
+  border:4px solid #cccccc;
+  }
+  .totalbg {
+  background-color:#FFFFFF;       
+  }
+  .black {
+  background-color:#000000;       
+  }
+  /*]]>*/
+  </style>
+</head>
+
+<body topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" class="totalbg"
+style="background-color:#FFFFFF;">
+  <!--Spacer -->
+
+  <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height=
+  "40">
+    <tr>
+      <td><img src=
+      "http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1"
+      height="40" /></td>
+    </tr>
+  </table><!--End Spacer -->
+  <!--Logo and Links -->
+
+  <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr>
+      <td width="139" class="style2"><img src=
+      "http://i1.cmail1.com/ei/r/96/198/93E/094151/images/logo.jpg" alt="Logo" width=
+      "118" height="36" style="border-style:none;" /></td>
+
+      <td width="18"></td>
+
+      <td width="140" align="center"><a href="#" class="style4 dark" style=
+      "text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;">
+      <span class="color" style="color:#00a7e5;">Forward</span> this.</a></td>
+
+      <td width="12"></td>
+
+      <td width="140" align="center"><a href="http://boldtype.cmail1.com/t/r/u/utciy/l/"
+      class="style4 dark" style=
+      "text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;">
+      <span class="color" style="color:#00a7e5;">Un</span>-Subscribe.</a></td>
+
+      <td width="11"></td>
+
+      <td width="140" align="center"><a href="#" class="style4 dark" style=
+      "text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;">
+      <span class="color" style="color:#00a7e5;">Contact</span> Us.</a></td>
+    </tr>
+
+    <tr height="10">
+      <td colspan="7"></td>
+    </tr>
+
+    <tr height="3">
+      <td class="lightbg" style="background-color:#e3e3e3;"></td>
+
+      <td></td>
+
+      <td class="lightbg" style="background-color:#e3e3e3;"></td>
+
+      <td></td>
+
+      <td class="lightbg" style="background-color:#e3e3e3;"></td>
+
+      <td></td>
+
+      <td class="lightbg" style="background-color:#e3e3e3;"></td>
+    </tr>
+  </table><!--End Logo and Links -->
+  <!--Spacer -->
+
+  <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height=
+  "40">
+    <tr>
+      <td><img src=
+      "http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1"
+      height="40" /></td>
+    </tr>
+  </table><!--End Spacer -->
+
+  <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr>
+      <td>
+        <!--Main Image and Headline -->
+        <!--End Spacer -->
+        <!--Full Width Copy -->
+
+        <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td rowspan="3">
+
+<h1>Today's Prayer Needs</h1>
+
+<ul>
+
+	<li><a href="/prayers/3">This is a test</a></li>
+
+</ul>
+
+</td>
+</tr>
+</table><!--End Full Width Copy -->
+<!--Spacer -->
+
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center"
+height="40">
+<tr>
+<td><img src=
+"http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif"
+width="1" height="40" /></td>
+</tr>
+</table><!--End Spacer -->
+</td>
+</tr>
+</table>
+</body>
+</html>
+Redirected to http://localhost:3000/
+Completed in 268ms (DB: 2) | 302 Found [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-03-30 22:50:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-31 05:50:10', "perishable_token" = '8sX78Ia7B8mIXesnVeDW', "last_request_at" = '2010-03-31 05:50:10' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.7ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+Rendered prayers/_form (7.0ms)
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 3) AND ("reminders".user_id = 2) LIMIT 1[0m
+Rendered prayers/_prayer (16.2ms)
+Rendered layouts/_header (3.9ms)
+Rendered layouts/_footer (1.0ms)
+Completed in 116ms (View: 31, DB: 4) | 200 OK [http://localhost/]
