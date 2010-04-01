@@ -16,11 +16,9 @@ server 'root@deesis.org', :app, :web, :db
 namespace :deploy do
   desc "Build the site" 
   
-  task :after_update_code, :roles => [:web] do
+  task :after_update_code, :roles => :web do
     run <<-EOF
       cd #{release_path}
-      rake gems:install
-      rake db:migrate
       rake asset:packager:build_all
     EOF
   end

@@ -495,3 +495,21 @@ Rendering user_sessions/new
 Rendered layouts/_header (4.6ms)
 Rendered layouts/_footer (0.9ms)
 Completed in 42ms (View: 30, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-01 09:24:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (4.3ms)
+Rendered layouts/_footer (0.7ms)
+Completed in 87ms (View: 28, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-01 09:24:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (1.5ms)
+Rendered layouts/_footer (0.2ms)
+Completed in 17ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
