@@ -5,6 +5,10 @@ module ApplicationHelper
     content_for(:sidebar) { sidebar }
   end
   
+  def title(title)
+    content_for(:title) { title }
+  end
+  
   def profile_pic(user, size = :thumb)
     link_to (image_tag user.profile_pic.url(size)), profile_path(user.username)
   end

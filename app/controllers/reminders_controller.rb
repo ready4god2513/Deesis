@@ -1,10 +1,11 @@
-class RemindersController < ApplicationController
+class RemindersController < ProtectedController
   
   def index
     @user = current_user
-    @user.send_reminder
-    
-    redirect_to(root_path)
+
+    respond_to do |format|
+      format.html # index.html.erb
+    end
   end
   
   def create

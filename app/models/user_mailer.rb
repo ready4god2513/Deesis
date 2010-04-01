@@ -1,6 +1,7 @@
 class UserMailer < ActionMailer::Base
   
   default_url_options[:host] = "deesis.org"
+  helper :application
   
   def registration_confirmation(user)
     recipients    user.email

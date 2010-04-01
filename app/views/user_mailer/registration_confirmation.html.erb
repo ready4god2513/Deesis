@@ -1,7 +1,5 @@
 <%= render :partial => 'layouts/email_header' %>
 
-<p>
-	This is the registration confirmation
-</p>
-
+<%= render :partial => 'static/registration_email_body' %>
+<p><small>A copy of this introduction can be found at <%= link_to support_url, support_url %></small></p>
 <%= render :partial => 'layouts/email_footer' %>

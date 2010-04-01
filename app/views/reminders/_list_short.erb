@@ -1,5 +1,5 @@
 <ul>
-	<% user.reminders.each do |reminder| %>
+	<% user.reminders.find_last_five.each do |reminder| %>
 		<li><%= link_to first_x_words(reminder.prayer.prayer), prayer_path(reminder.prayer) %></li>
 	<% end %>
 </ul>
