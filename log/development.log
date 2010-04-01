@@ -479,3 +479,19 @@ Rendering static/privacy
 Rendered layouts/_header (84.4ms)
 Rendered layouts/_footer (0.2ms)
 Completed in 87ms (View: 85, DB: 1) | 200 OK [http://localhost/privacy]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-01 09:21:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 37ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-01 09:21:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (4.6ms)
+Rendered layouts/_footer (0.9ms)
+Completed in 42ms (View: 30, DB: 0) | 200 OK [http://localhost/login]
