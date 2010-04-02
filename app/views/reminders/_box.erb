@@ -2,5 +2,7 @@
 	<div class="info_box box">
 		<h2>Your Prayer Reminders</h2>
 		<%= render :partial => 'reminders/list_short', :locals => { :user => user } %>
+		
+		<br /><br /><%= link_to 'View All Reminders', reminders_path %>
 	</div>
 <% end %>
