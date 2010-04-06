@@ -2,5 +2,5 @@
 
 <%= render :partial => 'form' %>
 <div id="prayers_list">
-	<%= render :partial => 'complete' %>
+	<%= render :partial => 'complete', :locals => { :complete => @prayer } %>
 </div>
