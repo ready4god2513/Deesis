@@ -4,7 +4,7 @@ set :scm, "git"
 set :branch, "master"
 set :deploy_via, :remote_cache
 set :deploy_to, "/var/www/vhosts/deesis.org/rails/deployment/#{application}"
-set :use_sudo, true
+set :use_sudo, false
 set :user, 'deesis_ftp'
 
 server 'root@deesis.org', :app, :web, :db
