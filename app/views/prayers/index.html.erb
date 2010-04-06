@@ -6,7 +6,7 @@
 <% end %>
 
 <div id="prayers_list">
-	<%= render :partial => 'prayer', :collection => @prayers %>
+	<%= render :partial => 'complete', :collection => @prayers %>
 	
 	<% unless @prayers.next_page.nil? %>
 		<div id="pagination">

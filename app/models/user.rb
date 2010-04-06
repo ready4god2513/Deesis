@@ -42,13 +42,11 @@ class User < ActiveRecord::Base
     else
       self.lastname = split.last
     end
-    
-    
   end
   
   
-  def wants_to_be_reminded?(user, prayer)
-    user.reminders.find_by_prayer_id(prayer.id)
+  def wants_to_be_reminded?(prayer)
+    self.reminders.find_by_prayer_id(prayer.id)
   end
   
 

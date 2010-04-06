@@ -1,5 +1,8 @@
 <% user.reminders.each do |reminder| %>
-	<div class="prayer_reminder">
-		<%= link_to format_output(reminder.prayer.prayer), prayer_url(reminder.prayer) %>
+	<div class="list prayer">
+		<%= render :partial => 'prayers/prayer', :locals => { :prayer => reminder.prayer }%>
+		<div class="meta">
+			<%= render :partial => 'reminders/destroy', :locals => { :reminder => reminder }%>
+		</div>
 	</div>
 <% end %>

@@ -49,7 +49,7 @@ div.messages{background:#666;color:#fff;font-weight:700;margin:10px 0;padding:5p
 div.meta{clear:both;color:#999;font-size:0.95em;margin-left:60px;padding:20px 0 10px 0;}
 div.meta a,div.user_info_box a,div.list a,div.info_box a{color:#333}
 div.meta form{display:inline;}
-div.meta a, div.meta input[type=submit] {color:#4184AB;background:#E6E6DF;border:none;display:inline;font-size:1em;padding:5px;-moz-border-radius:4px;margin-right:10px;text-align:center;}
+div.meta a, div.meta input, div.prayer_reminder input[type=submit] {color:#4184AB;background:#E6E6DF;border:none;display:inline;font-size:1em;padding:5px;-moz-border-radius:4px;margin-right:10px;text-align:center;}
 div.meta input[type=submit] {padding:4px;}
 div.tabs{margin:30px 0 5px}
 div.tabs ul li{display:inline;margin:0 3px 0 0}

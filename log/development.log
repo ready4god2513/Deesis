@@ -1143,3 +1143,2309 @@ Rendered prayers/_prayer (1.1ms)
 Rendered layouts/_header (1.5ms)
 Rendered layouts/_footer (0.2ms)
 Completed in 103ms (View: 14, DB: 2) | 200 OK [http://localhost/prayers]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 18:36:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 70ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-05 18:36:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (10.3ms)
+Rendered layouts/_footer (12.4ms)
+Completed in 139ms (View: 105, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 19:23:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 31ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-05 19:23:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (4.0ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 54ms (View: 14, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-04-05 19:24:19) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "email"=>"brandon@melissa-brandon.com"}, "action"=>"create", "authenticity_token"=>"nIfBLj2DbDHurUyaqY8aZZawcrK9TyW0s2D/0yvQ67k=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".email) = 'brandon@melissa-brandon.com') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "login_count" = 9, "updated_at" = '2010-04-06 02:24:20', "perishable_token" = 'CrPgpra-fKYj7dSfCABB', "last_request_at" = '2010-04-06 02:24:20' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/
+Completed in 1188ms (DB: 2) | 302 Found [http://localhost/user_sessions]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 19:24:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '4') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 02:24:20', "perishable_token" = 'xs66Fj4THoe_txXFogDu', "last_request_at" = '2010-04-06 02:24:20' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.9ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (13.8ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 4) [0m
+  [4;36;1mReminder Load (0.7ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 4) ORDER BY created_at DESC LIMIT 5[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (8.2ms)
+Rendered reminders/_box (26.0ms)
+Rendered prayers/_form (5.3ms)
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (7.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.8ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 319ms (View: 116, DB: 5) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 19:34:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '4') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 02:34:24', "perishable_token" = 'PcIWgI8O7UkoTecrLw6U', "last_request_at" = '2010-04-06 02:34:24' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.9ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 4) [0m
+  [4;35;1mReminder Load (0.6ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 4) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (6.6ms)
+Rendered reminders/_box (17.2ms)
+Rendered prayers/_form (3.7ms)
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (7.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.8ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 201ms (View: 43, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-05 19:34:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (username like '%%') ORDER BY last_request_at DESC, created_at DESC LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering users/index
+Rendered users/_user (10.0ms)
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '4') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 02:34:32', "perishable_token" = 'URX-LsuN2GWhFpemW2u-', "last_request_at" = '2010-04-06 02:34:32' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+Rendered layouts/_header (22.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 81ms (View: 49, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-04-05 19:34:34) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '4') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 02:34:34', "perishable_token" = 'OtSwgk9UWYQvGuQj8wfz', "last_request_at" = '2010-04-06 02:34:34' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/
+Completed in 53ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 19:34:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 30ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-05 19:34:35) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (3.9ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 132ms (View: 13, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-05 19:36:32) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered layouts/_header (9.4ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 62ms (View: 34, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-05 19:36:45) [POST]
+  Parameters: {"recaptcha_response_field"=>"nevis advance", "recaptcha_challenge_field"=>"02FYyKoNEuQvmcivZMcXYHUaEUxFSDQE7b5kJg6nOtXsJvwvRTp4OoDvZIDb2R7h0TzRpnW7puZ7pzlil-BUP3MnoFQgMwgH6whEwJWI7yYUPpqJpm7Oz-jMJO9CjhBxtGfxY3bPbvnQSZxMeaz9Sk8m3xGlbGWVdI2k2TjIvZe1p_dBPoNosDpiPVR4pKYEOSqnY4Wt3InUrhRvkG8IjsimnCmfRtHu_3OwM0KL1SHfsAjzlDSoD8zqFrVkZr4u7Hm8a-yjS4k7v_R4G4aiktNTSH7x0B", "commit"=>"Register", "action"=>"create", "authenticity_token"=>"nIfBLj2DbDHurUyaqY8aZZawcrK9TyW0s2D/0yvQ67k=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"brandon", "password"=>"[FILTERED]", "email"=>"brandonh@ibethel.org"}}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'brandonh@ibethel.org') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'brandonh@ibethel.org') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("profile_pic_content_type", "location", "last_request_at", "created_at", "activity_stream_token", "crypted_password", "postal_code", "updated_at", "profile_pic_file_name", "profile_pic_file_size", "perishable_token", "username", "api_key", "profile_pic_updated_at", "lastname", "password_salt", "firstname", "persistence_token", "login_count", "last_login_at", "status", "email", "pic") VALUES(NULL, NULL, '2010-04-06 02:36:46', '2010-04-06 02:36:46', NULL, '9a523aa288ce1e374c093e606368450939ffbb45f148d99bcfce01d12d5f26d7ab1dee27f9ea7d734057da659cfe5dc7958312e809723b3624a28fce20bcfbe2', NULL, '2010-04-06 02:36:46', NULL, NULL, 'Gh8bg17GgDYQcddQietD', 'brandon', NULL, NULL, NULL, 'J99RyVmQ-TEg_x1jg-p7', NULL, '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b', 1, NULL, NULL, 'brandonh@ibethel.org', NULL)[0m
+[paperclip] Saving attachments.
+Rendered layouts/_email_header (4.4ms)
+Rendered static/_registration_email_body (1.1ms)
+Rendered layouts/_email_footer (0.8ms)
+Sent mail to brandonh@ibethel.org
+
+Date: Mon, 5 Apr 2010 19:36:46 -0700
+From: welcome@deesis.org
+To: brandonh@ibethel.org
+Subject: Welcome to Deesis
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+  <title>Deesis</title>
+  <style type="text/css">
+/*<![CDATA[*/
+  h1 {
+        font-size: 40px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        color: #000000;
+        line-height:40px;
+        letter-spacing:-2px;
+  }
+  .style3 {
+        font-size: 16px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight:bold;
+        line-height:18px;
+  }
+  .style4 {
+        font-size: 18px;
+        font-family: Arial, sans-serif;
+        font-weight:bold;
+        line-height:18px;
+  }
+  .color {
+  color: #00a7e5; 
+  }
+  .dark {
+  color: #222222; 
+  }
+  .realdark {
+  color:#030303;
+  }
+  .white {
+  color: #222222; 
+  }
+  p, ol, ul {
+  line-height:22px;
+  font-size:12px;
+  color: #555555;
+  font-family:"Lucida Sans Unicode", "Lucida Grande", Arial, sans-serif
+  }
+  .webversion {
+  font-family: Arial, sans-serif;
+  font-size:12px;
+  color: #555555;
+  font-weight:bold;
+  }
+  a {
+  font-weight:bold;
+  color: #00a7e5; 
+  text-decoration:none;
+  }
+  .weblink {
+  color:#C8C8C8
+  }
+  .style5 {
+        font-size: 14px;
+        line-height:18px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight:bold;
+  }
+  .darkbg {
+  background-color:#333333;       
+  }
+  .lightbg {
+  background-color:#e3e3e3;       
+  }
+  .largeborder {
+  border:8px solid #cccccc;
+  }
+  .smallborder {
+  border:4px solid #cccccc;
+  }
+  .totalbg {
+  background-color:#FFFFFF;       
+  }
+  .black {
+  background-color:#000000;       
+  }
+  /*]]>*/
+  </style>
+</head>
+
+<body topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" class="totalbg"
+style="background-color:#FFFFFF;">
+  <!--Spacer -->
+
+  <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height=
+  "40">
+    <tr>
+      <td><img src=
+      "http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1"
+      height="40" /></td>
+    </tr>
+  </table><!--End Spacer -->
+  <!--Logo and Links -->
+
+  <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr>
+      <td width="139" class="style2"><img src=
+      "http://i1.cmail1.com/ei/r/96/198/93E/094151/images/logo.jpg" alt="Logo" width=
+      "118" height="36" style="border-style:none;" /></td>
+
+      <td width="18"></td>
+
+      <td width="140" align="center"><a href="#" class="style4 dark" style=
+      "text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;">
+      <span class="color" style="color:#00a7e5;">Forward</span> this.</a></td>
+
+      <td width="12"></td>
+
+      <td width="140" align="center"><a href="http://boldtype.cmail1.com/t/r/u/utciy/l/"
+      class="style4 dark" style=
+      "text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;">
+      <span class="color" style="color:#00a7e5;">Un</span>-Subscribe.</a></td>
+
+      <td width="11"></td>
+
+      <td width="140" align="center"><a href="#" class="style4 dark" style=
+      "text-decoration:none;font-size:18px;font-family:Arial, sans-serif;font-weight:bold;line-height:18px;color:#222222;">
+      <span class="color" style="color:#00a7e5;">Contact</span> Us.</a></td>
+    </tr>
+
+    <tr height="10">
+      <td colspan="7"></td>
+    </tr>
+
+    <tr height="3">
+      <td class="lightbg" style="background-color:#e3e3e3;"></td>
+
+      <td></td>
+
+      <td class="lightbg" style="background-color:#e3e3e3;"></td>
+
+      <td></td>
+
+      <td class="lightbg" style="background-color:#e3e3e3;"></td>
+
+      <td></td>
+
+      <td class="lightbg" style="background-color:#e3e3e3;"></td>
+    </tr>
+  </table><!--End Logo and Links -->
+  <!--Spacer -->
+
+  <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" height=
+  "40">
+    <tr>
+      <td><img src=
+      "http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif" width="1"
+      height="40" /></td>
+    </tr>
+  </table><!--End Spacer -->
+
+  <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr>
+      <td>
+        <!--Main Image and Headline -->
+        <!--End Spacer -->
+        <!--Full Width Copy -->
+
+        <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td rowspan="3">
+
+<h1>Welcome to Deesis</h1>
+<p>
+	Deesis is a community of Christians bent on keeping each other in prayer.  We welcome you with open arms
+	and hope that you will find our community to be a blessing to you.
+</p>
+<p>
+	There are a couple of things that we like to point out to new members such as yourself-
+</p>
+<ol>
+	<li>Prayer for any (and every) subject is encouraged.  However, please refrain from any gossip, hate, or vulgar language.</li>
+	<li>Please be respectful and honoring when commenting on prayers.</li>
+	<li>Be a blessing to others, while allowing them to bless you.</li>
+</ol>
+<p>
+	Thank you for joining our community.
+</p>
+<p><strong>Deesis</strong></p>
+<p><small>A copy of this introduction can be found at <a href="http://deesis.org/support">http://deesis.org/support</a></small></p>
+</td>
+</tr>
+</table><!--End Full Width Copy -->
+<!--Spacer -->
+
+<table width="600" border="0" cellspacing="0" cellpadding="0" align="center"
+height="40">
+<tr>
+<td><img src=
+"http://i10.cmail1.com/ei/r/96/198/93E/094151/images/lightspacer40.gif"
+width="1" height="40" /></td>
+</tr>
+</table><!--End Spacer -->
+</td>
+</tr>
+</table>
+</body>
+</html>
+Redirected to http://localhost:3000/
+Completed in 494ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 19:36:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 02:36:46', "perishable_token" = 'JED92xn8ztjcH3l6m7IV', "last_request_at" = '2010-04-06 02:36:46' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.9ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+Rendered reminders/_box (10.2ms)
+Rendered prayers/_form (4.1ms)
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (5.6ms)
+Rendered prayers/_prayer (19.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (3.5ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (4.0ms)
+Rendered prayers/_prayer (13.4ms)
+Rendered layouts/_header (3.9ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 271ms (View: 162, DB: 8) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#create (for 127.0.0.1 at 2010-04-05 19:36:49) [POST]
+  Parameters: {"commit"=>"Remind Me", "action"=>"create", "authenticity_token"=>"nIfBLj2DbDHurUyaqY8aZZawcrK9TyW0s2D/0yvQ67k=", "controller"=>"reminders", "reminder"=>{"user_id"=>"5", "prayer_id"=>"25"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 02:36:49', "perishable_token" = '-lRNI4WBPcDMkYNPACEG', "last_request_at" = '2010-04-06 02:36:49' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mReminder Load (0.2ms)[0m   [0mSELECT "reminders".id FROM "reminders" WHERE ("reminders"."user_id" = 5 AND "reminders".prayer_id = 25) LIMIT 1[0m
+  [4;36;1mReminder Create (0.3ms)[0m   [0;1mINSERT INTO "reminders" ("created_at", "updated_at", "user_id", "prayer_id") VALUES('2010-04-06 02:36:49', '2010-04-06 02:36:49', 5, 25)[0m
+Redirected to http://localhost:3000/
+Completed in 69ms (DB: 2) | 302 Found [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 19:36:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 02:36:49', "perishable_token" = 'Z898NSU4jxaZE77_PI0L', "last_request_at" = '2010-04-06 02:36:49' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.9ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.5ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (4.4ms)
+Rendered reminders/_box (14.5ms)
+Rendered prayers/_form (3.6ms)
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_prayer (6.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (4.3ms)
+Rendered prayers/_prayer (9.8ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 112ms (View: 41, DB: 5) | 200 OK [http://localhost/]
+  [4;36;1mSQL (4.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) ORDER BY created_at DESC[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" ORDER BY created_at DESC[0m
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 20:09:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (93.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 03:09:14', "perishable_token" = 'Q3lY4an0q0ZcfADGjWZI', "last_request_at" = '2010-04-06 03:09:14' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.9ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.3ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.8ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (5.3ms)
+Rendered reminders/_box (33.1ms)
+Rendered prayers/_form (4.4ms)
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.6ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_destroy (5.4ms)
+Rendered prayers/_prayer (25.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.3ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (3.9ms)
+Rendered prayers/_prayer (10.1ms)
+Rendered layouts/_header (4.5ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 396ms (View: 87, DB: 99) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 20:09:16) [DELETE]
+  Parameters: {"commit"=>"Remove Reminder", "action"=>"index", "_method"=>"delete", "authenticity_token"=>"nIfBLj2DbDHurUyaqY8aZZawcrK9TyW0s2D/0yvQ67k=", "controller"=>"reminders"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 03:09:16', "perishable_token" = 'uJq8p1tr7DNUbCjxz2bw', "last_request_at" = '2010-04-06 03:09:16' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;35;1mReminder Load (0.8ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list (48.2ms)
+Rendered layouts/_header (5.3ms)
+Rendered layouts/_footer (0.7ms)
+Completed in 288ms (View: 218, DB: 3) | 200 OK [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 20:09:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 03:09:19', "perishable_token" = '9a81gsJ1pY_ZoAwpmWov', "last_request_at" = '2010-04-06 03:09:19' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (1.0ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (4.6ms)
+Rendered reminders/_box (18.2ms)
+Rendered prayers/_form (3.8ms)
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.5ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_destroy (118.8ms)
+Rendered prayers/_prayer (128.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.3ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (4.4ms)
+Rendered prayers/_prayer (10.0ms)
+Rendered layouts/_header (5.4ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 253ms (View: 168, DB: 6) | 200 OK [http://localhost/prayers]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:10:43) [DELETE]
+  Parameters: {"commit"=>"Remove Reminder", "action"=>"index", "_method"=>"delete", "authenticity_token"=>"nIfBLj2DbDHurUyaqY8aZZawcrK9TyW0s2D/0yvQ67k=", "controller"=>"reminders"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.8ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:10:43', "perishable_token" = '7_aeGdKN40W52pVR_AJh', "last_request_at" = '2010-04-06 04:10:43' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;35;1mReminder Load (0.5ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list (25.6ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 104ms (View: 32, DB: 3) | 200 OK [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:10:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:10:44', "perishable_token" = 'GGaSEMHotyIr5xu1hspp', "last_request_at" = '2010-04-06 04:10:44' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.8ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (4.3ms)
+Rendered reminders/_box (14.5ms)
+Rendered prayers/_form (3.6ms)
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_destroy (3.2ms)
+Rendered prayers/_prayer (10.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (3.6ms)
+Rendered prayers/_prayer (8.2ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 113ms (View: 43, DB: 5) | 200 OK [http://localhost/prayers]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:13:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:13:10', "perishable_token" = 'kBdYDBwMbMFfJwI_WFVi', "last_request_at" = '2010-04-06 04:13:10' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+ERROR: compiling _run_erb_app47views47reminders47_list46erb_locals_list_object_user RAISED compile error
+/Users/ready4god2513/Documents/rails/Deesis/app/views/reminders/_list.erb:4: syntax error, unexpected '=', expecting tASSOC
+...'reminders/destroy', :locals = { :reminder => reminder }).to...
+                              ^
+Function body:           def _run_erb_app47views47reminders47_list46erb_locals_list_object_user(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];user = local_assigns[:user];list = local_assigns[:list];;@output_buffer = '';  __in_erb_template=true ;  user.reminders.each do |reminder| ; @output_buffer.concat "\n\t<div class=\"prayer_reminder\">\n\t\t"
+
+; @output_buffer.concat(( link_to format_output(reminder.prayer.prayer), prayer_url(reminder.prayer) ).to_s); @output_buffer.concat "\n\t\t"
+; @output_buffer.concat(( render :partial => 'reminders/destroy', :locals = { :reminder => reminder }).to_s); @output_buffer.concat "\n\t</div>\n"
+
+;  end ; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/ready4god2513/Documents/rails/Deesis/app/views/reminders/_list.erb:9:in `compile!'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:20:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:19:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:184:in `render_partial'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:267:in `render_without_haml'
+/usr/local/lib/ruby/gems/1.8/gems/haml-2.2.22/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/Users/ready4god2513/Documents/rails/Deesis/app/views/reminders/index.html.erb:2:in `_run_erb_app47views47reminders47index46html46erb'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:306:in `with_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:30:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render_without_haml'
+/usr/local/lib/ruby/gems/1.8/gems/haml-2.2.22/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render_without_haml'
+/usr/local/lib/ruby/gems/1.8/gems/haml-2.2.22/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `custom'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `respond'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/ready4god2513/Documents/rails/Deesis/app/controllers/reminders_controller.rb:6:in `index'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `sass_old_process'
+/usr/local/lib/ruby/gems/1.8/gems/haml-2.2.22/lib/sass/plugin/rails.rb:20:in `process_without_compass'
+/usr/local/lib/ruby/gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/ready4god2513/Documents/rails/Deesis/app/views/reminders/_list.erb:4: syntax error, unexpected '=', expecting tASSOC
+...'reminders/destroy', :locals = { :reminder => reminder }).to...
+                              ^) on line #4 of app/views/reminders/_list.erb:
+1: <% user.reminders.each do |reminder| %>
+2: 	<div class="prayer_reminder">
+3: 		<%= link_to format_output(reminder.prayer.prayer), prayer_url(reminder.prayer) %>
+4: 		<%= render :partial => 'reminders/destroy', :locals = { :reminder => reminder }%>
+5: 	</div>
+6: <% end %>
+
+    app/views/reminders/_list.erb:9:in `compile!'
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/reminders/index.html.erb:2
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/reminders_controller.rb:6:in `index'
+    haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    /usr/local/lib/ruby/gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (95.0ms)
+Rendered rescues/_request_and_response (2.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:13:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:13:17', "perishable_token" = 'QfY-ZVqBArhO8L0wsa1X', "last_request_at" = '2010-04-06 04:13:17' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;35;1mReminder Load (0.6ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (4.4ms)
+Rendered reminders/_list (37.9ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 196ms (View: 50, DB: 3) | 200 OK [http://localhost/reminders]
+
+
+Processing RemindersController#destroy (for 127.0.0.1 at 2010-04-05 21:13:19) [DELETE]
+  Parameters: {"commit"=>"Remove Reminder", "action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"nIfBLj2DbDHurUyaqY8aZZawcrK9TyW0s2D/0yvQ67k=", "id"=>"13", "controller"=>"reminders"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:13:19', "perishable_token" = 'GlTt-EktvodOiAFpn-zc', "last_request_at" = '2010-04-06 04:13:19' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mReminder Load (0.5ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."id" = 13) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Destroy (0.3ms)[0m   [0;1mDELETE FROM "reminders" WHERE "id" = 13[0m
+Redirected to http://localhost:3000/
+Completed in 155ms (DB: 2) | 302 Found [http://localhost/reminders/13]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:13:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:13:19', "perishable_token" = 'qE89ze991j_6WIlmZoFU', "last_request_at" = '2010-04-06 04:13:19' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.8ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+Rendered reminders/_box (9.4ms)
+Rendered prayers/_form (3.7ms)
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (4.4ms)
+Rendered prayers/_prayer (13.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (3.6ms)
+Rendered prayers/_prayer (8.1ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 113ms (View: 47, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#create (for 127.0.0.1 at 2010-04-05 21:13:22) [POST]
+  Parameters: {"commit"=>"Remind Me", "action"=>"create", "authenticity_token"=>"nIfBLj2DbDHurUyaqY8aZZawcrK9TyW0s2D/0yvQ67k=", "controller"=>"reminders", "reminder"=>{"user_id"=>"5", "prayer_id"=>"25"}}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:13:22', "perishable_token" = 'th3RNNeQxPNC3tXC_KU7', "last_request_at" = '2010-04-06 04:13:22' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mReminder Load (0.2ms)[0m   [0mSELECT "reminders".id FROM "reminders" WHERE ("reminders"."user_id" = 5 AND "reminders".prayer_id = 25) LIMIT 1[0m
+  [4;36;1mReminder Create (0.3ms)[0m   [0;1mINSERT INTO "reminders" ("created_at", "updated_at", "user_id", "prayer_id") VALUES('2010-04-06 04:13:22', '2010-04-06 04:13:22', 5, 25)[0m
+Redirected to http://localhost:3000/
+Completed in 70ms (DB: 2) | 302 Found [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:13:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:13:22', "perishable_token" = 'JeIocECL2l4QM3urc9mO', "last_request_at" = '2010-04-06 04:13:22' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.9ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (4.3ms)
+Rendered reminders/_box (14.5ms)
+Rendered prayers/_form (3.6ms)
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_prayer (6.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (4.6ms)
+Rendered prayers/_prayer (92.4ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 192ms (View: 124, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:13:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:13:25', "perishable_token" = 'XQaqIW0KJ5Y1CF8Up451', "last_request_at" = '2010-04-06 04:13:25' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;35;1mReminder Load (0.5ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (3.7ms)
+Rendered reminders/_list (29.9ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 91ms (View: 36, DB: 3) | 200 OK [http://localhost/reminders]
+
+
+Processing RemindersController#destroy (for 127.0.0.1 at 2010-04-05 21:13:27) [DELETE]
+  Parameters: {"commit"=>"Remove Reminder", "action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"nIfBLj2DbDHurUyaqY8aZZawcrK9TyW0s2D/0yvQ67k=", "id"=>"14", "controller"=>"reminders"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:13:27', "perishable_token" = 'Cu3oX7WQhMVzz8CZ2SCm', "last_request_at" = '2010-04-06 04:13:27' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."id" = 14) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Destroy (0.2ms)[0m   [0;1mDELETE FROM "reminders" WHERE "id" = 14[0m
+Redirected to http://localhost:3000/
+Completed in 67ms (DB: 2) | 302 Found [http://localhost/reminders/14]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:13:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:13:27', "perishable_token" = 'fPo426m2cJttn_FDonOC', "last_request_at" = '2010-04-06 04:13:27' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.8ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+Rendered reminders/_box (9.4ms)
+Rendered prayers/_form (3.8ms)
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (4.2ms)
+Rendered prayers/_prayer (11.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (3.6ms)
+Rendered prayers/_prayer (95.4ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 194ms (View: 127, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#create (for 127.0.0.1 at 2010-04-05 21:14:57) [POST]
+  Parameters: {"commit"=>"Remind Me", "action"=>"create", "authenticity_token"=>"nIfBLj2DbDHurUyaqY8aZZawcrK9TyW0s2D/0yvQ67k=", "controller"=>"reminders", "reminder"=>{"user_id"=>"5", "prayer_id"=>"25"}}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:14:57', "perishable_token" = 'PpHkTQ5J5GwgLtLz6DM_', "last_request_at" = '2010-04-06 04:14:57' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mReminder Load (0.2ms)[0m   [0mSELECT "reminders".id FROM "reminders" WHERE ("reminders"."user_id" = 5 AND "reminders".prayer_id = 25) LIMIT 1[0m
+  [4;36;1mReminder Create (0.3ms)[0m   [0;1mINSERT INTO "reminders" ("created_at", "updated_at", "user_id", "prayer_id") VALUES('2010-04-06 04:14:57', '2010-04-06 04:14:57', 5, 25)[0m
+Redirected to http://localhost:3000/
+Completed in 66ms (DB: 2) | 302 Found [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:14:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:14:57', "perishable_token" = 'Gb2ubepMDGOtQfkAYHY5', "last_request_at" = '2010-04-06 04:14:57' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.9ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (4.3ms)
+Rendered reminders/_box (14.7ms)
+Rendered prayers/_form (3.7ms)
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_prayer (6.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (4.3ms)
+Rendered prayers/_prayer (8.9ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 197ms (View: 41, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:14:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:14:59', "perishable_token" = '4U0jTnnEc9i0ghZQrDtr', "last_request_at" = '2010-04-06 04:14:59' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;35;1mReminder Load (0.5ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (3.8ms)
+Rendered reminders/_list (117.3ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 177ms (View: 123, DB: 2) | 200 OK [http://localhost/reminders]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:16:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:16:01', "perishable_token" = 'QVjPtxN_kXqo6rTCvvsi', "last_request_at" = '2010-04-06 04:16:01' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;35;1mReminder Load (0.5ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (3.6ms)
+Rendered reminders/_list (30.2ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 90ms (View: 36, DB: 2) | 200 OK [http://localhost/reminders]
+
+
+Processing RemindersController#destroy (for 127.0.0.1 at 2010-04-05 21:16:03) [DELETE]
+  Parameters: {"commit"=>"Remove Reminder", "action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"nIfBLj2DbDHurUyaqY8aZZawcrK9TyW0s2D/0yvQ67k=", "id"=>"15", "controller"=>"reminders"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:16:03', "perishable_token" = 'bg87MiZovGackMf1C5Ae', "last_request_at" = '2010-04-06 04:16:03' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."id" = 15) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Destroy (0.2ms)[0m   [0;1mDELETE FROM "reminders" WHERE "id" = 15[0m
+Redirected to http://localhost:3000/
+Completed in 67ms (DB: 2) | 302 Found [http://localhost/reminders/15]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:16:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:16:03', "perishable_token" = 'j710ZobfURz14EnFbQTK', "last_request_at" = '2010-04-06 04:16:03' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.8ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+Rendered reminders/_box (9.3ms)
+Rendered prayers/_form (3.7ms)
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (4.3ms)
+Rendered prayers/_prayer (11.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (87.7ms)
+Rendered prayers/_prayer (92.5ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 195ms (View: 124, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#create (for 127.0.0.1 at 2010-04-05 21:16:06) [POST]
+  Parameters: {"commit"=>"Remind Me", "action"=>"create", "authenticity_token"=>"nIfBLj2DbDHurUyaqY8aZZawcrK9TyW0s2D/0yvQ67k=", "controller"=>"reminders", "reminder"=>{"user_id"=>"5", "prayer_id"=>"25"}}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:16:06', "perishable_token" = 'ir95czFhz2yNdN4HC3JA', "last_request_at" = '2010-04-06 04:16:06' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mReminder Load (0.2ms)[0m   [0mSELECT "reminders".id FROM "reminders" WHERE ("reminders"."user_id" = 5 AND "reminders".prayer_id = 25) LIMIT 1[0m
+  [4;36;1mReminder Create (0.3ms)[0m   [0;1mINSERT INTO "reminders" ("created_at", "updated_at", "user_id", "prayer_id") VALUES('2010-04-06 04:16:06', '2010-04-06 04:16:06', 5, 25)[0m
+Redirected to http://localhost:3000/
+Completed in 70ms (DB: 2) | 302 Found [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:16:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:16:06', "perishable_token" = 'MXUKHjdw-W4rqdW679-v', "last_request_at" = '2010-04-06 04:16:06' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.9ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (4.3ms)
+Rendered reminders/_box (14.8ms)
+Rendered prayers/_form (3.6ms)
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_prayer (6.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (4.3ms)
+Rendered prayers/_prayer (9.2ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 201ms (View: 41, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#create (for 127.0.0.1 at 2010-04-05 21:16:09) [POST]
+  Parameters: {"commit"=>"Remind Me", "action"=>"create", "authenticity_token"=>"nIfBLj2DbDHurUyaqY8aZZawcrK9TyW0s2D/0yvQ67k=", "controller"=>"reminders", "reminder"=>{"user_id"=>"5", "prayer_id"=>"24"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:16:09', "perishable_token" = 'pZKb7lOZpDJFQrN4U3vL', "last_request_at" = '2010-04-06 04:16:09' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mReminder Load (0.2ms)[0m   [0mSELECT "reminders".id FROM "reminders" WHERE ("reminders"."user_id" = 5 AND "reminders".prayer_id = 24) LIMIT 1[0m
+  [4;36;1mReminder Create (0.3ms)[0m   [0;1mINSERT INTO "reminders" ("created_at", "updated_at", "user_id", "prayer_id") VALUES('2010-04-06 04:16:09', '2010-04-06 04:16:09', 5, 24)[0m
+Redirected to http://localhost:3000/
+Completed in 69ms (DB: 2) | 302 Found [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:16:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:16:09', "perishable_token" = 'bFPXCRFbXSLy8yYelVwN', "last_request_at" = '2010-04-06 04:16:09' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.8ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.5ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mPrayer Load (0.4ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (6.5ms)
+Rendered reminders/_box (16.4ms)
+Rendered prayers/_form (4.9ms)
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_prayer (7.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_prayer (4.5ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.6ms)
+Completed in 108ms (View: 38, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:16:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:16:25', "perishable_token" = 'UVLf9m2uJnPVOvT53_pQ', "last_request_at" = '2010-04-06 04:16:25' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;36;1mReminder Load (0.7ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (3.7ms)
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (3.2ms)
+Rendered reminders/_list (37.0ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 186ms (View: 42, DB: 3) | 200 OK [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:16:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:16:29', "perishable_token" = 'nnOLw31o4ljqAniVU9q6', "last_request_at" = '2010-04-06 04:16:29' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.8ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.7ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (95.4ms)
+Rendered reminders/_box (105.2ms)
+Rendered prayers/_form (3.7ms)
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_prayer (7.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_prayer (4.6ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 197ms (View: 126, DB: 6) | 200 OK [http://localhost/prayers]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:16:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:16:31', "perishable_token" = 'AdULd8HoAPGBLOIfFHDU', "last_request_at" = '2010-04-06 04:16:31' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;36;1mReminder Load (0.7ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (4.8ms)
+  [4;36;1mPrayer Load (0.6ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (3.1ms)
+Rendered reminders/_list (38.9ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 99ms (View: 44, DB: 3) | 200 OK [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:16:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:16:34', "perishable_token" = 'U5BvfnYzTLUh0bjDjzQv', "last_request_at" = '2010-04-06 04:16:34' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.8ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.6ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (6.6ms)
+Rendered reminders/_box (16.6ms)
+Rendered prayers/_form (3.6ms)
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_prayer (6.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_prayer (4.5ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 108ms (View: 37, DB: 6) | 200 OK [http://localhost/prayers]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:16:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:16:37', "perishable_token" = 'mqa_Od5C6LHW2UFjN7N3', "last_request_at" = '2010-04-06 04:16:37' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;36;1mReminder Load (0.7ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (3.7ms)
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (3.1ms)
+Rendered reminders/_list (36.1ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 185ms (View: 41, DB: 3) | 200 OK [http://localhost/reminders]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:17:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:17:28', "perishable_token" = 'YtoQ-PgyDu4_PGN36_zD', "last_request_at" = '2010-04-06 04:17:28' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;35;1mReminder Load (0.7ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (3.8ms)
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (3.1ms)
+Rendered reminders/_list (126.4ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 198ms (View: 144, DB: 3) | 200 OK [http://localhost/reminders]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:17:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:17:46', "perishable_token" = 'PWvRE4Inzaco105m6JxP', "last_request_at" = '2010-04-06 04:17:46' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;36;1mReminder Load (0.7ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (4.0ms)
+  [4;36;1mPrayer Load (0.7ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (91.7ms)
+Rendered reminders/_list (130.3ms)
+Rendered layouts/_header (3.9ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 197ms (View: 142, DB: 4) | 200 OK [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:17:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:17:51', "perishable_token" = 'txf9CVMsv1BVlfLWMbg5', "last_request_at" = '2010-04-06 04:17:51' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.8ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.6ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (6.6ms)
+Rendered reminders/_box (16.6ms)
+Rendered prayers/_form (3.6ms)
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_prayer (7.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_prayer (4.6ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 107ms (View: 37, DB: 6) | 200 OK [http://localhost/prayers]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:17:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:17:59', "perishable_token" = 'uQBnihhwz6op2aBxPDVD', "last_request_at" = '2010-04-06 04:17:59' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;36;1mReminder Load (0.7ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (3.7ms)
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (3.1ms)
+Rendered reminders/_list (36.7ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 97ms (View: 42, DB: 3) | 200 OK [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:20:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:20:37', "perishable_token" = 'S8Vzj7WeI5txjSK23o9g', "last_request_at" = '2010-04-06 04:20:37' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.9ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.6ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (6.7ms)
+Rendered reminders/_box (17.0ms)
+Rendered prayers/_form (3.6ms)
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (4.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.0ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 197ms (View: 40, DB: 5) | 200 OK [http://localhost/prayers]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:22:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:22:07', "perishable_token" = 'ghYAtK0GMMQQTHjIr_1n', "last_request_at" = '2010-04-06 04:22:07' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.8ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;36;1mReminder Load (0.6ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (6.7ms)
+Rendered reminders/_box (17.9ms)
+Rendered prayers/_form (3.7ms)
+
+ActionView::TemplateError (undefined local variable or method `prayer' for #<ActionView::Base:0x10307d678>) on line #1 of app/views/prayers/_complete.erb:
+1: <div class="list prayer" id="prayer_id_<%= prayer.id %>">
+2: 	<%= render :partial => 'prayer', :locals => { :prayer => prayer }%>
+3: 	<%= render :partial => 'meta', :locals => { :prayer => prayer }%>
+4: 	<div class="clear"></div>
+
+    app/views/prayers/_complete.erb:1
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/prayers/index.html.erb:9
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/prayers_controller.rb:9:in `index'
+    haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    /usr/local/lib/ruby/gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (98.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:22:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:22:49', "perishable_token" = 'N-w6FD2fER3EmcUXySga', "last_request_at" = '2010-04-06 04:22:49' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.9ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.6ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (6.6ms)
+Rendered reminders/_box (16.7ms)
+Rendered prayers/_form (3.6ms)
+
+ActionView::TemplateError (undefined method `profile_pic' for nil:NilClass) on line #1 of app/views/prayers/_prayer.erb:
+1: <div class="avatar left"><%= profile_pic(prayer.user) %></div>
+2: <div class="item left"><%= format_output(prayer.prayer) %></div>
+
+    app/helpers/application_helper.rb:13:in `profile_pic'
+    app/views/prayers/_prayer.erb:1
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/prayers/_complete.erb:2
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/prayers/index.html.erb:9
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/prayers_controller.rb:9:in `index'
+    haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    /usr/local/lib/ruby/gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (205.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:23:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:23:21', "perishable_token" = 'ZdYXJMb8Pww_EDGAOVKx', "last_request_at" = '2010-04-06 04:23:21' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.9ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;36;1mReminder Load (0.6ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mPrayer Load (0.4ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (6.6ms)
+Rendered reminders/_box (16.6ms)
+Rendered prayers/_form (3.6ms)
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (4.0ms)
+  [4;36;1mReminder Load (0.5ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_meta (94.7ms)
+Rendered prayers/_complete (106.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.3ms)
+  [4;36;1mReminder Load (0.6ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_meta (3.1ms)
+Rendered prayers/_complete (6.2ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 214ms (View: 143, DB: 6) | 200 OK [http://localhost/prayers]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:23:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:23:44', "perishable_token" = '0uC8PEjAxqm14JkZfAoW', "last_request_at" = '2010-04-06 04:23:44' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;35;1mReminder Load (0.7ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (3.8ms)
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_destroy (3.1ms)
+Rendered reminders/_list (35.7ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 95ms (View: 41, DB: 3) | 200 OK [http://localhost/reminders]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:24:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:24:57', "perishable_token" = 'nUfQU99vSGMdeloLYkZj', "last_request_at" = '2010-04-06 04:24:57' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;36;1mReminder Load (0.7ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+
+ActionView::TemplateError (Missing template reminders/_prayer.erb in view path app/views) on line #3 of app/views/reminders/_list.erb:
+1: <% user.reminders.each do |reminder| %>
+2: 	<div class="list prayer">
+3: 		<%= render :partial => 'prayer', :locals => { :prayer => reminder.prayer }%>
+4: 		<div class="meta">
+5: 			<%= render :partial => 'reminders/destroy', :locals => { :reminder => reminder }%>
+6: 		</div>
+
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/reminders/_list.erb:3
+    /usr/local/lib/ruby/gems/1.8/gems/will_paginate-2.3.12/lib/will_paginate/finder.rb:168:in `method_missing'
+    /usr/local/lib/ruby/gems/1.8/gems/will_paginate-2.3.12/lib/will_paginate/finder.rb:168:in `method_missing'
+    app/views/reminders/_list.erb:1
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/reminders/index.html.erb:3
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/reminders_controller.rb:6:in `index'
+    haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    /usr/local/lib/ruby/gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (196.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:25:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:25:07', "perishable_token" = 'VLLb6rNNkATbLwT2wpqz', "last_request_at" = '2010-04-06 04:25:07' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;36;1mReminder Load (0.7ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (5.7ms)
+Rendered reminders/_destroy (3.8ms)
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.7ms)
+Rendered reminders/_destroy (3.3ms)
+Rendered reminders/_list (42.0ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 107ms (View: 52, DB: 4) | 200 OK [http://localhost/reminders]
+
+
+Processing RemindersController#destroy (for 127.0.0.1 at 2010-04-05 21:25:11) [DELETE]
+  Parameters: {"commit"=>"Remove Reminder", "action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"nIfBLj2DbDHurUyaqY8aZZawcrK9TyW0s2D/0yvQ67k=", "id"=>"17", "controller"=>"reminders"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:25:11', "perishable_token" = 'kjK2rPAl-KKSKKUHqTAp', "last_request_at" = '2010-04-06 04:25:11' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."id" = 17) ORDER BY created_at DESC[0m
+  [4;36;1mReminder Destroy (0.2ms)[0m   [0;1mDELETE FROM "reminders" WHERE "id" = 17[0m
+Redirected to http://localhost:3000/
+Completed in 66ms (DB: 2) | 302 Found [http://localhost/reminders/17]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:25:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:25:11', "perishable_token" = 'nVAbcS97Gnr9NqN_O0Tj', "last_request_at" = '2010-04-06 04:25:11' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.9ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (4.4ms)
+Rendered reminders/_box (14.7ms)
+Rendered prayers/_form (3.6ms)
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (4.2ms)
+  [4;36;1mReminder Load (0.5ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_meta (3.3ms)
+Rendered prayers/_complete (9.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.1ms)
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (4.4ms)
+Rendered prayers/_meta (7.2ms)
+Rendered prayers/_complete (9.9ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 208ms (View: 50, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:25:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:25:14', "perishable_token" = 'euxmeHF2ulGDDUba0Q8G', "last_request_at" = '2010-04-06 04:25:14' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;35;1mReminder Load (0.5ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (6.3ms)
+Rendered reminders/_destroy (3.9ms)
+Rendered reminders/_list (120.8ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 180ms (View: 126, DB: 3) | 200 OK [http://localhost/reminders]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-04-05 21:26:34) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:26:34', "perishable_token" = 'hyRqm7YUfUUmnomAZ2tT', "last_request_at" = '2010-04-06 04:26:34' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_settings (1.1ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 511ms (View: 461, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:26:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:26:36', "perishable_token" = 'SfTOPwB3-6hhCTAwr8MZ', "last_request_at" = '2010-04-06 04:26:36' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.8ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (4.3ms)
+Rendered reminders/_box (14.4ms)
+Rendered prayers/_form (3.6ms)
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (3.9ms)
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_meta (3.1ms)
+Rendered prayers/_complete (7.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.0ms)
+  [4;35;1mReminder Load (0.2ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (4.3ms)
+Rendered prayers/_meta (7.1ms)
+Rendered prayers/_complete (9.8ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 112ms (View: 42, DB: 5) | 200 OK [http://localhost/prayers]
+
+
+Processing PrayersController#show (for 127.0.0.1 at 2010-04-05 21:26:38) [GET]
+  Parameters: {"action"=>"show", "id"=>"25", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:26:38', "perishable_token" = 'sXCT6_TxRvcuObQIyMQe', "last_request_at" = '2010-04-06 04:26:38' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".prayer_id = 25) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering prayers/show
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (5.7ms)
+Rendered reminders/_box (15.9ms)
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/prayers/_complete.erb:
+1: <div class="list prayer" id="prayer_id_<%= complete.id %>">
+2: 	<%= render :partial => 'prayer', :locals => { :prayer => complete }%>
+3: 	<%= render :partial => 'meta', :locals => { :prayer => complete }%>
+4: 	<div class="clear"></div>
+
+    app/views/prayers/_complete.erb:1
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/prayers/show.html.erb:2
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/prayers_controller.rb:40:in `show'
+    haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    /usr/local/lib/ruby/gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (94.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrayersController#show (for 127.0.0.1 at 2010-04-05 21:26:57) [GET]
+  Parameters: {"action"=>"show", "id"=>"25", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:26:57', "perishable_token" = 'sBGe1svfFqnzYOskaJKm', "last_request_at" = '2010-04-06 04:26:57' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".prayer_id = 25) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering prayers/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (5.7ms)
+Rendered reminders/_box (15.7ms)
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/prayers/_complete.erb:
+1: <div class="list prayer" id="prayer_id_<%= complete.id %>">
+2: 	<%= render :partial => 'prayer', :locals => { :prayer => complete }%>
+3: 	<%= render :partial => 'meta', :locals => { :prayer => complete }%>
+4: 	<div class="clear"></div>
+
+    app/views/prayers/_complete.erb:1
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/prayers/show.html.erb:2
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/prayers_controller.rb:40:in `show'
+    haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    /usr/local/lib/ruby/gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (186.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrayersController#show (for 127.0.0.1 at 2010-04-05 21:27:28) [GET]
+  Parameters: {"action"=>"show", "id"=>"25", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:27:28', "perishable_token" = 'grmZ4nlrRxlN0D7MLlGH', "last_request_at" = '2010-04-06 04:27:28' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".prayer_id = 25) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering prayers/show
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (5.6ms)
+Rendered reminders/_box (15.7ms)
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/prayers/_complete.erb:
+1: <div class="list prayer" id="prayer_id_<%= complete.id %>">
+2: 	<%= render :partial => 'prayer', :locals => { :prayer => complete }%>
+3: 	<%= render :partial => 'meta', :locals => { :prayer => complete }%>
+4: 	<div class="clear"></div>
+
+    app/views/prayers/_complete.erb:1
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/prayers/show.html.erb:2
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/prayers_controller.rb:40:in `show'
+    haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    /usr/local/lib/ruby/gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (96.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrayersController#show (for 127.0.0.1 at 2010-04-05 21:27:53) [GET]
+  Parameters: {"action"=>"show", "id"=>"25", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:27:53', "perishable_token" = 'p3s1JN53lzVXhAHzhVbR', "last_request_at" = '2010-04-06 04:27:53' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".prayer_id = 25) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering prayers/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (5.7ms)
+Rendered reminders/_box (16.0ms)
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (3.8ms)
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_meta (3.4ms)
+Rendered prayers/_complete (8.1ms)
+Rendered comments/_form (6.1ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 222ms (View: 150, DB: 4) | 200 OK [http://localhost/prayers/25]
+
+
+Processing PrayersController#show (for 127.0.0.1 at 2010-04-05 21:28:11) [GET]
+  Parameters: {"action"=>"show", "id"=>"25", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:28:12', "perishable_token" = 'sWRIf1riAMIS0nnV7uAQ', "last_request_at" = '2010-04-06 04:28:12' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".prayer_id = 25) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering prayers/show
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.6ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (6.7ms)
+Rendered reminders/_box (108.0ms)
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (4.0ms)
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_meta (3.5ms)
+Rendered prayers/_complete (8.5ms)
+Rendered comments/_form (4.4ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 204ms (View: 131, DB: 4) | 200 OK [http://localhost/prayers/25]
+
+
+Processing PrayersController#show (for 127.0.0.1 at 2010-04-05 21:28:23) [GET]
+  Parameters: {"action"=>"show", "id"=>"25", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:28:23', "perishable_token" = 'w0NGyHg_HdtATfPfzl60', "last_request_at" = '2010-04-06 04:28:23' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".prayer_id = 25) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering prayers/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (5.8ms)
+Rendered reminders/_box (15.9ms)
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (3.9ms)
+Rendered comments/_form (4.3ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 114ms (View: 41, DB: 4) | 200 OK [http://localhost/prayers/25]
+
+
+Processing PrayersController#show (for 127.0.0.1 at 2010-04-05 21:28:38) [GET]
+  Parameters: {"action"=>"show", "id"=>"25", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:28:38', "perishable_token" = 'cGLrdEObnh8gDz_SMIdu', "last_request_at" = '2010-04-06 04:28:38' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".prayer_id = 25) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering prayers/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (5.8ms)
+Rendered reminders/_box (15.8ms)
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (3.8ms)
+Rendered comments/_form (4.3ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 116ms (View: 42, DB: 4) | 200 OK [http://localhost/prayers/25]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:28:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:28:43', "perishable_token" = 'HVlyRkW7YxrJFeivdqwj', "last_request_at" = '2010-04-06 04:28:43' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.8ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (4.3ms)
+Rendered reminders/_box (14.3ms)
+Rendered prayers/_form (3.6ms)
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (3.9ms)
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_meta (3.1ms)
+Rendered prayers/_complete (7.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.0ms)
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (4.3ms)
+Rendered prayers/_meta (7.1ms)
+Rendered prayers/_complete (9.8ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 112ms (View: 42, DB: 5) | 200 OK [http://localhost/prayers]
+
+
+Processing PrayersController#show (for 127.0.0.1 at 2010-04-05 21:28:45) [GET]
+  Parameters: {"action"=>"show", "id"=>"25", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:28:45', "perishable_token" = 'bzS5IXsVawPtj2a356d7', "last_request_at" = '2010-04-06 04:28:45' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".prayer_id = 25) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering prayers/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (5.7ms)
+Rendered reminders/_box (15.7ms)
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (3.9ms)
+Rendered comments/_form (4.3ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 195ms (View: 35, DB: 4) | 200 OK [http://localhost/prayers/25]
+
+
+Processing PrayersController#show (for 127.0.0.1 at 2010-04-05 21:29:12) [GET]
+  Parameters: {"action"=>"show", "id"=>"25", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:29:12', "perishable_token" = 'r7hsa2pmbFX6x8X3_33f', "last_request_at" = '2010-04-06 04:29:12' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".prayer_id = 25) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering prayers/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (5.8ms)
+Rendered reminders/_box (15.9ms)
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (3.8ms)
+Rendered comments/_form (4.3ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 200ms (View: 41, DB: 4) | 200 OK [http://localhost/prayers/25]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:29:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:29:27', "perishable_token" = 'C4YkkO6NziWXlk9UCc3M', "last_request_at" = '2010-04-06 04:29:27' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;35;1mReminder Load (0.5ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (6.1ms)
+Rendered reminders/_destroy (92.7ms)
+Rendered reminders/_list (122.4ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 183ms (View: 127, DB: 3) | 200 OK [http://localhost/reminders]
+
+
+Processing RemindersController#destroy (for 127.0.0.1 at 2010-04-05 21:29:29) [DELETE]
+  Parameters: {"commit"=>"Remove Reminder", "action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"nIfBLj2DbDHurUyaqY8aZZawcrK9TyW0s2D/0yvQ67k=", "id"=>"16", "controller"=>"reminders"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:29:29', "perishable_token" = 'aWR8Av8j2OWeDqc6G6of', "last_request_at" = '2010-04-06 04:29:29' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."id" = 16) ORDER BY created_at DESC[0m
+  [4;35;1mReminder Destroy (0.2ms)[0m   [0mDELETE FROM "reminders" WHERE "id" = 16[0m
+Redirected to http://localhost:3000/
+Completed in 65ms (DB: 2) | 302 Found [http://localhost/reminders/16]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:29:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:29:29', "perishable_token" = 'hsN7CIG9a-n6-kaC_TX6', "last_request_at" = '2010-04-06 04:29:29' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.9ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+Rendered reminders/_box (9.8ms)
+Rendered prayers/_form (3.8ms)
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (4.0ms)
+  [4;35;1mReminder Load (0.2ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (4.3ms)
+Rendered prayers/_meta (7.5ms)
+Rendered prayers/_complete (12.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.1ms)
+  [4;35;1mReminder Load (0.3ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (3.7ms)
+Rendered prayers/_meta (6.7ms)
+Rendered prayers/_complete (9.6ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 200ms (View: 43, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:29:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:29:34', "perishable_token" = '6r3kiXxKkTChNfqNoRAo', "last_request_at" = '2010-04-06 04:29:34' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;36;1mReminder Load (0.3ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+Rendered reminders/_list (8.0ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 68ms (View: 15, DB: 2) | 200 OK [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:29:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:29:36', "perishable_token" = 'Mxx3flBOkiljDuCRMRr8', "last_request_at" = '2010-04-06 04:29:36' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.9ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+Rendered reminders/_box (10.6ms)
+Rendered prayers/_form (3.8ms)
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (4.1ms)
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (4.5ms)
+Rendered prayers/_meta (7.9ms)
+Rendered prayers/_complete (12.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.4ms)
+  [4;36;1mReminder Load (0.3ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (3.9ms)
+Rendered prayers/_meta (7.2ms)
+Rendered prayers/_complete (10.4ms)
+Rendered layouts/_header (3.9ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 115ms (View: 46, DB: 4) | 200 OK [http://localhost/prayers]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:29:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:29:37', "perishable_token" = 'Hccrs9hZ0EHooPz2flJp', "last_request_at" = '2010-04-06 04:29:37' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;35;1mReminder Load (0.3ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC[0m
+Rendered reminders/_list (8.0ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 71ms (View: 15, DB: 2) | 200 OK [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:29:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:29:41', "perishable_token" = 'v9_Mg0rAXdVZJeVc6U4R', "last_request_at" = '2010-04-06 04:29:41' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.8ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+Rendered reminders/_box (95.5ms)
+Rendered prayers/_form (3.9ms)
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (4.1ms)
+  [4;35;1mReminder Load (0.2ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (4.5ms)
+Rendered prayers/_meta (7.8ms)
+Rendered prayers/_complete (12.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.1ms)
+  [4;35;1mReminder Load (0.2ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (3.7ms)
+Rendered prayers/_meta (6.5ms)
+Rendered prayers/_complete (9.3ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 198ms (View: 129, DB: 4) | 200 OK [http://localhost/prayers]
+
+
+Processing RemindersController#create (for 127.0.0.1 at 2010-04-05 21:36:40) [POST]
+  Parameters: {"commit"=>"Remind Me", "action"=>"create", "authenticity_token"=>"nIfBLj2DbDHurUyaqY8aZZawcrK9TyW0s2D/0yvQ67k=", "controller"=>"reminders", "reminder"=>{"user_id"=>"5", "prayer_id"=>"25"}}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (11.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:36:40', "perishable_token" = '_WFpIDR9YkUlgMoPiLrr', "last_request_at" = '2010-04-06 04:36:40' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;36;1mReminder Load (0.3ms)[0m   [0;1mSELECT "reminders".id FROM "reminders" WHERE ("reminders"."user_id" = 5 AND "reminders".prayer_id = 25) LIMIT 1[0m
+  [4;35;1mReminder Create (0.3ms)[0m   [0mINSERT INTO "reminders" ("created_at", "updated_at", "user_id", "prayer_id") VALUES('2010-04-06 04:36:40', '2010-04-06 04:36:40', 5, 25)[0m
+Redirected to http://localhost:3000/
+Completed in 109ms (DB: 13) | 302 Found [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:36:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:36:40', "perishable_token" = '5KMHpeMmkEA61e-d77vh', "last_request_at" = '2010-04-06 04:36:40' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.8ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.3ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (4.3ms)
+Rendered reminders/_box (17.5ms)
+Rendered prayers/_form (3.6ms)
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (3.9ms)
+  [4;35;1mReminder Load (0.4ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_meta (3.1ms)
+Rendered prayers/_complete (7.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.0ms)
+  [4;35;1mReminder Load (0.2ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered reminders/_new (4.3ms)
+Rendered prayers/_meta (7.1ms)
+Rendered prayers/_complete (9.7ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 247ms (View: 83, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#create (for 127.0.0.1 at 2010-04-05 21:36:42) [POST]
+  Parameters: {"commit"=>"Remind Me", "action"=>"create", "authenticity_token"=>"nIfBLj2DbDHurUyaqY8aZZawcrK9TyW0s2D/0yvQ67k=", "controller"=>"reminders", "reminder"=>{"user_id"=>"5", "prayer_id"=>"24"}}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:36:42', "perishable_token" = 'WoN4Hatta20oyOjCHip6', "last_request_at" = '2010-04-06 04:36:42' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT "reminders".id FROM "reminders" WHERE ("reminders"."user_id" = 5 AND "reminders".prayer_id = 24) LIMIT 1[0m
+  [4;35;1mReminder Create (0.3ms)[0m   [0mINSERT INTO "reminders" ("created_at", "updated_at", "user_id", "prayer_id") VALUES('2010-04-06 04:36:42', '2010-04-06 04:36:42', 5, 24)[0m
+Redirected to http://localhost:3000/
+Completed in 156ms (DB: 2) | 302 Found [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:36:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:36:42', "perishable_token" = 'ox6X5Lwg8DL6VcdPArp6', "last_request_at" = '2010-04-06 04:36:42' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.8ms)[0m   [0;1mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 5) [0m
+  [4;36;1mReminder Load (0.5ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 5[0m
+  [4;35;1mPrayer Load (0.4ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (6.5ms)
+Rendered reminders/_box (16.3ms)
+Rendered prayers/_form (3.6ms)
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (3.8ms)
+  [4;36;1mReminder Load (0.4ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 25) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_meta (3.0ms)
+Rendered prayers/_complete (7.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.1ms)
+  [4;36;1mReminder Load (0.6ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders"."prayer_id" = 24) AND ("reminders".user_id = 5) ORDER BY created_at DESC LIMIT 1[0m
+Rendered prayers/_meta (3.0ms)
+Rendered prayers/_complete (5.7ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 107ms (View: 39, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-04-05 21:36:45) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '75ead4feac4db3823b6b8a01b538b727743d80bb5058beb9d35e13a6909bf5097fc61463372c538fe6562321699d00690b829f6f3ba901c3205df05ee609364b') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:36:45', "perishable_token" = 'Qt0rreYoTRwfZEl6A_zw', "last_request_at" = '2010-04-06 04:36:45' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/
+Completed in 54ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:36:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 29ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-05 21:36:45) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 46ms (View: 13, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-04-05 21:36:55) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "email"=>"brandon@melissa-brandon.com"}, "action"=>"create", "authenticity_token"=>"nIfBLj2DbDHurUyaqY8aZZawcrK9TyW0s2D/0yvQ67k=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".email) = 'brandon@melissa-brandon.com') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "login_count" = 10, "updated_at" = '2010-04-06 04:36:55', "perishable_token" = '8vqdbPTnlE9YjqmhBTvt', "last_request_at" = '2010-04-06 04:36:55' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/
+Completed in 53ms (DB: 1) | 302 Found [http://localhost/user_sessions]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:36:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '4') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:36:56', "perishable_token" = 'nbr3ZVYM38UHbQTicm6b', "last_request_at" = '2010-04-06 04:36:56' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.8ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 4) [0m
+  [4;35;1mReminder Load (0.6ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 4) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (6.8ms)
+Rendered reminders/_box (103.9ms)
+Rendered prayers/_form (3.7ms)
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (4.0ms)
+Rendered prayers/_meta (1.0ms)
+Rendered prayers/_complete (5.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.0ms)
+Rendered prayers/_meta (1.0ms)
+Rendered prayers/_complete (3.6ms)
+Rendered layouts/_header (4.2ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 192ms (View: 124, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing RemindersController#index (for 127.0.0.1 at 2010-04-05 21:36:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reminders"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '4') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:36:59', "perishable_token" = 'MmcrJkRaT6-gPTyyciAu', "last_request_at" = '2010-04-06 04:36:59' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+Rendering template within layouts/application
+Rendering reminders/index
+  [4;36;1mReminder Load (0.7ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 4) ORDER BY created_at DESC[0m
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (6.2ms)
+Rendered reminders/_destroy (3.8ms)
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.1ms)
+Rendered reminders/_destroy (3.3ms)
+Rendered reminders/_list (44.2ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 103ms (View: 48, DB: 4) | 200 OK [http://localhost/reminders]
+
+
+Processing PrayersController#index (for 127.0.0.1 at 2010-04-05 21:37:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '4') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:37:54', "perishable_token" = 'JZbDvwl4i5otzMq37WVH', "last_request_at" = '2010-04-06 04:37:54' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.9ms)[0m   [0mSELECT * FROM "prayers" WHERE (prayer like '%%' AND answered like 'f' AND private = 'f') AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering prayers/index
+Rendered prayers/_search (0.2ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 4) [0m
+  [4;35;1mReminder Load (0.6ms)[0m   [0mSELECT * FROM "reminders" WHERE ("reminders".user_id = 4) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mPrayer Load (0.4ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (6.7ms)
+Rendered reminders/_box (16.7ms)
+Rendered prayers/_form (3.6ms)
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (3.9ms)
+Rendered prayers/_meta (1.0ms)
+Rendered prayers/_complete (5.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (2.0ms)
+Rendered prayers/_meta (1.0ms)
+Rendered prayers/_complete (3.6ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 106ms (View: 36, DB: 5) | 200 OK [http://localhost/prayers]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-04-05 21:37:59) [GET]
+  Parameters: {"action"=>"show", "username"=>"brandon", "controller"=>"users"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."username" = 'brandon') ORDER BY created_at DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "prayers" WHERE (("prayers"."private" = 'f') AND ("prayers".user_id = 5)) LIMIT 10[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '4') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:37:59', "perishable_token" = '3-yZU0G5XyJ0z7J39p-S', "last_request_at" = '2010-04-06 04:37:59' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+Rendered layouts/_header (21.1ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 205ms (View: 85, DB: 3) | 200 OK [http://localhost/profile/brandon]
+
+
+Processing PrayersController#show (for 127.0.0.1 at 2010-04-05 21:38:03) [GET]
+  Parameters: {"action"=>"show", "id"=>"25", "controller"=>"prayers"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '4') ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-06 04:38:03', "perishable_token" = 'mOBvESTrXl8Qu9ZQNvAv', "last_request_at" = '2010-04-06 04:38:03' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".prayer_id = 25) ORDER BY created_at DESC[0m
+Rendered layouts/_email_header (0.1ms)
+  [4;36;1mReminder Load (0.7ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 4) ORDER BY created_at DESC[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (7.0ms)
+
+ActionView::TemplateError (undefined method `protect_against_forgery?' for #<ActionView::Base:0x102fadec8>) on line #1 of app/views/reminders/_destroy.erb:
+1: <% form_for reminder, :html => { :method => 'delete' } do |f| %>
+2:     <%= f.submit 'Remove Reminder' %>
+3: <% end %>
+
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:190:in `form_tag'
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:209:in `form_for'
+    app/views/reminders/_destroy.erb:1
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/reminders/_list.erb:5
+    /usr/local/lib/ruby/gems/1.8/gems/will_paginate-2.3.12/lib/will_paginate/finder.rb:168:in `method_missing'
+    /usr/local/lib/ruby/gems/1.8/gems/will_paginate-2.3.12/lib/will_paginate/finder.rb:168:in `method_missing'
+    app/views/reminders/_list.erb:1
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/user_mailer/reminder.html.erb:5
+    haml (2.2.22) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/models/user.rb:66:in `send_reminder'
+    app/controllers/prayers_controller.rb:39:in `show'
+    haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    /usr/local/lib/ruby/gems/1.8/gems/compass-0.10.0.rc1/lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (117.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrayersController#show (for 127.0.0.1 at 2010-04-05 21:38:14) [GET]
+  Parameters: {"action"=>"show", "id"=>"25", "controller"=>"prayers"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '4') ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-06 04:38:14', "perishable_token" = '0azJZm7hSBP3YXTAHnF_', "last_request_at" = '2010-04-06 04:38:14' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+  [4;35;1mPrayer Load (0.5ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".prayer_id = 25) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering prayers/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reminders" WHERE ("reminders".user_id = 4) [0m
+  [4;36;1mReminder Load (0.5ms)[0m   [0;1mSELECT * FROM "reminders" WHERE ("reminders".user_id = 4) ORDER BY created_at DESC LIMIT 5[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "prayers" WHERE ("prayers"."id" = 25) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mPrayer Load (0.5ms)[0m   [0;1mSELECT * FROM "prayers" WHERE ("prayers"."id" = 24) AND ("prayers"."private" = 'f') ORDER BY created_at DESC LIMIT 10[0m
+Rendered reminders/_list_short (8.2ms)
+Rendered reminders/_box (18.6ms)
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) ORDER BY created_at DESC[0m
+Rendered prayers/_prayer (3.8ms)
+Rendered comments/_form (4.5ms)
+Rendered layouts/_header (3.7ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 118ms (View: 43, DB: 4) | 200 OK [http://localhost/prayers/25]
