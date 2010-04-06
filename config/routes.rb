@@ -21,6 +21,7 @@ ActionController::Routing::Routes.draw do |map|
   map.terms 'terms', :controller => 'static', :action => 'terms'
   map.privacy 'privacy', :controller => 'static', :action => 'privacy'
   
+  
   # This is a catch-all for routes that don't exist, visitor is redirected to home page.
   ActionController::Routing::Routes.draw do |map|
       map.connect ':controller/:action/:id'

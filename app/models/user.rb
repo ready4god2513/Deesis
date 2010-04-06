@@ -63,7 +63,9 @@ class User < ActiveRecord::Base
   
   
   def send_reminder
-    UserMailer.deliver_reminder(self)
+    self.find(:all).each do |user|
+      UserMailer.deliver_reminder(self)
+    end
   end
   
   def deliver_password_reset_instructions!
