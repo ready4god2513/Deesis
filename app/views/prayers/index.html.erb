@@ -1,12 +1,13 @@
 <%= sidebar(render :partial => 'search')  %>
 <%= sidebar(render :partial => 'reminders/box', :locals => { :user => current_user })  %>
 
-<% if current_user %>
-	<%= render :partial => 'form' %>
-<% end %>
+<%= render :partial => 'form' %>
 
 <div id="prayers_list">
 	<%= render :partial => 'complete', :collection => @prayers %>
+	<% if @prayers.count == 0 %>
+	 <%= render :partial => 'nothing_found' %>
+	<% end %>
 	
 	<% unless @prayers.next_page.nil? %>
 		<div id="pagination">

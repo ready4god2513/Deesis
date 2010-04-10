@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
   
-  current_tab :profile
-  
   # GET /users
   # GET /users.xml
   def index
@@ -18,6 +16,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.xml
   def show
+    
     @user = User.find_by_username(params[:username])
     
     if @user.nil?

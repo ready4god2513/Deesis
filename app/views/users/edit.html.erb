@@ -2,7 +2,7 @@
 
 <h1>Profile Management</h1>
 
-<% form_for(@user) do |f| %>
+<% form_for(@user, :html => { :multipart => true }) do |f| %>
 	<fieldset>
 		<div class="formFields">
 			<%= f.label :full_name %>
@@ -23,9 +23,7 @@
 			<%= f.submit 'Update Profile' %>
 		</div>
 	</fieldset>
-<% end %>
-
-<% form_for(@user, :html => { :multipart => true }) do |f| %>
+	
 	<fieldset>
 		<div class="formFields">
 			<%= f.label :pic %>
@@ -33,12 +31,10 @@
 			<%= error_message_on :user, :profile_pic, :prepend_text => 'Profile Pic ' %>
 		</div>
 		<div class="formFields">
-			<%= f.submit 'Upload Pic' %>
+			<%= f.submit 'Update Profile' %>
 		</div>
 	</fieldset>
-<% end %>
-
-<% form_for(@user) do |f| %>
+	
 	<fieldset>
 		<div class="formFields">
 			<%= f.label :password %>
@@ -51,7 +47,7 @@
 			<%= error_message_on :user, :password_confirmation, :prepend_text => 'Password Confirmation ' %>
 		</div>
 		<div class="formFields">
-			<%= f.submit 'Change Password' %>
+			<%= f.submit 'Update Profile' %>
 		</div>
 	</fieldset>
 <% end %>

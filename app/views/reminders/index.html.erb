@@ -2,3 +2,7 @@
 <div id="prayers_list">
 	<%= render :partial => 'list', :locals => { :user => @user } %>
 </div>
+
+<% if @user.reminders.count == 0 %>
+   <%= render :partial => 'prayers/nothing_found' %>
+<% end %>

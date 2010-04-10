@@ -15,13 +15,13 @@ div#footer a{color:#666;font-size:0.9em;margin:5px;text-decoration:underline}
 div#header{background:#4184AB;margin:0 0 20px;padding:10px 0 0}
 div#notice{background:#e6e6df;color:#000;font-weight:700;margin:10px 0;padding:10px 0}
 div#pagination a.more{background:#E6E6DF;color:#4184AB;display:block;font-size:14px;font-weight:700;height:22px;line-height:1.5em;margin:30px 0;outline:none;padding:6px 0;text-align:center;width:100%}
-div#sidebar { width:300px; margin-left:50px;}
+div#sidebar {width:300px; margin-left:50px;}
 div#user_login{background:#f5f5f3;position:relative;top:-15px;padding:5px;-moz-border-radius:5px}
 div#user_login a{color:#000;font-weight:700;margin:0 5px;}
 div#user_login,h1#logo{color:#fff}
 div.activity_stream {margin:5px 10px; font-size:0.9em;}
 div.activity_stream p {margin:2px 0;padding:0;}
-div.activity_stream a { color:#369; font-weight:bold;}
+div.activity_stream a {color:#369; font-weight:bold;}
 div.avatar img{background:#e8e8e8;border:none;margin-right:5px;}
 div.box{background:#fff;border:1px solid;border-bottom:5px solid;border-right:5px solid;border-color:#e6e6df;}
 div.complete{text-decoration:line-through}
@@ -57,7 +57,7 @@ div.tabs ul li a{background:#222;color:#fff;font-weight:700;margin:0;padding:5px
 div.tabs ul li a:hover,div.tabs ul li.current a{background:#F5F5F3;color:#000}
 div.wrapper{margin:0 auto;width:1170px}
 fieldset{border:none;margin-bottom:10px}
-h1 { text-transform:capitalize;}
+h1 {text-transform:capitalize;}
 img{border:none}
 table{border-collapse:collapse;margin:0;padding:0;width:700px}
 td{border:1px solid #e6e6df;border-collapse:collapse;color:#333;padding:6px}
