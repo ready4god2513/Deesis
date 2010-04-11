@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
     if firstname.nil? || firstname.empty?
       username
     else
-      firstname + ' ' + lastname
+      full_name
     end
   end
   

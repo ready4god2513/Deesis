@@ -1,7 +1,6 @@
 <div class="meta" id="prayer_<%= prayer.id %>">
-	<span class="num_people_praying"><%= pluralize(prayer.num_responses, 'Person', 'People') %></span>  Praying |
 	
-	<% if current_user.id == prayer.user_id %>
+	<% if user_can_edit(prayer) %>
 		<%= link_to 'Edit', edit_prayer_path(prayer) %>
 		<%= link_to 'Prayer is Answered', answered_path(prayer) %>
 	<% end %>

@@ -1,4 +1,4 @@
-.box{background:#fdfef6;border:1px solid;border-color:#bab9b9;color:#707070;font-size:0.8em;padding:10px}
+.box{background:#fdfef6;border:1px solid;border-color:#bab9b9;color:#666;font-size:0.8em;padding:10px}
 .charcounter{display:block;font-size:1em;font-weight:700}
 .clear{clear:both}
 .left,div.avatar{float:left}
@@ -8,7 +8,7 @@ a{color:#222}
 a.user_name_link{font-size:1.8em;color:#000;text-transform:capitalize;}
 a:hover{color:#2e80d3;text-decoration:underline}
 a:link,a:visited{color:#222;text-decoration:none}
-body{background:#f5f5f3;color:#464646;font-family:"Helvetica Neue", Helvetica, Verdana, sans-serif;font-size:0.8em;margin:0;padding:0;text-align:center}
+body{background:#f5f5f3;color:#000;font-family:"Helvetica Neue", Helvetica, Verdana, sans-serif;font-size:0.8em;margin:0;padding:0;text-align:center}
 div#content{font-size:1em;padding:20px;text-align:left;width:750px}
 div#footer{color:#666;font-size:0.9em;margin:10px 0 30px 20px;text-align:left}
 div#footer a{color:#666;font-size:0.9em;margin:5px;text-decoration:underline}
@@ -22,14 +22,14 @@ div#user_login,h1#logo{color:#fff}
 div.activity_stream {margin:5px 10px; font-size:0.9em;}
 div.activity_stream p {margin:2px 0;padding:0;}
 div.activity_stream a {color:#369; font-weight:bold;}
-div.avatar img{background:#e8e8e8;border:none;margin-right:5px;}
+div.avatar {background:#e8e8e8;border:none;margin-right:5px;width:50px;overflow:hidden;color:#000;font-size:1.1em;font-weight:bold;text-align:center;vertical-align:center;}
 div.box{background:#fff;border:1px solid;border-bottom:5px solid;border-right:5px solid;border-color:#e6e6df;}
 div.complete{text-decoration:line-through}
 div.footer{margin-bottom:40px;text-align:right}
 div.fieldWithErrors{display:inline;}
 div.formFields{background:#f8f8f8;clear:both;margin-bottom:4px;padding:5px}
 div.formFields input[type=text],div.formFields input[type=password],div.formFields select{border:1px solid;border-color:#ddd;font-size:1.1em;padding:7px}
-div.formFields label{display:block;font-weight:700;padding:5px 0}
+div.formFields label{width:110px;float:left;font-weight:700;padding:5px 0;text-align:right;padding-right:10px}
 div.formFields textarea{border:1px solid;border-color:#ddd;font-size:1.6em;height:50px;margin-bottom:10px;padding:7px;width:95%}
 div.formError{background:#FFCFCF;border:1px solid #E5A3A3;color:#B32E1B;display:inline;font-weight:700;margin:0;padding:7px}
 div.info_box{margin-bottom:10px;text-align:left;width:100%}
@@ -46,7 +46,7 @@ div.item p,h1,h2,h3,div.tabs ul{margin:0;padding:0}
 div.list{background:#f8f8f8;font-size:0.9em;margin:10px 0;padding:5px}
 div.listing_small{font-size:0.9em}
 div.messages{background:#666;color:#fff;font-weight:700;margin:10px 0;padding:5px;text-align:center}
-div.meta{clear:both;color:#999;font-size:0.95em;margin-left:60px;padding:20px 0 10px 0;}
+div.meta{clear:both;color:#000;font-size:0.95em;margin-left:60px;padding:20px 0 10px 0;}
 div.meta a,div.user_info_box a,div.list a,div.info_box a{color:#333}
 div.meta form{display:inline;}
 div.meta a, div.meta input, div.prayer_reminder input[type=submit] {color:#4184AB;background:#E6E6DF;border:none;display:inline;font-size:1em;padding:5px;-moz-border-radius:4px;margin-right:10px;text-align:center;}
@@ -56,9 +56,10 @@ div.tabs ul li{display:inline;margin:0 3px 0 0}
 div.tabs ul li a{background:#222;color:#fff;font-weight:700;margin:0;padding:5px 15px}
 div.tabs ul li a:hover,div.tabs ul li.current a{background:#F5F5F3;color:#000}
 div.wrapper{margin:0 auto;width:1170px}
-fieldset{border:none;margin-bottom:10px}
+fieldset{border:none;margin:20px 0}
 h1 {text-transform:capitalize;}
 img{border:none}
+legend{font-size:2em;margin:10px 0}
 table{border-collapse:collapse;margin:0;padding:0;width:700px}
 td{border:1px solid #e6e6df;border-collapse:collapse;color:#333;padding:6px}
 th{background:#CAE8EA;border:1px solid #e6e6df;color:#4f6b72;letter-spacing:2px;padding:6px 6px 6px 12px;text-align:left;text-transform:uppercase}

@@ -9,12 +9,8 @@ module ApplicationHelper
     content_for(:title) { title }
   end
   
-  def profile_pic(user, size = :thumb)
-    link_to (image_tag user.profile_pic.url(size)), profile_path(user.username)
-  end
-  
-  def profile_pic_with_popup(user)
-    link_to (image_tag user.profile_pic.url), user.profile_pic.url(:small), :class => 'expand_avatar'
+  def profile_pic(user)
+    link_to ('<div class="avatar">' + user.name_or_username + ' </div>', profile_path(user.username))
   end
   
   def format_output(content)
@@ -22,7 +18,7 @@ module ApplicationHelper
   end
   
   def user_can_edit(prayer)
-    if !current_user || prayer.user_id != current_user.id
+    if prayer.user_id != current_user.id
       return false
     else
       return true

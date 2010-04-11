@@ -72,10 +72,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         flash[:notice] = 'Your profile has been updated'
-        format.html { redirect_to edit_user_path(:current) }
+        format.html { redirect_to account_path() }
       else
         flash[:notice] = 'We couldn\'t update your profile.  Fix the errors, and let\'s try again'
-        format.html { redirect_to edit_user_path(:current) }
+        format.html { redirect_to account_path() }
       end
     end
   end
