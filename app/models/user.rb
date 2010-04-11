@@ -9,14 +9,6 @@ class User < ActiveRecord::Base
   acts_as_authentic do |c|
     c.login_field = "email"
   end
-  
-  has_attached_file :profile_pic,
-                    :styles => {
-                      :thumb => "48x48#",
-                      :small  => "400x400>" 
-                    },
-                    :default_style => :thumb,
-                    :default_url => '/images/missing.png'
 
 
   def name_or_username

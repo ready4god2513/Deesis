@@ -35,7 +35,6 @@ class PrayersController < ProtectedController
   # GET /prayers/1
   def show
     @prayer = Prayer.find(params[:id])
-    @comments = @prayer.comment(:limit => 2)
     
     respond_to do |format|
       format.html # show.html.erb

@@ -1,6 +1,6 @@
 <%= sidebar(render :partial => 'settings')  %>
 
-<h1>Profile Management</h1>
+<h1><%= profile_pic(@user) %> <%= @user.full_name %></h1>
 
 <% form_for(@user, :html => { :multipart => true }) do |f| %>
 	<fieldset>
@@ -19,20 +19,6 @@
 			<%= f.text_field :email %>
 			<%= error_message_on :user, :email, :prepend_text => 'Email ' %>
 		</div>
-		<div class="formFields">
-			<%= f.submit 'Update Profile' %>
-		</div>
-	</fieldset>
-	
-	<fieldset>
-		<div class="formFields">
-			<%= f.label :pic %>
-			<%= f.file_field :profile_pic %>
-			<%= error_message_on :user, :profile_pic, :prepend_text => 'Profile Pic ' %>
-		</div>
-		<div class="formFields">
-			<%= f.submit 'Update Profile' %>
-		</div>
 	</fieldset>
 	
 	<fieldset>
@@ -46,8 +32,8 @@
 			<%= f.password_field :password_confirmation %>
 			<%= error_message_on :user, :password_confirmation, :prepend_text => 'Password Confirmation ' %>
 		</div>
-		<div class="formFields">
-			<%= f.submit 'Update Profile' %>
-		</div>
 	</fieldset>
+	<div class="formFields">
+	  <%= f.submit 'Update Profile' %>
+  </div>
 <% end %>

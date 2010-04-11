@@ -1,7 +1,7 @@
 class Prayer < ActiveRecord::Base
   # ASSOCIATIONS
   belongs_to :user
-  has_many :comment
+  has_many :comments
   
   # VALIDATION
   validates_numericality_of :user_id
