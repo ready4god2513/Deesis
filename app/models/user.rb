@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :reminders
   
   default_scope :order => 'created_at DESC'
+  named_scope :send_me_reminders, :conditions => { :remind_me => true }
   
   acts_as_authentic do |c|
     c.login_field = "email"
@@ -54,9 +55,9 @@ class User < ActiveRecord::Base
   end
   
   
-  def send_reminder
-    self.find(:all, :conditions => ['remind_me = ?', true]).each do |user|
-      UserMailer.deliver_reminder(self)
+  def self.send_reminder
+    self.send_me_reminders.find_each do |user|
+      UserMailer.deliver_reminder(user)
     end
   end
   

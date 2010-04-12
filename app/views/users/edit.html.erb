@@ -1,4 +1,4 @@
-<%= sidebar(render :partial => 'settings')  %>
+<%= sidebar(render :partial => 'reminders/box', :locals => { :user => current_user })  %>
 
 <% form_for(@user) do |f| %>
 	<fieldset class="clear">
