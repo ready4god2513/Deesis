@@ -1,3 +1,3 @@
-$("#prayers_list").html("<%= escape_javascript(render(:partial => 'prayers/prayer')) %>");
+$("#prayers_list").prepend("<%= escape_javascript(render(:partial => 'prayers/complete', :locals => { :complete => @prayer })) %>");
 $("#notice").html('<%= escape_javascript(flash.delete(:notice)) %>');
 $("#prayers_list div:nth-child(1)").highlightFade({speed:2000});
