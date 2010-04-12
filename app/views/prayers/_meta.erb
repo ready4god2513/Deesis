@@ -8,5 +8,6 @@
   <% if !current_user.wants_to_be_reminded?(prayer) %>
     <%= render :partial => 'reminders/new', :locals => { :prayer => prayer } %>
   <% end %>
+  
 	<%= link_to 'Comments', prayer%>
 </div>
