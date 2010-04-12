@@ -1,0 +1,12 @@
+<%= render :partial => 'layouts/email_header' %>
+
+<h1>Prayer Answered</h1>
+<p>The following prayer has been answered:</p>
+
+<blockquote>
+  <%= render :partial => 'prayers/prayer', :locals => { :prayer => @prayer }%>
+</blockquote>
+
+<p>Thank you for your constant prayer.</p>
+
+<%= render :partial => 'layouts/email_footer' %>

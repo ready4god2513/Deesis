@@ -20,6 +20,15 @@ class UserMailer < ActionMailer::Base
   end
   
   
+  def prayer_answered(user, prayer)
+    from          default_url_options[:host]
+    recipients    user.email
+    content_type  "text/html"
+    subject       "Prayer Answered"
+    body          :prayer => prayer
+  end
+  
+  
   def password_reset_instructions(user)
     subject       "Password Reset Instructions"
     from          default_url_options[:host]

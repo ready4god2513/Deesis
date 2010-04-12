@@ -55,7 +55,7 @@ class User < ActiveRecord::Base
   
   
   def send_reminder
-    self.find(:all).each do |user|
+    self.find(:all, :conditions => ['remind_me = ?', true]).each do |user|
       UserMailer.deliver_reminder(self)
     end
   end

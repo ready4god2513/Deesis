@@ -2,7 +2,10 @@
 	<h2>Search Prayers</h2>
 	<form action="/" method="GET">
 		<div class="formFields">
-			<input type="text" name="search" id="search" value="<%= params[:search] || 'Search'%>" />
+			<input type="text" name="search" id="search" value="<%= params[:search] || 'Search' %>" />
 		</div>
 	</form>
+	<% if params[:search] %>
+	 <p><strong><%= pluralize(@prayers.count, 'Prayer') %> found</strong> <%= link_to 'Clear Search', root_path %></p>
+	<%end %>
 </div>

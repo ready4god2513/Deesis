@@ -3,7 +3,9 @@
 <h1>Today's Prayer Needs</h1>
 
 <% @user.reminders.each do |reminder| %>
-	<%= render :partial => 'prayers/prayer', :locals => { :prayer => reminder.prayer }%>
+  <blockquote>
+    <%= render :partial => 'prayers/prayer', :locals => { :prayer => reminder.prayer }%>
+  </blockquote>
 <% end %>
 
 <%= render :partial => 'layouts/email_footer' %>

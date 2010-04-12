@@ -16,4 +16,10 @@ class Reminder < ActiveRecord::Base
     self.delete_all(:prayer_id => prayer.id)
   end
   
+  def self.send_prayer_answered(prayer)
+    self.find_all_by_prayer_id(prayer.id).each do |reminder|
+      UserMailer.deliver_prayer_answered(reminder.user, prayer)
+    end
+  end
+  
 end

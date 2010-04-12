@@ -1,6 +1,6 @@
 <%= sidebar(render :partial => 'settings')  %>
 
-<% form_for(@user, :html => { :multipart => true }) do |f| %>
+<% form_for(@user) do |f| %>
 	<fieldset class="clear">
 	  <legend>Account Information</legend>
 		<div class="formFields">
@@ -18,6 +18,11 @@
 			<%= f.text_field :email %>
 			<%= error_message_on :user, :email, :prepend_text => 'Email' %>
 		</div>
+		<div class="formFields">
+      <%= f.label :remind_me, 'Prayer Reminders' %>
+      <%= f.check_box :remind_me %> Send Me Daily Prayer Reminders
+      <%= error_message_on :user, :remind_me, :prepend_text => 'Send Reminder' %>
+    </div>
 	</fieldset>
 	
 	<fieldset>

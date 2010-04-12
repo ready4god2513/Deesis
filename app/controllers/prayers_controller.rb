@@ -21,6 +21,9 @@ class PrayersController < ProtectedController
     respond_to do |format|
       if @prayer.save
         
+        # Send out an email letting users know the prayer was answered
+        Reminder.send_prayer_answered(@prayer)
+        
         # Remove reminders
         Reminder.remove_by_prayer(@prayer)
         
