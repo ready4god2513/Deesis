@@ -2,7 +2,7 @@ default_run_options[:pty] = true
 set :application, "deesis"
 set :repository,  "git@github.com:ready4god2513/Deesis.git"
 set :scm, "git"
-set :user, "deployer"
+set :user, "deesis_ftp"
 set :branch, "master"
 set :deploy_via, :remote_cache
 set :use_sudo, false
