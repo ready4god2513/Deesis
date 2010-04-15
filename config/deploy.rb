@@ -1,7 +1,7 @@
 default_run_options[:pty] = true
 
 set :application, "Deesis"
-set :repository,  "git://github.com/ready4god2513/Deesis.git"
+set :repository,  "http://github.com/ready4god2513/Deesis.git"
 set :domain, 'deesis.org' 
 set :scm, "git"
 set :branch, "master"
