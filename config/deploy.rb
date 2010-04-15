@@ -7,10 +7,8 @@ set :branch, "master"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
-role :web, "apache"                          # Your HTTP server, Apache/etc
-role :app, "apache"                          # This may be the same as your `Web` server
-role :db,  "apache", :primary => true # This is where Rails migrations will run
-role :db,  "apache"
+server 'www.deesis.org', :app, :web, :db
+
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
