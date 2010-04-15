@@ -1,38 +1,23 @@
 default_run_options[:pty] = true
-ssh_options[:forward_agent] = true
-
-set :application, "Deesis"
 set :repository,  "git@github.com:ready4god2513/Deesis.git"
-set :domain, 'deesis.org' 
 set :scm, "git"
+set :user, "deployer"
 set :branch, "master"
-set :deploy_to, "/var/www/vhosts/deesis.org/httpdocs"
-set :use_sudo, false
-set :user, 'deesis_ftp'
+set :deploy_via, :remote_cache
 
-server 'deesis_ftp@deesis.org', :app, :web, :db
+role :web, "apache"                          # Your HTTP server, Apache/etc
+role :app, "apache"                          # This may be the same as your `Web` server
+role :db,  "apache", :primary => true # This is where Rails migrations will run
+role :db,  "apache"
 
-role :app, domain 
-role :web, domain 
-role :db, domain, :primary => true
+# If you are using Passenger mod_rails uncomment this:
+# if you're still using the script/reapear helper you will need
+# these http://github.com/rails/irs_process_scripts
 
-namespace :deploy do
-  desc "Build the site" 
-  
-  task :after_update_code, :roles => :web do
-    run <<-EOF
-      cd #{release_path}
-      rake asset:packager:build_all
-    EOF
-  end
-  
-  
-  task :update_crontab, :roles => :db do
-    run "cd #{release_path} && whenever --update-crontab #{application}"
-  end
-  
-  
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-  end
-end
+# namespace :deploy do
+#   task :start do ; end
+#   task :stop do ; end
+#   task :restart, :roles => :app, :except => { :no_release => true } do
+#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+#   end
+# end
