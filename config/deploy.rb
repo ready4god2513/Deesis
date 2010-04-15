@@ -1,4 +1,5 @@
 default_run_options[:pty] = true
+set :application "deesis"
 set :repository,  "git@github.com:ready4god2513/Deesis.git"
 set :scm, "git"
 set :user, "deployer"
