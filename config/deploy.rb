@@ -5,6 +5,7 @@ set :scm, "git"
 set :user, "deployer"
 set :branch, "master"
 set :deploy_via, :remote_cache
+set :use_sudo, false
 
 role :web, "apache"                          # Your HTTP server, Apache/etc
 role :app, "apache"                          # This may be the same as your `Web` server
