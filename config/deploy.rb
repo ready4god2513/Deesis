@@ -6,6 +6,8 @@ set :user, "deesis_ftp"
 set :branch, "master"
 set :deploy_via, :remote_cache
 set :use_sudo, false
+set :deploy_to, "/var/www/vhosts/deesis.org/httpdocs"
+
 
 server 'www.deesis.org', :app, :web, :db
 
